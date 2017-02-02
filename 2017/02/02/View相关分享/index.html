@@ -84,15 +84,37 @@
 
 
 
-<meta name="description" content="aaa">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Clwater Blog">
-<meta property="og:url" content="http://clwater.github.io/index.html">
+<meta name="description" content="Android View
+Android View框架相关  View的测量 布局 绘制过程LinearLayout RelativeLayout实现源码分析
+
+从setContentView与LayoutInflater说起setContentView分析相关关系  
+  Activity中有Window成员 实例化为PhoneWindow PhoneWindow是抽象Window类的实现类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="View相关分享">
+<meta property="og:url" content="http://clwater.github.io/2017/02/02/View相关分享/index.html">
 <meta property="og:site_name" content="Clwater Blog">
-<meta property="og:description" content="aaa">
+<meta property="og:description" content="Android View
+Android View框架相关  View的测量 布局 绘制过程LinearLayout RelativeLayout实现源码分析
+
+从setContentView与LayoutInflater说起setContentView分析相关关系  
+  Activity中有Window成员 实例化为PhoneWindow PhoneWindow是抽象Window类的实现类">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2191286-ed8a7074cddfb63c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://clwater.github.io/View层级分析.png">
+<meta property="og:image" content="http://clwater.github.io/inflate参数.png">
+<meta property="og:image" content="http://clwater.github.io/View.png">
+<meta property="og:image" content="http://clwater.github.io/View measure过程.png">
+<meta property="og:image" content="http://clwater.github.io/View draw流程.png">
+<meta property="og:image" content="http://clwater.github.io/LinearLayout二次测量.png">
+<meta property="og:image" content="http://clwater.github.io/负delta.png">
+<meta property="og:updated_time" content="2017-02-02T15:30:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Clwater Blog">
-<meta name="twitter:description" content="aaa">
+<meta name="twitter:title" content="View相关分享">
+<meta name="twitter:description" content="Android View
+Android View框架相关  View的测量 布局 绘制过程LinearLayout RelativeLayout实现源码分析
+
+从setContentView与LayoutInflater说起setContentView分析相关关系  
+  Activity中有Window成员 实例化为PhoneWindow PhoneWindow是抽象Window类的实现类">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2191286-ed8a7074cddfb63c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -120,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="http://clwater.github.io/"/>
+  <link rel="canonical" href="http://clwater.github.io/2017/02/02/View相关分享/"/>
 
 
 
 
 
-  <title> Clwater Blog </title>
+  <title> View相关分享 | Clwater Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -147,9 +169,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -210,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -245,10 +265,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/blog_byhexo/2017/02/02/View相关分享/" itemprop="url">
-                  View相关分享
-                </a>
+                View相关分享
               
             
           </h1>
@@ -299,9 +316,7 @@
       
 
       
-        
-          
-            <h1 id="Android-View"><a href="#Android-View" class="headerlink" title="Android View"></a>Android View</h1><blockquote>
+        <h1 id="Android-View"><a href="#Android-View" class="headerlink" title="Android View"></a>Android View</h1><blockquote>
 <p>Android View框架相关  View的测量 布局 绘制过程<br>LinearLayout RelativeLayout实现源码分析</p>
 </blockquote>
 <h2 id="从setContentView与LayoutInflater说起"><a href="#从setContentView与LayoutInflater说起" class="headerlink" title="从setContentView与LayoutInflater说起"></a>从setContentView与LayoutInflater说起</h2><h3 id="setContentView分析"><a href="#setContentView分析" class="headerlink" title="setContentView分析"></a>setContentView分析</h3><h4 id="相关关系"><a href="#相关关系" class="headerlink" title="相关关系"></a>相关关系</h4><p>  <img src="http://upload-images.jianshu.io/upload_images/2191286-ed8a7074cddfb63c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="相关关系图"></p>
@@ -502,16 +517,20 @@
 <h3 id="RelativeLayout的draw过程"><a href="#RelativeLayout的draw过程" class="headerlink" title="RelativeLayout的draw过程"></a>RelativeLayout的draw过程</h3><p>RelativeLayout作为ViewGroup的子类 因为其性质原因  没有对draw过程进行修改</p>
 <p>以上</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -523,16 +542,15 @@
 
       
       
-        <div class="post-eof"></div>
-      
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -540,6 +558,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -559,8 +581,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/blog_byhexo/images/myimage.jpeg"
@@ -602,6 +633,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-View"><span class="nav-number">1.</span> <span class="nav-text">Android View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从setContentView与LayoutInflater说起"><span class="nav-number">1.1.</span> <span class="nav-text">从setContentView与LayoutInflater说起</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setContentView分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">setContentView分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#相关关系"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">相关关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PhoneWindow的setContentView分析"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">PhoneWindow的setContentView分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LayoutInflater源码分析"><span class="nav-number">1.1.2.</span> <span class="nav-text">LayoutInflater源码分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View的测量-布局-绘制过程"><span class="nav-number">1.2.</span> <span class="nav-text">View的测量 布局 绘制过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测量之前的事情"><span class="nav-number">1.2.1.</span> <span class="nav-text">测量之前的事情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#measure源码分析"><span class="nav-number">1.2.2.</span> <span class="nav-text">measure源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout源码分析"><span class="nav-number">1.2.3.</span> <span class="nav-text">layout源码分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#draw源码分析"><span class="nav-number">1.2.4.</span> <span class="nav-text">draw源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-1-draw-the-background-if-needed"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">Step 1, draw the background, if needed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-2-save-the-canvas’-layers"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">Step 2, save the canvas’ layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-3-draw-the-content"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">Step 3, draw the content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-4-draw-the-children"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">Step 4, draw the children</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-5-draw-the-fade-effect-and-restore-layers"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">Step 5, draw the fade effect and restore layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Step-6-draw-decorations-scrollbars"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">Step 6, draw decorations (scrollbars)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinearLayout-源码分析"><span class="nav-number">1.3.</span> <span class="nav-text">LinearLayout 源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#measure过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">measure过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要过程"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">主要过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化相关变量"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">初始化相关变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一次测量"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">第一次测量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二次测量mTotalLength"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">二次测量mTotalLength</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二次测量部分View和对为测量的子View进行测量"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">二次测量部分View和对为测量的子View进行测量</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#delta为负的相关解析"><span class="nav-number">1.3.1.5.0.1.</span> <span class="nav-text">delta为负的相关解析</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layout过程"><span class="nav-number">1.3.2.</span> <span class="nav-text">layout过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#draw-源码分析"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">draw 源码分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RelativeLayout-源码分析"><span class="nav-number">1.4.</span> <span class="nav-text">RelativeLayout  源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#measure过程-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">measure过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要过程-1"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">主要过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-将内部View根据纵向关系和横向关系排序"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">1 将内部View根据纵向关系和横向关系排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-初始化相关变量"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">2 初始化相关变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-遍历水平关系的View"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">3  遍历水平关系的View</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-遍历竖直关系的View"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">4 遍历竖直关系的View</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-baseline计算"><span class="nav-number">1.4.1.6.</span> <span class="nav-text">5 baseline计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-宽度和高度修正"><span class="nav-number">1.4.1.7.</span> <span class="nav-text">6 宽度和高度修正</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单总结"><span class="nav-number">1.4.1.8.</span> <span class="nav-text">简单总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RelativeLayout的layout过程"><span class="nav-number">1.4.2.</span> <span class="nav-text">RelativeLayout的layout过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RelativeLayout的draw过程"><span class="nav-number">1.4.3.</span> <span class="nav-text">RelativeLayout的draw过程</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -708,6 +755,10 @@
 
 
   
+  <script type="text/javascript" src="/blog_byhexo/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog_byhexo/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -739,6 +790,10 @@
 
   
 
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
   
 
 
