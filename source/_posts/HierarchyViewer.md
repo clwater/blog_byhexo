@@ -1,7 +1,7 @@
 ---
 title: Android Tools 之一 Hierarchy Viewer
 date: 2017-02-03 18:02:56
-tags: ["android" , "view" , tools" , "Hierarchy Viewer"]
+tags: ["android" , "view" , "tools" , "Hierarchy Viewer"]
 categories: "android"
 ---
 # Android Tools 之一 Hierarchy Viewer
