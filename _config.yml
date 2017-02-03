@@ -5,14 +5,14 @@
 # Site
 title: Clwater Blog
 subtitle: 日常写bug
-description: description
+description: bug如风 常伴吾身
 author: clwater
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://clwater.github.io
+url: http://www.gengzhibo.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
