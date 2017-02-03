@@ -5,9 +5,9 @@
 # Site
 title: Clwater Blog
 subtitle: 日常写bug
-description:
-author: John Doe
-language:
+description: description
+author: clwater
+language: zh-Hans
 timezone:
 
 # URL
@@ -70,3 +70,5 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/clwater/clwater.github.io.git
+
+since: 2016
