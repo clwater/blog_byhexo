@@ -8,8 +8,8 @@ categories: "教程"
 
 > 帮助为了方便访问一些不存在的网站的你们
 
-### 搬瓦工
-[官方网站](http://bandwagonhost.com/) 虽然经常连接不上  反而这个[备用地址](bwh1.net)倒是连接速度很快
+## 搬瓦工
+[官方网站](http://bandwagonhost.com/) 虽然经常连接不上  反而这个[备用地址](http://bwh1.net)倒是连接速度很快
 一个支持*ailpay*的国外vps 价格十分的感人 现在应该是2.99美元一个月 同时五个机房可以随意更换 也就是说可以获得五个ip地址 某些情况下十分的有用
 
 同样价格感人的还有Host1plus 2美元每月 但是线路不是很稳定详细的可以查看[官方网站](https://www.host1plus.com/)
@@ -22,7 +22,8 @@ ss就是Shadowsocks 一个轻量级的科学上网方式支持OS X Windows Linux
 
 pptp是一种点对点隧道协议 可以用来实现科学上网相对于ss来说可配置性更多. 具体的也可以参考[点对点隧道协议](https://zh.wikipedia.org/wiki/%E9%BB%9E%E5%B0%8D%E9%BB%9E%E9%9A%A7%E9%81%93%E5%8D%94%E8%AD%B0)
 
-# 个人vpn搭建教程
+
+## 个人vpn搭建教程
 
 ## vps的准备
 由于是在搬瓦工中搭建的vpn 所以还是推荐购买搬瓦工的服务器 需要注意以下几点
@@ -61,5 +62,159 @@ pptp是一种点对点隧道协议 可以用来实现科学上网相对于ss来�
   ![关闭ss](http://p1.bpimg.com/567571/db9a818fc6d290bd.png)
   不需要的时候可以点击这里关闭ss服务
 
-  ---
-  待续
+### 手动配置ss服务开启vpn
+
+1. 进入控制台
+
+2. 利用pip安装ss服务
+
+  ```
+  # yum install python-setuptools && easy_install pip  
+  # pip install shadowsocks
+  ```
+3. 配置相关信息
+
+  也有两种方式 推荐第一种 配置信息方便查看和更改
+  *  创建配置信息
+    ```
+    # touch /etc/shadowsocks.json
+    # vi /etc/shadowsocks.json
+
+    {
+    "server":"xxx.xxx.xxx", //服务器的IP
+    "server_port":443,      //服务器断开
+    "local_address": "127.0.0.1",   //客户端地址
+    "local_port":1080,              //客户端端口
+    "password":"MyPass",    //密码
+    "timeout":600,          //超时时间(s)
+    "method":"rc4-md5"      //加密方式 可选“bf-cfb”, “aes-256-cfb”, "salsa20" , “rc4″等
+    }
+    ```
+    运行ss服务
+    ```
+    # ssserver -c /etc/shadowsocks.json -d start
+    ```
+  * 直接设置相关信息
+    ```
+    # ssserver -p 443 -k MyPass -m rc4-md5 -d start
+    ```
+4. 停止ss服务
+  ```
+  #ssserver -c /etc/shadowsocks.json -d stop
+  //通过json文件配置开启的服务关闭方法
+
+  #ssserver -d stop
+  //直接配置信息开启的服务关闭的方法
+  ```
+
+## 通过pptp搭建个人vpn
+1. 安装PPP和iptables
+  ```
+  # yum install -y ppp iptables
+  ```
+2. 安装pptpd
+  由于我们是通过yum安转的ppp 因为yum安转的ppp是最新的版本 所以我们要根据当前的ppp版本来选择pptp的版本
+  ```
+  # yum list installed ppp  //查看当前ppp版本
+  ```
+  ![查看当前ppp版本](http://i1.piimg.com/567571/e241c874e8b62a46.png)
+
+  根据当期ppp版本选择对应的pptp版本 可以在[这里](http://poptop.sourceforge.net/yum/stable/packages/)找到对应的版本下载
+
+  ppp 2.4.4 对应 pptp 1.3.4的版本
+
+  ppp 2.4.5 对应 pptp 1.4.0的版本
+
+  ```
+  # wget http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.4.0-1.el6.x86_64.rpm
+  //下载对应的版本
+  # yum install perl
+  //安装perl
+  # rpm -ivh pptpd-1.4.0-1.el6.x86_64.rpm
+  //安装pptp
+  ```
+
+  至此均安装完毕 下面进行配置
+
+3. vpn相关配置
+  一下均对配置文件进行备份 有需要的可以回滚操作
+
+  * 配置 /etc/ppp/options.pptpd
+
+  ```
+  # cp /etc/ppp/options.pptpd /etc/ppp/options.pptpd.bak
+  //备份
+  # vi /etc/ppp/options.pptpd
+
+  //将以下内容添加到options.pptpd当中
+  ms-dns 8.8.8.8
+  ms-dns 8.8.4.4
+  ```
+  * 配置 /etc/ppp/chap-secrets
+
+  ```
+  # cp /etc/ppp/chap-secrets   /etc/ppp/chap-secrets.bak
+  //备份
+  # vi /etc/ppp/chap-secrets
+
+  //添加以下内容
+  myusername pptpd mypassword *
+  //myusername vpn账号
+  //mypassword vpn密码
+  //* 可连接的ip地址 *表示接受所有ip地址的来源
+  ```
+  * 配置 /etc/pptpd.conf
+
+  ```
+  # cp /etc/pptpd.conf     /etc/pptpd.conf.bak
+  //备份
+  # vi /etc/pptpd.conf
+
+  //添加一下内容 用于获得vpn客户端获得ip的范围
+  localip 192.168.0.1
+  remoteip 192.168.0.234-238,192.168.0.245
+
+  //配置文件的最后要以空行结尾
+  ```
+
+  * 配置 /etc/sysctl.conf
+
+  ```
+  # cp /etc/sysctl.conf /etc/sysctl.conf.bak
+  # vi /etc/sysctl.conf
+
+  //修改以下内容 使其支持转发
+  net.ipv4.ip_forward = 1
+
+  # /sbin/sysctl -p
+  //保存修改后的文件
+  ```
+
+  * 启动pptp服务和iptables
+
+  ```
+  # /sbin/service iptables start
+  //启动iptables
+
+  # iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.0/24 -j SNAT --to-source xxx.xxx.xxx.xxx
+  //设置转发功能 -o eth0制定网卡
+  // xxx.xxx.xxx.xxx为公网ip
+
+  # /etc/init.d/iptables save
+  //保存iptables的转发规则
+  # /sbin/service iptables restart
+  //重新启动iptables
+
+  # service pptpd start
+  ```
+
+## FinalSpeed对ss的优化提速
+```
+# wget http://fs.d1sm.net/finalspeed/install_fs.sh
+# chmod +x install_fs.sh
+# ./install_fs.sh 2>&1 | tee install.log
+```
+
+
+## 相关注意事项
+**个人学习用 不要用于奇怪的地方 游戏延迟可能很高**

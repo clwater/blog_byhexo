@@ -106,7 +106,8 @@
 <meta property="og:image" content="http://i1.piimg.com/567571/8c1dbd24a590d38b.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/a003df1753b524ae.png">
 <meta property="og:image" content="http://p1.bpimg.com/567571/db9a818fc6d290bd.png">
-<meta property="og:updated_time" content="2017-02-06T14:56:36.000Z">
+<meta property="og:image" content="http://i1.piimg.com/567571/e241c874e8b62a46.png">
+<meta property="og:updated_time" content="2017-02-06T14:55:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在搬瓦工中搭建个人vpn(ss和pptp)">
 <meta name="twitter:description" content="帮助为了方便访问一些不存在的网站的你们
@@ -435,12 +436,12 @@
         <blockquote>
 <p>帮助为了方便访问一些不存在的网站的你们</p>
 </blockquote>
-<h3 id="搬瓦工"><a href="#搬瓦工" class="headerlink" title="搬瓦工"></a>搬瓦工</h3><p><a href="http://bandwagonhost.com/" target="_blank" rel="external">官方网站</a> 虽然经常连接不上  反而这个<a href="bwh1.net">备用地址</a>倒是连接速度很快<br>一个支持<em>ailpay</em>的国外vps 价格十分的感人 现在应该是2.99美元一个月 同时五个机房可以随意更换 也就是说可以获得五个ip地址 某些情况下十分的有用</p>
+<h2 id="搬瓦工"><a href="#搬瓦工" class="headerlink" title="搬瓦工"></a>搬瓦工</h2><p><a href="http://bandwagonhost.com/" target="_blank" rel="external">官方网站</a> 虽然经常连接不上  反而这个<a href="http://bwh1.net" target="_blank" rel="external">备用地址</a>倒是连接速度很快<br>一个支持<em>ailpay</em>的国外vps 价格十分的感人 现在应该是2.99美元一个月 同时五个机房可以随意更换 也就是说可以获得五个ip地址 某些情况下十分的有用</p>
 <p>同样价格感人的还有Host1plus 2美元每月 但是线路不是很稳定详细的可以查看<a href="https://www.host1plus.com/" target="_blank" rel="external">官方网站</a></p>
 <p>这里只是简单的介绍了两个可以通过支付宝支付的国外vps 免去了还得申请visa卡的纠结 更多详细的内容可以查看<a href="https://zhuanlan.zhihu.com/p/21872685" target="_blank" rel="external">十个便宜VPS(国内国外)主机分享-VPS服务器建站和搭建应用服务体验</a><br>  <a id="more"></a></p>
 <h2 id="ss和pptp"><a href="#ss和pptp" class="headerlink" title="ss和pptp"></a>ss和pptp</h2><p>ss就是Shadowsocks 一个轻量级的科学上网方式支持OS X Windows Linux iOS android的客户端. 具体可以参考<a href="https://zh.wikipedia.org/zh-cn/Shadowsocks" target="_blank" rel="external">Shadowsocks的详细说明</a></p>
 <p>pptp是一种点对点隧道协议 可以用来实现科学上网相对于ss来说可配置性更多. 具体的也可以参考<a href="https://zh.wikipedia.org/wiki/%E9%BB%9E%E5%B0%8D%E9%BB%9E%E9%9A%A7%E9%81%93%E5%8D%94%E8%AD%B0" target="_blank" rel="external">点对点隧道协议</a></p>
-<h1 id="个人vpn搭建教程"><a href="#个人vpn搭建教程" class="headerlink" title="个人vpn搭建教程"></a>个人vpn搭建教程</h1><h2 id="vps的准备"><a href="#vps的准备" class="headerlink" title="vps的准备"></a>vps的准备</h2><p>由于是在搬瓦工中搭建的vpn 所以还是推荐购买搬瓦工的服务器 需要注意以下几点</p>
+<h2 id="个人vpn搭建教程"><a href="#个人vpn搭建教程" class="headerlink" title="个人vpn搭建教程"></a>个人vpn搭建教程</h2><h2 id="vps的准备"><a href="#vps的准备" class="headerlink" title="vps的准备"></a>vps的准备</h2><p>由于是在搬瓦工中搭建的vpn 所以还是推荐购买搬瓦工的服务器 需要注意以下几点</p>
 <ol>
 <li>注册的邮箱需要真实 省的以后无法找回密码</li>
 <li>同样是注册时 用拼音填写就可以 资料是否真实无所谓 但是国家 省份需要真实存在的</li>
@@ -461,10 +462,69 @@
 <p><img src="http://i1.piimg.com/567571/8c1dbd24a590d38b.png" alt="配置ss客户端"><br>下载ss客户端后创建新的连接 输入相关的信息</p>
 <p><img src="http://p1.bpimg.com/567571/a003df1753b524ae.png" alt="相关介绍"></p>
 <p><img src="http://p1.bpimg.com/567571/db9a818fc6d290bd.png" alt="关闭ss"><br>不需要的时候可以点击这里关闭ss服务</p>
-<hr>
-<p>待续</p>
 </li>
 </ol>
+<h3 id="手动配置ss服务开启vpn"><a href="#手动配置ss服务开启vpn" class="headerlink" title="手动配置ss服务开启vpn"></a>手动配置ss服务开启vpn</h3><ol>
+<li><p>进入控制台</p>
+</li>
+<li><p>利用pip安装ss服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install python-setuptools &amp;&amp; easy_install pip  </div><div class="line"># pip install shadowsocks</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置相关信息</p>
+<p>也有两种方式 推荐第一种 配置信息方便查看和更改</p>
+<ul>
+<li><p>创建配置信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># touch /etc/shadowsocks.json</div><div class="line"># vi /etc/shadowsocks.json</div><div class="line"></div><div class="line">&#123;</div><div class="line">&quot;server&quot;:&quot;xxx.xxx.xxx&quot;, //服务器的IP</div><div class="line">&quot;server_port&quot;:443,      //服务器断开</div><div class="line">&quot;local_address&quot;: &quot;127.0.0.1&quot;,   //客户端地址</div><div class="line">&quot;local_port&quot;:1080,              //客户端端口</div><div class="line">&quot;password&quot;:&quot;MyPass&quot;,    //密码</div><div class="line">&quot;timeout&quot;:600,          //超时时间(s)</div><div class="line">&quot;method&quot;:&quot;rc4-md5&quot;      //加密方式 可选“bf-cfb”, “aes-256-cfb”, &quot;salsa20&quot; , “rc4″等</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>运行ss服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
+</li>
+<li><p>直接设置相关信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># ssserver -p 443 -k MyPass -m rc4-md5 -d start</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>停止ss服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#ssserver -c /etc/shadowsocks.json -d stop</div><div class="line">//通过json文件配置开启的服务关闭方法</div><div class="line"></div><div class="line">#ssserver -d stop</div><div class="line">//直接配置信息开启的服务关闭的方法</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="通过pptp搭建个人vpn"><a href="#通过pptp搭建个人vpn" class="headerlink" title="通过pptp搭建个人vpn"></a>通过pptp搭建个人vpn</h2><ol>
+<li><p>安装PPP和iptables</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum install -y ppp iptables</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装pptpd<br>由于我们是通过yum安转的ppp 因为yum安转的ppp是最新的版本 所以我们要根据当前的ppp版本来选择pptp的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># yum list installed ppp  //查看当前ppp版本</div></pre></td></tr></table></figure>
+<p><img src="http://i1.piimg.com/567571/e241c874e8b62a46.png" alt="查看当前ppp版本"></p>
+<p>根据当期ppp版本选择对应的pptp版本 可以在<a href="http://poptop.sourceforge.net/yum/stable/packages/" target="_blank" rel="external">这里</a>找到对应的版本下载</p>
+<p>ppp 2.4.4 对应 pptp 1.3.4的版本</p>
+<p>ppp 2.4.5 对应 pptp 1.4.0的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># wget http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.4.0-1.el6.x86_64.rpm</div><div class="line">//下载对应的版本</div><div class="line"># yum install perl</div><div class="line">//安装perl</div><div class="line"># rpm -ivh pptpd-1.4.0-1.el6.x86_64.rpm</div><div class="line">//安装pptp</div></pre></td></tr></table></figure>
+<p>至此均安装完毕 下面进行配置</p>
+</li>
+<li><p>vpn相关配置<br>一下均对配置文件进行备份 有需要的可以回滚操作</p>
+<ul>
+<li>配置 /etc/ppp/options.pptpd</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># cp /etc/ppp/options.pptpd /etc/ppp/options.pptpd.bak</div><div class="line">//备份</div><div class="line"># vi /etc/ppp/options.pptpd</div><div class="line"></div><div class="line">//将以下内容添加到options.pptpd当中</div><div class="line">ms-dns 8.8.8.8</div><div class="line">ms-dns 8.8.4.4</div></pre></td></tr></table></figure>
+<ul>
+<li>配置 /etc/ppp/chap-secrets</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># cp /etc/ppp/chap-secrets   /etc/ppp/chap-secrets.bak</div><div class="line">//备份</div><div class="line"># vi /etc/ppp/chap-secrets</div><div class="line"></div><div class="line">//添加以下内容</div><div class="line">myusername pptpd mypassword *</div><div class="line">//myusername vpn账号</div><div class="line">//mypassword vpn密码</div><div class="line">//* 可连接的ip地址 *表示接受所有ip地址的来源</div></pre></td></tr></table></figure>
+<ul>
+<li>配置 /etc/pptpd.conf</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># cp /etc/pptpd.conf     /etc/pptpd.conf.bak</div><div class="line">//备份</div><div class="line"># vi /etc/pptpd.conf</div><div class="line"></div><div class="line">//添加一下内容 用于获得vpn客户端获得ip的范围</div><div class="line">localip 192.168.0.1</div><div class="line">remoteip 192.168.0.234-238,192.168.0.245</div><div class="line"></div><div class="line">//配置文件的最后要以空行结尾</div></pre></td></tr></table></figure>
+<ul>
+<li>配置 /etc/sysctl.conf</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># cp /etc/sysctl.conf /etc/sysctl.conf.bak</div><div class="line"># vi /etc/sysctl.conf</div><div class="line"></div><div class="line">//修改以下内容 使其支持转发</div><div class="line">net.ipv4.ip_forward = 1</div><div class="line"></div><div class="line"># /sbin/sysctl -p</div><div class="line">//保存修改后的文件</div></pre></td></tr></table></figure>
+<ul>
+<li>启动pptp服务和iptables</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># /sbin/service iptables start</div><div class="line">//启动iptables</div><div class="line"></div><div class="line"># iptables -t nat -A POSTROUTING -o eth0 -s 192.168.0.0/24 -j SNAT --to-source xxx.xxx.xxx.xxx</div><div class="line">//设置转发功能 -o eth0制定网卡</div><div class="line">// xxx.xxx.xxx.xxx为公网ip</div><div class="line"></div><div class="line"># /etc/init.d/iptables save</div><div class="line">//保存iptables的转发规则</div><div class="line"># /sbin/service iptables restart</div><div class="line">//重新启动iptables</div><div class="line"></div><div class="line"># service pptpd start</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="FinalSpeed对ss的优化提速"><a href="#FinalSpeed对ss的优化提速" class="headerlink" title="FinalSpeed对ss的优化提速"></a>FinalSpeed对ss的优化提速</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># wget http://fs.d1sm.net/finalspeed/install_fs.sh</div><div class="line"># chmod +x install_fs.sh</div><div class="line"># ./install_fs.sh 2&gt;&amp;1 | tee install.log</div></pre></td></tr></table></figure>
+<h2 id="相关注意事项"><a href="#相关注意事项" class="headerlink" title="相关注意事项"></a>相关注意事项</h2><p><strong>个人学习用 不要用于奇怪的地方 游戏延迟可能很高</strong></p>
 
       
     </div>
@@ -714,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#搬瓦工"><span class="nav-number">1.</span> <span class="nav-text">搬瓦工</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ss和pptp"><span class="nav-number"></span> <span class="nav-text">ss和pptp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个人vpn搭建教程"><span class="nav-number"></span> <span class="nav-text">个人vpn搭建教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vps的准备"><span class="nav-number"></span> <span class="nav-text">vps的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过ss搭建个人vpn"><span class="nav-number"></span> <span class="nav-text">通过ss搭建个人vpn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用ss的Shadowsocks-Server一键开启vpn"><span class="nav-number">1.</span> <span class="nav-text">利用ss的Shadowsocks Server一键开启vpn</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#搬瓦工"><span class="nav-number">1.</span> <span class="nav-text">搬瓦工</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ss和pptp"><span class="nav-number">2.</span> <span class="nav-text">ss和pptp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人vpn搭建教程"><span class="nav-number">3.</span> <span class="nav-text">个人vpn搭建教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vps的准备"><span class="nav-number">4.</span> <span class="nav-text">vps的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过ss搭建个人vpn"><span class="nav-number">5.</span> <span class="nav-text">通过ss搭建个人vpn</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#利用ss的Shadowsocks-Server一键开启vpn"><span class="nav-number">5.1.</span> <span class="nav-text">利用ss的Shadowsocks Server一键开启vpn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动配置ss服务开启vpn"><span class="nav-number">5.2.</span> <span class="nav-text">手动配置ss服务开启vpn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过pptp搭建个人vpn"><span class="nav-number">6.</span> <span class="nav-text">通过pptp搭建个人vpn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FinalSpeed对ss的优化提速"><span class="nav-number">7.</span> <span class="nav-text">FinalSpeed对ss的优化提速</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关注意事项"><span class="nav-number">8.</span> <span class="nav-text">相关注意事项</span></a></li></ol></div>
             
 
           </div>
