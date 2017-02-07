@@ -41,7 +41,7 @@ menu:
   categories: /categories
   tags: /tags
   about: /about
-  #sitemap: /sitemap.xml
+  #=sitemap: /sitemap.xml
   #commonweal: /404.html
 
 
@@ -267,7 +267,7 @@ mathjax:
 
 
 # Swiftype Search API Key
-# swiftype_key: XLKrBybUiHiRgQChy3rJ
+swiftype_key: XLKrBybUiHiRgQChy3rJ
 
 # Baidu Analytics ID
 baidu_analytics: d62d5f2846e8623f48fe847021d53b14
@@ -398,15 +398,15 @@ calendar:
   singleEvents: true
   maxResults: 250
 
-# Algolia Search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 10
-  labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
+# # Algolia Search
+# algolia_search:
+#   enable: false
+#   hits:
+#     per_page: 10
+#   labels:
+#     input_placeholder: Search for Posts
+#     hits_empty: "We didn't find any results for the search: ${query}"
+#     hits_stats: "${hits} results found in ${time} ms"
 
 
 
@@ -475,11 +475,11 @@ vendors:
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+# search:
+  # path: search.xml
+  # field: post
+  # format: html
+  # limit: 10000
 
 
 
