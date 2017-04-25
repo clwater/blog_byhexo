@@ -35,7 +35,10 @@ categories : "RpgMaker 教程"
 
 例) 英雄打败魔王的流程
 
-![index1_2](http://tkool.jp/assets/files/products_rpgvx_lecture_point1_1.jpg)
+![原文件](http://tkool.jp/assets/files/products_rpgvx_lecture_point1_1.jpg)
+
+![野生翻译的我](http://i4.buimg.com/567571/07237a5675b3175e.png)
+
 
 主要的流程大概是这样,现在,我们要决定英雄是如何打败魔王的
 
