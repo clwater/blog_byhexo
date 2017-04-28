@@ -48,7 +48,7 @@ categories : "RpgMaker 教程"
 
 ![更改地图的BGM](http://ooymoxvz4.bkt.clouddn.com/17-4-26/24032817-file_1493212646678_8a85.png)
 
-# Step4 绘制地图
+## Step4 绘制地图
 
 如果你准备好了 那么让我开始绘制地图
 
@@ -88,5 +88,10 @@ categories : "RpgMaker 教程"
 
 其实这里大概的地图分布做到了就好 不需要完全一致
 
+![将地点信息加入的地图](http://ooymoxvz4.bkt.clouddn.com/17-4-28/78586753-file_1493385544956_a25c.png)
 
-未完待续
+## Step5 确定初始地点
+
+现在我们将世界地图绘制完成了 在运行测试一下游戏之前 我们要确定初始出现的位置
+
+![选择时间模式](http://ooymoxvz4.bkt.clouddn.com/17-4-28/60240045-file_1493385729977_a1f9.png)
