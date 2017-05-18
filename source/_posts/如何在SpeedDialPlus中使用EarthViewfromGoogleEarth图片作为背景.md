@@ -1,11 +1,11 @@
 ---
-title: 如何在SpeedDialPlus中EarthViewfromGoogleEarth图片
+title: 如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景
 date: 2017-05-17 23:56:45
 tags: ["peed Dial Plus" , "Earth View from Google Earth" , "Chrome插件" , "Python"]
 categories: "Python"
 ---
 
-## 如何在Speed Dial Plus中Earth View from Google Earth图片
+## 如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景
 
 ## 介绍
 Speed Dial Plus和Earth View from Google Earth都是Chrome中的两个十分好用的新标签页插件
@@ -130,3 +130,7 @@ main()
 程序写的很随意 山顶洞人编程 性能的话自用还可以的
 
 图片的话只有google erath的图片 可以配置或加入更多的图片 现阶段基本没有扩展性 只能看地球了(1500多张图片还不够看 只能说明 该换风格了)
+
+## 项目地址
+
+https://github.com/clwater/SpeedDialPlusImage
