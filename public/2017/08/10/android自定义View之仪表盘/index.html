@@ -1,0 +1,1090 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android,view,自定义," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Android自定义View之仪表盘
+又是新系列（坑） 感觉都很零碎，能积累一些是一些了
+
+背景随着项目开发 越来越多的需求被摆在面前 其中不免涉及到定制的功能其中仪表盘也是一个很常用的功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android自定义View之仪表盘">
+<meta property="og:url" content="http://www.gengzhibo.com/2017/08/10/android自定义View之仪表盘/index.html">
+<meta property="og:site_name" content="Clwater Blog">
+<meta property="og:description" content="Android自定义View之仪表盘
+又是新系列（坑） 感觉都很零碎，能积累一些是一些了
+
+背景随着项目开发 越来越多的需求被摆在面前 其中不免涉及到定制的功能其中仪表盘也是一个很常用的功能">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/25082465.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/78850293.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/30532330.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/72116334.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/81417498.jpg">
+<meta property="og:updated_time" content="2017-08-20T13:29:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android自定义View之仪表盘">
+<meta name="twitter:description" content="Android自定义View之仪表盘
+又是新系列（坑） 感觉都很零碎，能积累一些是一些了
+
+背景随着项目开发 越来越多的需求被摆在面前 其中不免涉及到定制的功能其中仪表盘也是一个很常用的功能">
+<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/17-8-20/25082465.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gengzhibo.com/2017/08/10/android自定义View之仪表盘/"/>
+
+
+
+
+
+  <title> Android自定义View之仪表盘 | Clwater Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d62d5f2846e8623f48fe847021d53b14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Clwater Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">bug如风 常伴吾身</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/08/10/android自定义View之仪表盘/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android自定义View之仪表盘
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T22:33:13+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android自定义View/" itemprop="url" rel="index">
+                    <span itemprop="name">android自定义View</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/08/10/android自定义View之仪表盘/" class="leancloud_visitors" data-flag-title="Android自定义View之仪表盘">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Android自定义View之仪表盘"><a href="#Android自定义View之仪表盘" class="headerlink" title="Android自定义View之仪表盘"></a>Android自定义View之仪表盘</h1><blockquote>
+<p>又是新系列（坑） 感觉都很零碎，能积累一些是一些了</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>随着项目开发 越来越多的需求被摆在面前 其中不免涉及到定制的功能<br>其中仪表盘也是一个很常用的功能<br><a id="more"></a></p>
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://ooymoxvz4.bkt.clouddn.com/17-8-20/25082465.jpg" alt="效果图"></p>
+<h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><h3 id="外侧渐变圆环"><a href="#外侧渐变圆环" class="headerlink" title="外侧渐变圆环"></a>外侧渐变圆环</h3><p><img src="http://ooymoxvz4.bkt.clouddn.com/17-8-20/78850293.jpg" alt="外侧圆环效果"></p>
+<h3 id="外侧刻度盘及文字显示"><a href="#外侧刻度盘及文字显示" class="headerlink" title="外侧刻度盘及文字显示"></a>外侧刻度盘及文字显示</h3><p><img src="http://ooymoxvz4.bkt.clouddn.com/17-8-20/30532330.jpg" alt="外侧刻度盘及文字显示"></p>
+<h3 id="指针显示"><a href="#指针显示" class="headerlink" title="指针显示"></a>指针显示</h3><p><img src="http://ooymoxvz4.bkt.clouddn.com/17-8-20/72116334.jpg" alt="指针显示"></p>
+<h3 id="内部圆环及文字展示"><a href="#内部圆环及文字展示" class="headerlink" title="内部圆环及文字展示"></a>内部圆环及文字展示</h3><p><img src="http://ooymoxvz4.bkt.clouddn.com/17-8-20/81417498.jpg" alt="内部圆环及文字展示"></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="自定义组件显示优化"><a href="#自定义组件显示优化" class="headerlink" title="自定义组件显示优化"></a>自定义组件显示优化</h3><p>设置自定义组件的时候要优化组件的高度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> width = MeasureSpec.getSize(widthMeasureSpec);</div><div class="line">    <span class="keyword">int</span> heitht = width / <span class="number">2</span> / <span class="number">4</span> * <span class="number">5</span>;</div><div class="line">    initIndex(width / <span class="number">2</span>);</div><div class="line">    <span class="comment">//优化组件高度</span></div><div class="line">    setMeasuredDimension(width, heitht);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="onDraw-过程"><a href="#onDraw-过程" class="headerlink" title="onDraw()过程"></a>onDraw()过程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    <span class="comment">//禁用硬件加速</span></div><div class="line">    setLayerType(LAYER_TYPE_SOFTWARE, <span class="keyword">null</span>);</div><div class="line">    <span class="comment">//外侧颜色指示圆环</span></div><div class="line">    initRing(canvas);</div><div class="line">    <span class="comment">//刻度文字</span></div><div class="line">    initScale(canvas);</div><div class="line">    <span class="comment">//指针</span></div><div class="line">    initPointer(canvas);</div><div class="line">    <span class="comment">//提示内容</span></div><div class="line">    initText(canvas);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>主要还是这个四个绘制的过程</p>
+<h2 id="外侧颜色指示圆环"><a href="#外侧颜色指示圆环" class="headerlink" title="外侧颜色指示圆环"></a>外侧颜色指示圆环</h2><ol>
+<li>首先绘制的前一部分的红黄渐变圆环<br>这个圆环并不是一个180度的圆环 而是一个两百度的圆环 下侧再实现水平的效果</li>
+<li>绘制后一部分的绿色渐变圆环</li>
+<li>修正底部的效果 修改成水平的效果</li>
+<li>绘制内部半圆 遮盖住渐变的半圆</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initRing</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    paint.setAntiAlias(<span class="keyword">true</span>);</div><div class="line">    paint.setStrokeWidth(<span class="number">2</span>);</div><div class="line">    canvas.save();</div><div class="line">    <span class="comment">//canvas中心移动到中间</span></div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//前100红黄渐变圆环</span></div><div class="line">    paint.setStyle(Paint.Style.FILL);</div><div class="line">    <span class="comment">//设置渐变的颜色范围</span></div><div class="line">    <span class="keyword">int</span>[] colors = &#123;Color.parseColor(<span class="string">"#F95A37"</span>), Color.parseColor(<span class="string">"#f9cf45"</span>)&#125;;</div><div class="line">    <span class="comment">//设置的渐变起止位置</span></div><div class="line">    <span class="keyword">float</span>[] positions = &#123;<span class="number">0.5f</span> - <span class="number">10f</span>/<span class="number">180f</span> * <span class="number">0.5f</span>, <span class="number">0.5f</span> + <span class="number">0.5f</span> * <span class="number">5f</span> / <span class="number">6f</span>&#125;;</div><div class="line">    <span class="comment">//设置渐变的蒙版</span></div><div class="line">    SweepGradient sweepGradient = <span class="keyword">new</span> SweepGradient(<span class="number">0</span>, <span class="number">0</span>, colors, positions);</div><div class="line">    paint.setShader(sweepGradient);</div><div class="line">    rect = <span class="keyword">new</span> RectF( -length, -length, length, length);</div><div class="line">    <span class="comment">//绘制圆环</span></div><div class="line">    canvas.drawArc(rect, <span class="number">170</span>, <span class="number">10f</span> + <span class="number">180f</span> / <span class="number">6f</span> * <span class="number">5f</span>, <span class="keyword">true</span>, paint);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//100之后绿色渐变圆环</span></div><div class="line">    paint.setStyle(Paint.Style.FILL);</div><div class="line">    canvas.rotate(<span class="number">10</span>,<span class="number">0f</span>,<span class="number">0f</span>);</div><div class="line">    <span class="keyword">int</span>[] colors2 = &#123;Color.parseColor(<span class="string">"#79D062"</span>),  Color.parseColor(<span class="string">"#3FBF55"</span>)&#125;;</div><div class="line">    <span class="keyword">float</span>[] positions2 = &#123;<span class="number">0.5f</span> + <span class="number">0.5f</span> * ( <span class="number">144f</span> / <span class="number">180f</span>), <span class="number">1.0f</span>&#125;;</div><div class="line">    sweepGradient = <span class="keyword">new</span> SweepGradient(<span class="number">0</span>, <span class="number">0</span>, colors2, positions2);</div><div class="line">    paint.setShader(sweepGradient);</div><div class="line">    rect = <span class="keyword">new</span> RectF( -length, -length, length, length);</div><div class="line">    canvas.drawArc(rect, <span class="number">180f</span> + <span class="number">180f</span> * (<span class="number">140f</span> / <span class="number">180f</span>), <span class="number">180f</span> / <span class="number">6</span> + <span class="number">10</span>, <span class="keyword">true</span>, paint);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line"></div><div class="line">    <span class="comment">//绘制描边效果的画笔</span></div><div class="line">    strokePain = <span class="keyword">new</span> Paint(paint);</div><div class="line">    strokePain.setColor(<span class="number">0x3f979797</span>);</div><div class="line">    strokePain.setStrokeWidth(<span class="number">10</span>);</div><div class="line">    strokePain.setShader(<span class="keyword">null</span>);</div><div class="line">    strokePain.setStyle(Paint.Style.STROKE);</div><div class="line">    canvas.drawArc(rect, <span class="number">170</span>, <span class="number">200</span>, <span class="keyword">true</span>, strokePain);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line"></div><div class="line">    <span class="comment">//底边水平</span></div><div class="line">    paint.setShader(<span class="keyword">null</span>);</div><div class="line">    paint.setColor(backGroundColor);</div><div class="line">    paint.setStyle(Paint.Style.FILL);</div><div class="line">    canvas.drawRect(-length  , (<span class="keyword">float</span>) (Math.sin(Math.toRadians(<span class="number">10</span>) ) * length /<span class="number">3f</span> * <span class="number">2f</span>), length  ,  (<span class="keyword">float</span>) (Math.sin(Math.toRadians(<span class="number">10</span>)) * length  + <span class="number">100</span>) , paint);</div><div class="line">    canvas.drawRect(-length  , (<span class="keyword">float</span>) (Math.sin(Math.toRadians(<span class="number">10</span>) ) * length /<span class="number">3f</span> * <span class="number">2f</span>), length  ,  (<span class="keyword">float</span>) (Math.sin(Math.toRadians(<span class="number">10</span>) ) * length /<span class="number">3f</span> * <span class="number">2f</span>) , strokePain);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//内部背景色填充</span></div><div class="line">    paint.setColor(backGroundColor);</div><div class="line">    paint.setShader(<span class="keyword">null</span>);</div><div class="line">    rect = <span class="keyword">new</span> RectF( - (length - length / <span class="number">3f</span>  - <span class="number">2</span>), -(length / <span class="number">3f</span> * <span class="number">2f</span> - <span class="number">2</span>), length - length / <span class="number">3f</span> -<span class="number">2</span> , length / <span class="number">3f</span> * <span class="number">2f</span> - <span class="number">2</span>);</div><div class="line">    canvas.drawArc(rect, <span class="number">170</span>, <span class="number">200</span>, <span class="keyword">true</span>, strokePain);</div><div class="line">    canvas.drawArc(rect, <span class="number">0</span>, <span class="number">360</span>, <span class="keyword">true</span>, paint);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="外侧刻度盘及文字显示-1"><a href="#外侧刻度盘及文字显示-1" class="headerlink" title="外侧刻度盘及文字显示"></a>外侧刻度盘及文字显示</h2><p>旋转画布绘制对应角度的显示及刻度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initScale</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line">    paint.setColor(Color.parseColor(<span class="string">"#999999"</span>));</div><div class="line"></div><div class="line">    tmpPaint = <span class="keyword">new</span> Paint(paint); <span class="comment">//刻度画笔对象</span></div><div class="line">    tmpPaint.setStrokeWidth(<span class="number">1</span>);</div><div class="line">    tmpPaint.setTextSize(<span class="number">35</span>);</div><div class="line">    tmpPaint.setTextAlign(Paint.Align.CENTER);</div><div class="line"></div><div class="line">    canvas.rotate(-<span class="number">90</span>,<span class="number">0f</span>,<span class="number">0f</span>);</div><div class="line"></div><div class="line">    <span class="keyword">float</span>  y = length;</div><div class="line">    y = - y;</div><div class="line">    <span class="keyword">int</span> count = <span class="number">12</span>; <span class="comment">//总刻度数</span></div><div class="line">    paint.setColor(backGroundColor);</div><div class="line"></div><div class="line">    <span class="keyword">float</span> tempRou = <span class="number">180</span> / <span class="number">12f</span>;</div><div class="line">    <span class="comment">//每次旋转的角度</span></div><div class="line">    paint.setColor(Color.WHITE);</div><div class="line">    paint.setStrokeWidth(<span class="number">5</span>);</div><div class="line"></div><div class="line">    <span class="comment">//绘制刻度和百分比</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= count ; i++)&#123;</div><div class="line">        <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span> ) &#123;</div><div class="line">            canvas.drawText(String.valueOf((i) * <span class="number">10</span>), <span class="number">0</span>, y - <span class="number">20f</span>, tmpPaint);</div><div class="line">        &#125;</div><div class="line">        canvas.drawLine(<span class="number">0f</span>, y , <span class="number">0</span>, y + length / <span class="number">15</span>, paint);</div><div class="line">        canvas.rotate(tempRou,<span class="number">0f</span>,<span class="number">0f</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="指针显示-1"><a href="#指针显示-1" class="headerlink" title="指针显示"></a>指针显示</h2><p>指针显示的比较简单也是唯二需要变化的之一</p>
+<p>指针的绘制比较简单 根据传入的角度(百分比)旋转对应的角度 填充绘制一个三角形</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initPointer</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line"></div><div class="line"></div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line">    <span class="keyword">float</span> change;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (perPoint &lt; <span class="number">1</span> )&#123;</div><div class="line">        change = perPoint * <span class="number">180</span>;</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        change = <span class="number">180</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//根据参数得到旋转角度</span></div><div class="line">    canvas.rotate(-<span class="number">90</span> + change,<span class="number">0f</span>,<span class="number">0f</span>);</div><div class="line"></div><div class="line">    <span class="comment">//绘制三角形形成指针</span></div><div class="line">    Path path = <span class="keyword">new</span> Path();</div><div class="line">    path.moveTo(<span class="number">0</span> , pointLength);</div><div class="line">    path.lineTo(-<span class="number">10</span> , <span class="number">0</span>);</div><div class="line">    path.lineTo(<span class="number">10</span>,<span class="number">0</span>);</div><div class="line">    path.lineTo(<span class="number">0</span> , pointLength);</div><div class="line">    path.close();</div><div class="line"></div><div class="line">    canvas.drawPath(path, paint);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="内部圆环及文字展示-1"><a href="#内部圆环及文字展示-1" class="headerlink" title="内部圆环及文字展示"></a>内部圆环及文字展示</h2><p>先绘制一个带阴影的圆环 再居中绘制提示的文本信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initText</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    <span class="comment">//抗锯齿</span></div><div class="line">    canvas.setDrawFilter(<span class="keyword">new</span> PaintFlagsDrawFilter(<span class="number">0</span>, Paint.ANTI_ALIAS_FLAG|Paint.FILTER_BITMAP_FLAG));</div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>, r);</div><div class="line"></div><div class="line">    <span class="keyword">float</span> rIndex = length ;</div><div class="line"></div><div class="line">    <span class="comment">//设置文字展示的圆环</span></div><div class="line">    paint.setColor(Color.parseColor(<span class="string">"#eeeeee"</span>));</div><div class="line">    paint.setShader(<span class="keyword">null</span>);</div><div class="line">    paint.setShadowLayer(<span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0x54000000</span>);</div><div class="line">    rect = <span class="keyword">new</span> RectF( - (rIndex/ <span class="number">3</span> ), - (rIndex / <span class="number">3</span>), rIndex / <span class="number">3</span>, rIndex / <span class="number">3</span>);</div><div class="line">    canvas.drawArc(rect, <span class="number">0</span>, <span class="number">360</span>, <span class="keyword">true</span>, paint);</div><div class="line"></div><div class="line">    paint.clearShadowLayer();</div><div class="line"></div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2f</span> , r);</div><div class="line"></div><div class="line"></div><div class="line">    textPaint.setStrokeWidth(<span class="number">1</span>);</div><div class="line">    textPaint.setAntiAlias(<span class="keyword">true</span>);</div><div class="line"></div><div class="line">    textPaint.setTextSize(<span class="number">60</span>);</div><div class="line">    textPaint.setColor(Color.parseColor(<span class="string">"#fc6555"</span>));</div><div class="line">    textPaint.setTextAlign(Paint.Align.RIGHT);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//判断指数变化及颜色设定</span></div><div class="line">    <span class="keyword">int</span> _per = (<span class="keyword">int</span>) (per * <span class="number">120</span>);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (_per &lt; <span class="number">60</span>)&#123;</div><div class="line">        textPaint.setColor(Color.parseColor(<span class="string">"#ff6450"</span>));</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (_per &lt; <span class="number">100</span>) &#123;</div><div class="line">        textPaint.setColor(Color.parseColor(<span class="string">"#f5a623"</span>));</div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        textPaint.setColor(Color.parseColor(<span class="string">"#79d062"</span>));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">float</span> swidth = textPaint.measureText(String.valueOf(_per));</div><div class="line">    <span class="comment">//计算偏移量 是的数字和百分号整体居中显示</span></div><div class="line">    swidth =   (swidth - (swidth + <span class="number">22</span>) / <span class="number">2</span>);</div><div class="line"></div><div class="line"></div><div class="line">    canvas.translate( swidth , <span class="number">0</span>);</div><div class="line">    canvas.drawText(<span class="string">""</span> + _per, <span class="number">0</span>, <span class="number">0</span>, textPaint);</div><div class="line"></div><div class="line">    textPaint.setTextSize(<span class="number">30</span>);</div><div class="line">    textPaint.setTextAlign(Paint.Align.LEFT);</div><div class="line"></div><div class="line">    canvas.drawText(<span class="string">"%"</span> , <span class="number">0</span>, <span class="number">0</span>, textPaint);</div><div class="line">    textPaint.setTextAlign(Paint.Align.CENTER);</div><div class="line">    textPaint.setColor(Color.parseColor(<span class="string">"#999999"</span>));</div><div class="line"></div><div class="line"></div><div class="line">    canvas.restore();</div><div class="line">    canvas.save();</div><div class="line">    canvas.translate(canvas.getWidth()/<span class="number">2</span>  , r + length / <span class="number">3</span> /<span class="number">2</span> );</div><div class="line">    canvas.drawText(<span class="string">"完成率"</span> , <span class="number">0</span>, <span class="number">0</span>, textPaint);</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="更新动画"><a href="#更新动画" class="headerlink" title="更新动画"></a>更新动画</h2><p>使用ValueAnimator实现指针的转动动画效果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">cgangePer</span><span class="params">(<span class="keyword">float</span> per )</span></span>&#123;</div><div class="line">    <span class="keyword">this</span>.perOld = <span class="keyword">this</span>.per;</div><div class="line">    <span class="keyword">this</span>.per = per;</div><div class="line">    ValueAnimator va =  ValueAnimator.ofFloat(perOld,per);</div><div class="line">    va.setDuration(<span class="number">1000</span>);</div><div class="line">    va.setInterpolator(<span class="keyword">new</span> OvershootInterpolator());</div><div class="line">    va.addUpdateListener(<span class="keyword">new</span> ValueAnimator.AnimatorUpdateListener() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationUpdate</span><span class="params">(ValueAnimator animation)</span> </span>&#123;</div><div class="line">            perPoint = (<span class="keyword">float</span>) animation.getAnimatedValue();</div><div class="line">            invalidate();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    va.start();</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个仪表盘的实现就完成了  具体的代码可以查看<a href="https://github.com/clwater/AndroidDashBoard.git" target="_blank" rel="external">我的github</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/view/" rel="tag"># view</a>
+          
+            <a href="/tags/自定义/" rel="tag"># 自定义</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/" rel="next" title="如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景">
+                <i class="fa fa-chevron-left"></i> 如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myicon.jpeg"
+               alt="clwater" />
+          <p class="site-author-name" itemprop="name">clwater</p>
+          <p class="site-description motion-element" itemprop="description">日常写bug 顺便留点痕迹</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/clwater" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/suoldevil19" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/gengzhibo/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="gengzhibo@gengzhibo.net" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/clwater_gzb" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android自定义View之仪表盘"><span class="nav-number">1.</span> <span class="nav-text">Android自定义View之仪表盘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#效果图"><span class="nav-number">1.2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计过程"><span class="nav-number">1.3.</span> <span class="nav-text">设计过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外侧渐变圆环"><span class="nav-number">1.3.1.</span> <span class="nav-text">外侧渐变圆环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外侧刻度盘及文字显示"><span class="nav-number">1.3.2.</span> <span class="nav-text">外侧刻度盘及文字显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指针显示"><span class="nav-number">1.3.3.</span> <span class="nav-text">指针显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部圆环及文字展示"><span class="nav-number">1.3.4.</span> <span class="nav-text">内部圆环及文字展示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.4.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义组件显示优化"><span class="nav-number">1.4.1.</span> <span class="nav-text">自定义组件显示优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#onDraw-过程"><span class="nav-number">1.4.2.</span> <span class="nav-text">onDraw()过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外侧颜色指示圆环"><span class="nav-number">1.5.</span> <span class="nav-text">外侧颜色指示圆环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外侧刻度盘及文字显示-1"><span class="nav-number">1.6.</span> <span class="nav-text">外侧刻度盘及文字显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针显示-1"><span class="nav-number">1.7.</span> <span class="nav-text">指针显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部圆环及文字展示-1"><span class="nav-number">1.8.</span> <span class="nav-text">内部圆环及文字展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新动画"><span class="nav-number">1.9.</span> <span class="nav-text">更新动画</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">clwater</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+      
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("XUzGKfuL0SWqGNbAtiml2AoK-gzGzoHsz", "QabKH7LligrztykhrA1kWPqj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
