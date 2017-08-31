@@ -2,7 +2,7 @@
 title: Android自定义View之仪表盘
 date: 2017-08-10 22:33:13
 tags: ["android" , "view" , "自定义"]
-categories : "android自定义View"
+categories : "Android自定义View"
 ---
 
 # Android自定义View之仪表盘
