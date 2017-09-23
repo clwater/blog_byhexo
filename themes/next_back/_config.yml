@@ -134,6 +134,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/clwater
+  BookLibrary: http://gitbug.top
   Weibo: http://weibo.com/suoldevil19
   Zhihu: https://www.zhihu.com/people/gengzhibo/activities
   Email: gengzhibo@gengzhibo.net
@@ -154,7 +155,7 @@ social_icons:
   Twitter: twitter
   Weibo: weibo
   Email: envelope
-  #zhihu: 
+  BookLibrary: book
 
 
 # Sidebar Avatar
@@ -267,26 +268,27 @@ mathjax:
 
 
 # Swiftype Search API Key
-swiftype_key: XLKrBybUiHiRgQChy3rJ
+#swiftype_key: XLKrBybUiHiRgQChy3rJ
 
 # Baidu Analytics ID
 baidu_analytics: d62d5f2846e8623f48fe847021d53b14
 
 # Duoshuo ShortName
-duoshuo_shortname: gengzhiboblog
+#duoshuo_shortname: gengzhiboblog
+
 
 # Disqus
-#disqus_shortname:
+disqus_shortname: clwaterblog
 
 # Hypercomments
-#hypercomments_id:
+# hypercomments_id: 93779
 
 # Gentie productKey
 #gentie_productKey:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
+# youyan_uid: 2140310
 
 # Baidu Share
 # Available value:
@@ -409,7 +411,6 @@ calendar:
 #     hits_stats: "${hits} results found in ${time} ms"
 
 
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
@@ -475,11 +476,13 @@ vendors:
   # https://github.com/hustcc/canvas-nest.js
   canvas_nest:
 
-# search:
-  # path: search.xml
-  # field: post
-  # format: html
-  # limit: 10000
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+
 
 
 
