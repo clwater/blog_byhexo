@@ -14,6 +14,8 @@ categories : "RpgMaker 教程"
 
 ![第二回创建的世界地图](http://ooymoxvz4.bkt.clouddn.com/17-10-4/53054520.jpg)
 
+<!-- more -->
+
 下一个阶段 我们将创建对应标识(城镇及地下城)的内容
 
 ### Step6 开始制作城堡的地图
@@ -27,7 +29,7 @@ categories : "RpgMaker 教程"
 #### 绘制城堡地图
 我们要绘制一张地图,我们想象一下国王在城堡中生活的场景
 
-![城堡内国王生活的地方](http://ooymoxvz4.bkt.clouddn.com/17-10-4/76035004.jpg)
+![城堡内国王生活的地方](http://ooymoxvz4.bkt.clouddn.com/17-10-4/29932479.jpg)
 
 通过瓷砖 柱子 还有进行装饰,并将国王放在地图的中间,并在下部设置一个出人口.
 
