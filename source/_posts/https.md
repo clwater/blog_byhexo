@@ -1,5 +1,5 @@
 ---
-title: https
+title: Https从了解到算了
 date: 2017-11-04 22:52:03
 tags: ["https" ]
 categories: "https"
@@ -13,6 +13,8 @@ categories: "https"
 *以下相关名词均摘自wikipedia*
 
 **Https** 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure，缩写：HTTPS，常称为HTTP over TLS，HTTP over SSL或HTTP Secure）是一种通过计算机网络进行安全通信的传输协议。HTTPS经由HTTP进行通信，但利用SSL/TLS来加密数据包。HTTPS开发的主要目的，是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。这个协议由网景公司（Netscape）在1994年首次提出，随后扩展到互联网上。
+
+  <!-- more -->
 
 **SSL** 安全套接层（Secure Sockets Layer）是netscape设计的主要用于Web的安全传输协议,位于可靠的面向连接的网络层协议和应用层协议之间的一种协议层。
 
@@ -205,11 +207,11 @@ Alexa排名前百万的网站中有40.9%的网站收到影响
 
 ![Wireshark抓包实例](http://upload-images.jianshu.io/upload_images/2191286-e8e05fc281b9537d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 1. Client Hello (C-S)
-![Client Hello (C-S)](http://ooymoxvz4.bkt.clouddn.com/17-11-3/93935647.jpg
+![Client Hello (C-S)](http://ooymoxvz4.bkt.clouddn.com/17-11-3/93935647.jpg)
 
   1. 提供最高支持的TLS/SSl版本
-  * 客户端生成随机数random_c
-  * 客户端支持的加密方式
+  2. 客户端生成随机数random_c
+  3. 客户端支持的加密方式
 
 2. Server Hello(S-C)
 ![Server Hello(S-C)](http://upload-images.jianshu.io/upload_images/2191286-7563d4329f2aed04.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
