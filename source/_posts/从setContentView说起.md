@@ -9,7 +9,7 @@ categories: "android"
 ### setContentView分析
 #### 相关关系
 
-  ![相关关系图](http://p1.bpimg.com/567571/ad9dd8344a63f0cd.png)  
+  ![相关关系图](http://ooymoxvz4.bkt.clouddn.com/18-1-13/61853049.jpg)  
   <!-- more -->
 
   Activity中有Window成员 实例化为PhoneWindow PhoneWindow是抽象Window类的实现类
@@ -18,7 +18,7 @@ categories: "android"
 
   具体的构如下
 
-  ![View层级分析](http://i1.piimg.com/567571/b7961c0d826c75e0.png)
+  ![View层级分析](http://ooymoxvz4.bkt.clouddn.com/18-1-13/39785701.jpg)
 
   具体的可以通过hierarchyviewer工具分析一下
 
@@ -417,7 +417,7 @@ categories: "android"
 
   ```
   相关inflate参数的结果
-  ![inflate参数.png](/inflate参数.png)
+  ![inflate参数.png](http://ooymoxvz4.bkt.clouddn.com/18-1-13/4341656.jpg)
 
 4. 相关方法解析
   在Inflate中多次被调用的rInflate

@@ -96,17 +96,17 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 Android View框架相关  View的测量 布局 绘制过程LinearLayout RelativeLayout实现源码分析
 
 View的测量 布局 绘制过程测量之前的事情View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1k行)  根据相关设置来觉得十分要重新执行相关功能1234567891011121314151">
-<meta property="og:image" content="http://p1.bqimg.com/567571/a5aa47e56fd6434a.png">
-<meta property="og:image" content="http://www.gengzhibo.com/View measure过程.png">
-<meta property="og:image" content="http://p1.bpimg.com/567571/e7b2c1005fdb70b2.png">
-<meta property="og:updated_time" content="2017-02-06T14:56:36.000Z">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/43941602.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/11065619.jpg">
+<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/85888827.jpg">
+<meta property="og:updated_time" content="2018-01-13T13:26:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android View 相关源码分析之三 View的绘制过程">
 <meta name="twitter:description" content="Android View
 Android View框架相关  View的测量 布局 绘制过程LinearLayout RelativeLayout实现源码分析
 
 View的测量 布局 绘制过程测量之前的事情View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1k行)  根据相关设置来觉得十分要重新执行相关功能1234567891011121314151">
-<meta name="twitter:image" content="http://p1.bqimg.com/567571/a5aa47e56fd6434a.png">
+<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/43941602.jpg">
 
 
 
@@ -119,7 +119,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: 'undefined',
       author: '博主'
     },
     algolia: {
@@ -381,16 +381,6 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/03/View 绘制源码分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/View 绘制源码分析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -431,7 +421,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
   <a id="more"></a>
   <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getRootMeasureSpec</span><span class="params">(<span class="keyword">int</span> windowSize, <span class="keyword">int</span> rootDimension)</span> </span>&#123;</div><div class="line">      <span class="keyword">int</span> measureSpec;</div><div class="line">      <span class="keyword">switch</span> (rootDimension) &#123;</div><div class="line"></div><div class="line">      <span class="keyword">case</span> ViewGroup.LayoutParams.MATCH_PARENT:</div><div class="line">          <span class="comment">// Window can't resize. Force root view to be windowSize.</span></div><div class="line">          measureSpec = MeasureSpec.makeMeasureSpec(windowSize, MeasureSpec.EXACTLY);</div><div class="line">          <span class="keyword">break</span>;</div><div class="line">      ...</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> measureSpec;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>View 绘制整体流程图如下</p>
-<p><img src="http://p1.bqimg.com/567571/a5aa47e56fd6434a.png" alt="View绘制整体流程图"></p>
+<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/43941602.jpg" alt="View绘制整体流程图"></p>
 <h3 id="measure源码分析"><a href="#measure源码分析" class="headerlink" title="measure源码分析"></a>measure源码分析</h3><p>结论:</p>
 <ul>
 <li><p>measure的过程就是父View向子View递归调用view.measure方法 (measure中回调onMeasure方法)的过程</p>
@@ -445,7 +435,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 <li><p>View的getMeasuredWidth()和getMeasuredHeight()方法来获取View测量的宽高，要必须保证这两个方法在onMeasure流程之后被调用才能返回有效值。</p>
 </li>
 </ul>
-<p><img src="/View measure过程.png" alt="View measure过程"></p>
+<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/11065619.jpg" alt="View measure过程"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * &lt;p&gt;</div><div class="line"> * This is called to find out how big a view should be. The parent supplies constraint information in the width and height parameters.</div><div class="line"> * &lt;/p&gt;</div><div class="line"> *</div><div class="line"> * &lt;p&gt;</div><div class="line"> * The actual measurement work of a view is performed in</div><div class="line"> * &#123;<span class="doctag">@link</span> #onMeasure(int, int)&#125;, called by this method. Therefore, only</div><div class="line"> * &#123;<span class="doctag">@link</span> #onMeasure(int, int)&#125; can and must be overridden by subclasses.</div><div class="line"> * &lt;/p&gt;</div><div class="line"> *</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> widthMeasureSpec Horizontal space requirements as imposed by the</div><div class="line"> *        parent</div><div class="line"> * <span class="doctag">@param</span> heightMeasureSpec Vertical space requirements as imposed by the</div><div class="line"> *        parent</div><div class="line"> *</div><div class="line"> * <span class="doctag">@see</span> #onMeasure(int, int)</div><div class="line"> */</div><div class="line"> <span class="comment">//没舍得删这些注释  感觉重要的事情都说了   为了计算整个View树的实际大小 设置实际的高和宽 每个子View都是根据父视图和自身决定实际宽高的 在onMeasure()方法中进行实际测量.传入widthMeasureSpec和heightMeasureSpec参数来表示了父View的规格 不但传入了模式 还传入了size 而对于DecorView来说 传入的模式一般为EXACTLY模式 size对应屏幕的宽高. 所以说子View的大小是父子View共同决定的</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">measure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line"></div><div class="line">               <span class="comment">// measure ourselves, this should set the measured dimension flag back</span></div><div class="line">               onMeasure(widthMeasureSpec, heightMeasureSpec);</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
 <p>MeasureSpec内部类</p>
 <p>MeasureSpec是View的内部类 int型，由高2位规格模式specMode和低30位具体尺寸specSize组成 其中specMode只有三种</p>
@@ -473,7 +463,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 <p>onLyayout方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">View中</div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed, <span class="keyword">int</span> left, <span class="keyword">int</span> top, <span class="keyword">int</span> right, <span class="keyword">int</span> bottom)</span> </span>&#123;</div><div class="line">&#125;</div><div class="line">ViewGroup中</div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">onLayout</span><span class="params">(<span class="keyword">boolean</span> changed,</span></span></div><div class="line">      <span class="keyword">int</span> l, <span class="keyword">int</span> t, <span class="keyword">int</span> r, <span class="keyword">int</span> b);</div></pre></td></tr></table></figure></p>
 <p>均是空方法  后面会就LinearLayout和RelativeLayout源码进行分析</p>
 <h3 id="draw源码分析"><a href="#draw源码分析" class="headerlink" title="draw源码分析"></a>draw源码分析</h3><p>View的draw流程图如下</p>
-<p><img src="http://p1.bpimg.com/567571/e7b2c1005fdb70b2.png" alt="Viewdraw"></p>
+<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/85888827.jpg" alt="Viewdraw"></p>
 <p>结论:</p>
 <ul>
 <li>View需要在子类中实现onDraw的过程</li>
@@ -587,12 +577,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      <div id="uyan_frame"></div>
     
   </div>
 
@@ -638,7 +623,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -656,7 +641,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -794,7 +779,7 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -911,39 +896,30 @@ View的测量 布局 绘制过程测量之前的事情View的整个绘制流程�
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'clwaterblog';
-      var disqus_identifier = '2017/02/03/View 绘制源码分析/';
-
-      var disqus_title = "Android View 相关源码分析之三 View的绘制过程";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
+	
 
-      
-        var disqus_config = function () {
-            this.page.url = disqus_url;
-            this.page.identifier = disqus_identifier;
-            this.page.title = disqus_title;
-        };
-        run_disqus_script('embed.js');
-      
 
-    </script>
+
+
+
   
 
 
 
 
 
+  
+      
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
+      <!-- UY END -->
+  
 
 
 

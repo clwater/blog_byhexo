@@ -23,7 +23,7 @@ categories : "RpgMaker 教程"
 
 在开始制作之前,你要要构建你的Rpg游戏,就像是建筑的蓝图图,需要好好斟酌一下.
 
-![index1_1](http://i1.piimg.com/567571/73d18b45702e2850.png)
+![index1_1](http://ooymoxvz4.bkt.clouddn.com/18-1-13/419123.jpg)
 
 直接做一个十分宏大的游戏是比较困难的,所以我们要开始尝试做一个小游戏来熟悉整个流程.这里我们的主题是"英雄打败魔王",希望能为你们带来灵感
 
@@ -37,7 +37,7 @@ categories : "RpgMaker 教程"
 
 ![原文件](http://tkool.jp/assets/files/products_rpgvx_lecture_point1_1.jpg)
 
-![野生翻译的我](http://i4.buimg.com/567571/07237a5675b3175e.png)
+![野生翻译的我](http://ooymoxvz4.bkt.clouddn.com/18-1-13/9489569.jpg)
 
 
 主要的流程大概是这样,现在,我们要决定英雄是如何打败魔王的

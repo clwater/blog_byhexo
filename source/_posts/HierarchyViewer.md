@@ -41,7 +41,7 @@ Please use Android Device Monitor (tools/monitor) instead.
 
 ### 使用Hierarchy Viewer
 
-![Hierarchy Viewer 1-1](http://i1.piimg.com/567571/95498e5576c157e1.png)
+![Hierarchy Viewer 1-1](http://ooymoxvz4.bkt.clouddn.com/18-1-13/38369431.jpg)
 
 成功连接后会出现如上页面
 
@@ -51,23 +51,23 @@ Please use Android Device Monitor (tools/monitor) instead.
 
 选择想要查看的进程后进入 Load View Hierarchy页面
 
-![Hierarchy Viewer 1-2](http://p1.bpimg.com/567571/08b13a1f4b3c6b97.png)
+![Hierarchy Viewer 1-2](http://ooymoxvz4.bkt.clouddn.com/18-1-13/92076930.jpg)
 
 下面对不同部分分别介绍一下
 
-![Hierarchy Viewer 1-3](http://i1.piimg.com/567571/ed16834323343ea2.png)
+![Hierarchy Viewer 1-3](http://ooymoxvz4.bkt.clouddn.com/18-1-13/86316333.jpg)
 
 1. Save as PNG: 把这个布局的层级另存为png格式
 2. Capture Layers: 把这个布局的层级另存为psd格式
 
   可以查看各层级的情况
 
-  ![Capture Layers](http://i1.piimg.com/567571/62b7d9584993e3a1.png)
+  ![Capture Layers](http://ooymoxvz4.bkt.clouddn.com/18-1-13/35966961.jpg)
 
 3. Load View Hierarchy: 重新载入这个view层级图
 4. Evaluate Contrast: 查看层级布局的具体情况
 
-  ![Evaluate Contrast](http://i1.piimg.com/567571/594698903a3e6fa1.png)
+  ![Evaluate Contrast](http://ooymoxvz4.bkt.clouddn.com/18-1-13/9472523.jpg)
 
 5. Display View: 在单独的一个窗口中显示所选择的view
 6. Invalidate Layout: 重绘当前窗口
@@ -76,11 +76,11 @@ Please use Android Device Monitor (tools/monitor) instead.
 9. Dump Theme: 下载这个view主题的资源
 10. Profile Node: 得到measure，layout，draw的性能指示器
 
-![Hierarchy Viewer 1-6](http://p1.bpimg.com/567571/b7a6efcd6d505116.png)
+![Hierarchy Viewer 1-6](http://ooymoxvz4.bkt.clouddn.com/18-1-13/39942923.jpg)
 
 选取某个view节点可以查看选取的View的详情
 
-![Hierarchy Viewer 1-6](http://i1.piimg.com/567571/3b66b1216e20e81d.png)
+![Hierarchy Viewer 1-6](http://ooymoxvz4.bkt.clouddn.com/18-1-13/41478031.jpg)
 
 关于View的渲染机制可以参考一下本人关于android View相关机制解析的文章 [Android View 相关源码分析之三 View的绘制过程 ](http://www.jianshu.com/p/8f3e45663d06)
 
@@ -88,7 +88,7 @@ Please use Android Device Monitor (tools/monitor) instead.
 
 还记得最开始使用Hierarchy Viewer中上方有Inspect screenshot的按钮 可以查看当前Activity的像素情况
 
-![Inspect screenshot](http://p1.bqimg.com/567571/82cd3eeaf8663969.png)
+![Inspect screenshot](http://ooymoxvz4.bkt.clouddn.com/18-1-13/5593142.jpg)
 
 (层级十分的清晰 就不仔细解释了)
 

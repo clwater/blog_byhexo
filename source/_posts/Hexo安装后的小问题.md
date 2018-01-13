@@ -62,7 +62,7 @@ yourcomptername的位置要填你自己的路径
 
 **查看node的版本情况**
 
-![查看node的版本情况](http://i1.piimg.com/567571/40394f9488d8e335.png)
+![查看node的版本情况](http://ooymoxvz4.bkt.clouddn.com/18-1-13/36864615.jpg)
 (这个截图是我配置完成后的截图 初次使用的时候可能有部分出入)
 
 在这里可以看到我的node版本是4.8.2

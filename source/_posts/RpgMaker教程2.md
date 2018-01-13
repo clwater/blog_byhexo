@@ -14,7 +14,7 @@ categories : "RpgMaker 教程"
 
 <!-- more -->
 
-![野生翻译的我](http://i4.buimg.com/567571/07237a5675b3175e.png)
+![野生翻译的我](http://ooymoxvz4.bkt.clouddn.com/18-1-13/34278468.jpg)
 
 这一回中我们将继续做游戏的开发工作
 
@@ -24,7 +24,7 @@ categories : "RpgMaker 教程"
 
 现在,我们要创建一个新项目,让我们启动程序,在菜单 文件-新建项目中
 
-![新建项目的画面](http://i2.muimg.com/567571/d60e27718edbb8bf.png)
+![新建项目的画面](http://ooymoxvz4.bkt.clouddn.com/18-1-13/94169312.jpg)
 
 文件名游戏名什么的 应该不需要解释了
 
@@ -33,8 +33,6 @@ categories : "RpgMaker 教程"
 让我们绘制一个野外的地图来做作为冒险的舞台,最初的世界地图的宽和高都是100(Vx版本),因为他需要展示很多的信息,初次之外我们还会制作很多30*30的详细地图
 
 在MAO001的对象中右键选择地图设置,设定地图的参数
-
-![地图设置](http://ooyk47nhk.bkt.clouddn.com/17-4-25/28050585-file_1493112311376_c429.png)
 
 ![地图设置详情](http://ooymoxvz4.bkt.clouddn.com/17-5-1/52613111-file_1493638260381_5383.png)
 

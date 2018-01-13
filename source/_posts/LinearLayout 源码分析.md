@@ -211,7 +211,7 @@ measureVertical和measureHorizontal只是布局方向上的区别 以下主要�
 
 实例如下
 
-![LinearLayout二次测量](http://p1.bpimg.com/567571/8ac762ffc7d13b2e.png)
+![LinearLayout二次测量](http://ooymoxvz4.bkt.clouddn.com/18-1-13/34816550.jpg)
 
 
 
@@ -408,7 +408,7 @@ resolveSizeAndState方法 定义在View中
 ###### delta为负的相关解析
 相关代码及效果如下
 
-![负delta.png](http://p1.bqimg.com/567571/214652b3a9d04170.png)
+![负delta.png](http://ooymoxvz4.bkt.clouddn.com/18-1-13/88204275.jpg)
 
 根据之前的measure流程分析一下
 

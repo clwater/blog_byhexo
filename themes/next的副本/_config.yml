@@ -278,7 +278,7 @@ baidu_analytics: d62d5f2846e8623f48fe847021d53b14
 
 
 # Disqus
-disqus_shortname: clwaterblog
+# disqus_shortname: clwaterblog
 
 # Hypercomments
 # hypercomments_id: 93779
@@ -288,7 +288,7 @@ disqus_shortname: clwaterblog
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-# youyan_uid: 2140310
+youyan_uid: 2140310
 
 # Baidu Share
 # Available value:
@@ -324,10 +324,10 @@ jiathis: true
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: false
-  user_id: 0
+# duoshuo_info:
+#   ua_enable: true
+#   admin_enable: false
+#   user_id: 0
   #admin_nickname: Author
 
 

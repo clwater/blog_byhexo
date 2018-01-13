@@ -35,7 +35,7 @@ View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1
   }
   ```
   <!-- more -->
-  
+
   ```java
   private static int getRootMeasureSpec(int windowSize, int rootDimension) {
         int measureSpec;
@@ -52,7 +52,7 @@ View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1
   ```
 View 绘制整体流程图如下
 
-![View绘制整体流程图](http://p1.bqimg.com/567571/a5aa47e56fd6434a.png)
+![View绘制整体流程图](http://ooymoxvz4.bkt.clouddn.com/18-1-13/43941602.jpg)
 
 ### measure源码分析
 
@@ -69,7 +69,7 @@ View 绘制整体流程图如下
 
 
 
-![View measure过程](/View measure过程.png)
+![View measure过程](http://ooymoxvz4.bkt.clouddn.com/18-1-13/11065619.jpg)
 
 ```java
 /**
@@ -396,7 +396,7 @@ onLyayout方法
 
 View的draw流程图如下
 
-![Viewdraw](http://p1.bpimg.com/567571/e7b2c1005fdb70b2.png)
+![Viewdraw](http://ooymoxvz4.bkt.clouddn.com/18-1-13/85888827.jpg)
 
 结论:
 * View需要在子类中实现onDraw的过程
