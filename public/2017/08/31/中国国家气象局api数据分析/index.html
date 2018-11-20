@@ -92,15 +92,15 @@
 <meta property="og:site_name" content="Clwater Blog">
 <meta property="og:description" content="中国国家气象局api数据分析
 天气预报是程序中很常见的功能 然而现在免费好用的天气api却很难找 不妨仔细的看一下国家气象局 本分就此网站来获取天气">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-9-2/2275119.jpg">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-9-2/67360173.jpg">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/17-9-2/10458430.jpg">
-<meta property="og:updated_time" content="2017-09-02T15:17:57.000Z">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/2275119.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/67360173.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/10458430.jpg">
+<meta property="og:updated_time" content="2018-11-19T13:26:55.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中国国家气象局api数据分析">
 <meta name="twitter:description" content="中国国家气象局api数据分析
 天气预报是程序中很常见的功能 然而现在免费好用的天气api却很难找 不妨仔细的看一下国家气象局 本分就此网站来获取天气">
-<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/17-9-2/2275119.jpg">
+<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/2275119.jpg">
 
 
 
@@ -375,6 +375,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/08/31/中国国家气象局api数据分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/08/31/中国国家气象局api数据分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -413,9 +423,9 @@
 </blockquote>
 <h2 id="地址及页面分析"><a href="#地址及页面分析" class="headerlink" title="地址及页面分析"></a>地址及页面分析</h2><h3 id="地址分析"><a href="#地址分析" class="headerlink" title="地址分析"></a>地址分析</h3><p>  通过尝试,想要获取某个城市或者地址的天气页面有两种方式,一种是通过经纬度访问<a href="http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982" target="_blank" rel="external">http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982</a>,另一种是通过城市id访问<a href="http://m.weather.com.cn/mweather/101010100.shtml" target="_blank" rel="external">http://m.weather.com.cn/mweather/101010100.shtml</a> 两个地址都能得到北京市的天气情况 不过前一种是经纬度,另一种是城市id.</p>
 <p>  关于城市的id可以查看<a href="http://mobile.weather.com.cn/js/citylist.xml" target="_blank" rel="external">http://mobile.weather.com.cn/js/citylist.xml</a>可以得到全国2500多个城市县区及全球其他国家6000多个城市的数据 可以直接通过以上的接口获得相关城市的天气数据</p>
-<h3 id="页面分析"><a href="#页面分析" class="headerlink" title="页面分析"></a>页面分析</h3><h4 id="id查询"><a href="#id查询" class="headerlink" title="id查询"></a>id查询</h4><p>  我们先访问以下<a href="http://m.weather.com.cn/mweather/101010100.shtml" target="_blank" rel="external">http://m.weather.com.cn/mweather/101010100.shtml</a>页面  看看整个页面都请求了什么<br>  <img src="http://ooymoxvz4.bkt.clouddn.com/17-9-2/2275119.jpg" alt="页面请求信息"></p>
-<p>  <a href="http://m.weather.com.cn/mweather/101010100.shtml" target="_blank" rel="external">http://m.weather.com.cn/mweather/101010100.shtml</a> 这个页面并没有返回对应的数据 也是 现在谁家的网页还能都是静态的<br>  然后是这个位置的素质五连<img src="http://ooymoxvz4.bkt.clouddn.com/17-9-2/67360173.jpg" alt="数据五连"><br>  后面是一个时间戳 模仿了对应的请求格式 但是每次访问的时候都被拒绝应该是页面js代码中有控制 看来直接通过城市id获取不行了</p>
-<h4 id="经纬度查询"><a href="#经纬度查询" class="headerlink" title="经纬度查询"></a>经纬度查询</h4><p>  如果直接通过经纬度地址进行访问<a href="http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982" target="_blank" rel="external">http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982</a>通过分析可以在直接访问的地址中找到返回这个部分数据<br><img src="http://ooymoxvz4.bkt.clouddn.com/17-9-2/10458430.jpg" alt="请求详情"></p>
+<h3 id="页面分析"><a href="#页面分析" class="headerlink" title="页面分析"></a>页面分析</h3><h4 id="id查询"><a href="#id查询" class="headerlink" title="id查询"></a>id查询</h4><p>  我们先访问以下<a href="http://m.weather.com.cn/mweather/101010100.shtml" target="_blank" rel="external">http://m.weather.com.cn/mweather/101010100.shtml</a>页面  看看整个页面都请求了什么<br>  <img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/2275119.jpg" alt="页面请求信息"></p>
+<p>  <a href="http://m.weather.com.cn/mweather/101010100.shtml" target="_blank" rel="external">http://m.weather.com.cn/mweather/101010100.shtml</a> 这个页面并没有返回对应的数据 也是 现在谁家的网页还能都是静态的<br>  然后是这个位置的素质五连<img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/67360173.jpg" alt="数据五连"><br>  后面是一个时间戳 模仿了对应的请求格式 但是每次访问的时候都被拒绝应该是页面js代码中有控制 看来直接通过城市id获取不行了</p>
+<h4 id="经纬度查询"><a href="#经纬度查询" class="headerlink" title="经纬度查询"></a>经纬度查询</h4><p>  如果直接通过经纬度地址进行访问<a href="http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982" target="_blank" rel="external">http://m.weather.com.cn/d/town/index?lat=39.915055&amp;lon=116.403982</a>通过分析可以在直接访问的地址中找到返回这个部分数据<br><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/10458430.jpg" alt="请求详情"></p>
 <h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">([&#123;&quot;TEMMIN&quot;:19,&quot;reftime&quot;:&quot;201709022000&quot;,&quot;WIND1&quot;:&quot;04&quot;,&quot;WINS1&quot;:&quot;01&quot;,&quot;WIND2&quot;:&quot;01&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;02&quot;,&quot;WEATHER2&quot;:&quot;02&quot;,&quot;TEMMAX&quot;:29&#125;,&#123;&quot;TEMMIN&quot;:19,&quot;reftime&quot;:&quot;201709032000&quot;,&quot;WIND1&quot;:&quot;01&quot;,&quot;WINS1&quot;:&quot;00&quot;,&quot;WIND2&quot;:&quot;08&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;02&quot;,&quot;WEATHER2&quot;:&quot;02&quot;,&quot;TEMMAX&quot;:27&#125;,&#123;&quot;TEMMIN&quot;:18,&quot;reftime&quot;:&quot;201709042000&quot;,&quot;WIND1&quot;:&quot;01&quot;,&quot;WINS1&quot;:&quot;00&quot;,&quot;WIND2&quot;:&quot;01&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;01&quot;,&quot;WEATHER2&quot;:&quot;02&quot;,&quot;TEMMAX&quot;:27&#125;,&#123;&quot;TEMMIN&quot;:19,&quot;reftime&quot;:&quot;201709052000&quot;,&quot;WIND1&quot;:&quot;01&quot;,&quot;WINS1&quot;:&quot;00&quot;,&quot;WIND2&quot;:&quot;08&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;07&quot;,&quot;WEATHER2&quot;:&quot;02&quot;,&quot;TEMMAX&quot;:29&#125;,&#123;&quot;TEMMIN&quot;:18,&quot;reftime&quot;:&quot;201709062000&quot;,&quot;WIND1&quot;:&quot;01&quot;,&quot;WINS1&quot;:&quot;00&quot;,&quot;WIND2&quot;:&quot;02&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;00&quot;,&quot;WEATHER2&quot;:&quot;00&quot;,&quot;TEMMAX&quot;:30&#125;],[&#123;&quot;WIND&quot;:&quot;05&quot;,&quot;WEA08&quot;:&quot;02&quot;,&quot;reftime&quot;:&quot;201709010800&quot;,&quot;PRE08&quot;:&quot;0.0&quot;,&quot;TMAX&quot;:28,&quot;TMIN&quot;:21,&quot;WEA20&quot;:&quot;02&quot;,&quot;PRE20&quot;:&quot;0.0&quot;,&quot;WINS&quot;:&quot;01&quot;&#125;])</div></pre></td></tr></table></figure>
 <p>  这部分的数据可以看出来是个json格式数据 取其中一部分来分析<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;TEMMIN&quot;:19,&quot;reftime&quot;:&quot;201709022000&quot;,&quot;WIND1&quot;:&quot;04&quot;,&quot;WINS1&quot;:&quot;01&quot;,&quot;WIND2&quot;:&quot;01&quot;,&quot;WINS2&quot;:&quot;00&quot;,&quot;WEATHER1&quot;:&quot;02&quot;,&quot;WEATHER2&quot;:&quot;02&quot;,&quot;TEMMAX&quot;:29&#125;</div></pre></td></tr></table></figure></p>
 <p>  经过整理后发现对应数据如下</p>
@@ -426,7 +436,7 @@
 <p>  WINS对应如下:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;0&quot;:&quot;微风&quot;,&quot;1&quot;:&quot;3-4级&quot;,&quot;2&quot;:&quot;4-5级&quot;,&quot;3&quot;:&quot;5-6级&quot;,&quot;4&quot;:&quot;6-7级&quot;,&quot;5&quot;:&quot;7-8级&quot;,&quot;6&quot;:&quot;8-9级&quot;,&quot;7&quot;:&quot;9-10级&quot;,&quot;8&quot;:&quot;10-11级&quot;,&quot;9&quot;:&quot;11-12级&quot;&#125;;</div></pre></td></tr></table></figure></p>
 <h2 id="获取流程"><a href="#获取流程" class="headerlink" title="获取流程"></a>获取流程</h2><p>  通过经纬度可以直接获取天气信息 而且精度较高可以定位当前位置后再获取天气信息 但是只适用国内的天气信息 可以本地缓存全国所有地区的经纬度或者通过城市id访问天气信息的页面中获取经纬度 看实际使用情况斟酌</p>
 <p>  而通过城市id的方法可以获得全球的天气信息</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>  页面还有很多数据可以发现 </p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>  页面还有很多数据可以发现</p>
 
       
     </div>
@@ -524,7 +534,12 @@
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -570,7 +585,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -579,7 +594,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -588,7 +603,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -697,7 +712,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
 
@@ -843,30 +858,39 @@
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2017/08/31/中国国家气象局api数据分析/';
+
+      var disqus_title = "中国国家气象局api数据分析";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
-
-
-
-
-  
-
-
-
-
-
-  
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
-  
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
-      <!-- UY END -->
-  
+
+
+
+
 
 
 

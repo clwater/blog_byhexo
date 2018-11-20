@@ -1,0 +1,1173 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android,view,自定义," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#Android自定义View之元素按钮
+
+之前在dribbble看到的三个元素的按钮,参考了设计的创意,添加了自己定义的动画效果来实现.先看效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android自定义View之元素按钮">
+<meta property="og:url" content="http://www.gengzhibo.com/2018/01/16/view03/index.html">
+<meta property="og:site_name" content="Clwater Blog">
+<meta property="og:description" content="#Android自定义View之元素按钮
+
+之前在dribbble看到的三个元素的按钮,参考了设计的创意,添加了自己定义的动画效果来实现.先看效果">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/91123430.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/47003102.jpg">
+<meta property="og:updated_time" content="2018-11-19T13:35:01.007Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android自定义View之元素按钮">
+<meta name="twitter:description" content="#Android自定义View之元素按钮
+
+之前在dribbble看到的三个元素的按钮,参考了设计的创意,添加了自己定义的动画效果来实现.先看效果">
+<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/91123430.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gengzhibo.com/2018/01/16/view03/"/>
+
+
+
+
+
+  <title> Android自定义View之元素按钮 | Clwater Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d62d5f2846e8623f48fe847021d53b14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Clwater Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">bug如风 常伴吾身</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2018/01/16/view03/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android自定义View之元素按钮
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-16T17:11:20+08:00">
+                2018-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android自定义View/" itemprop="url" rel="index">
+                    <span itemprop="name">Android自定义View</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/16/view03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/01/16/view03/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2018/01/16/view03/" class="leancloud_visitors" data-flag-title="Android自定义View之元素按钮">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Android自定义View之元素按钮</p>
+<blockquote>
+<p>之前在dribbble看到的三个元素的按钮,参考了设计的创意,添加了自己定义的动画效果来实现.先看效果</p>
+</blockquote>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/91123430.jpg" alt="效果图"></p>
+<a id="more"></a>
+<p>分别是水火电三个元素的按钮实现.其中电的实现最简单,水的次之,火的实际还并不满意,没有火焰扰动的感觉,尝试过几次但是效果都不理想,最后只保留了自下向上的扇形遮罩.如果有好的效果再优化实现.</p>
+<h2 id="闪电篇"><a href="#闪电篇" class="headerlink" title="闪电篇"></a>闪电篇</h2><h3 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h3><p>通过闪电的位置将整体划分成七个部分(七个部分的主要原因是最初设计了一个中部放大的透镜效果,但是没能实现),从右上角进入,在中心点附近运动,直到停在中心点.闪电本身可以看做一个中心对称的图形,整理就简化成了现将canvas旋转一定角度,然后绘制中心对称的闪电形状,最后在x轴上运动就可以了.</p>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/47003102.jpg" alt="黄线是旋转后的坐标"></p>
+<p>黄线是旋转后的坐标,可以看出简化后实现起来很简单.</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
+<li><p>背景部分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制闪电背景</span></div><div class="line"><span class="function"><span class="keyword">private</span> fun  <span class="title">drawBaseButton</span><span class="params">(canvas: Canvas , index: Float)</span> </span>&#123;</div><div class="line">    <span class="comment">//设置画笔</span></div><div class="line">    val paint = Paint()</div><div class="line"></div><div class="line">    <span class="comment">//添加闪电移动到指定位置时的背景颜色设置</span></div><div class="line">    <span class="keyword">if</span> ((index &lt;= <span class="number">0.45F</span> &amp;&amp; index &gt;= <span class="number">0.35F</span>) || (index &gt;= <span class="number">0.65F</span> &amp;&amp; index &lt;= <span class="number">0.75F</span>)) &#123;</div><div class="line">        paint.color = Color.parseColor(<span class="string">"#ACADAC"</span>)</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        paint.color = Color.parseColor(<span class="string">"#595A59"</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    paint.style = Paint.Style.FILL</div><div class="line"></div><div class="line">    <span class="comment">//绘制闪电背景</span></div><div class="line">    canvas.drawArc(RectF(-baseR, -baseR, baseR, baseR), <span class="number">0F</span> , <span class="number">360F</span>,<span class="keyword">true</span> , paint)</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>闪电部分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> fun  <span class="title">drawLighting</span><span class="params">(canvas: Canvas , index: Float)</span> </span>&#123;</div><div class="line">    val baseR = baseR * coefficient</div><div class="line">    var index = index</div><div class="line">    var changeR = <span class="number">0F</span></div><div class="line"></div><div class="line">    <span class="comment">//将整个闪电的运动拆成七个部分</span></div><div class="line">    <span class="keyword">if</span> (index &lt;= <span class="number">0.25</span>)&#123;</div><div class="line">        changeR  = <span class="keyword">this</span>.baseR + baseR</div><div class="line">        changeR = (changeR * (<span class="number">1</span> - index / <span class="number">0.25</span>)).toFloat()</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0.4</span>)&#123;</div><div class="line">        index = index - <span class="number">0.25F</span></div><div class="line">        changeR  = <span class="keyword">this</span>.baseR</div><div class="line">        changeR = -(changeR * (index / (<span class="number">0.4F</span> - <span class="number">0.25F</span>)))</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0.6F</span>)&#123;</div><div class="line">        index = index - <span class="number">0.4F</span></div><div class="line">        changeR = <span class="keyword">this</span>.baseR</div><div class="line">        changeR = -changeR *  (<span class="number">1</span> - index / <span class="number">0.2F</span>)</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0.7F</span>)&#123;</div><div class="line">        index = index - <span class="number">0.6F</span></div><div class="line">        changeR = baseR</div><div class="line">        changeR = changeR * index / <span class="number">0.1F</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0.8F</span>)&#123;</div><div class="line">        index = index - <span class="number">0.7F</span></div><div class="line">        changeR = baseR</div><div class="line">        changeR = baseR - changeR * index / <span class="number">0.1F</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">0.9F</span>)&#123;</div><div class="line">        index = index - <span class="number">0.8F</span></div><div class="line">        changeR = baseR</div><div class="line">        changeR = -changeR * index / <span class="number">0.1F</span></div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &lt;= <span class="number">1F</span>)&#123;</div><div class="line">        index = index - <span class="number">0.9F</span></div><div class="line">        changeR = baseR</div><div class="line">        changeR = -changeR + changeR * (index / <span class="number">0.1F</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//设置画笔</span></div><div class="line">    val path = Path()</div><div class="line">    val paint = Paint()</div><div class="line">    paint.strokeWidth = <span class="number">5F</span></div><div class="line">    paint.style = Paint.Style.FILL</div><div class="line">    paint.color = viewBackgroundColor</div><div class="line"></div><div class="line">    val points :MutableList&lt;Point&gt; = ArrayList()</div><div class="line">    <span class="comment">//设置绘制闪电的路径点</span></div><div class="line">    points.add(pointFactory(<span class="number">60</span> , baseR))</div><div class="line">    points.add(pointFactory(-<span class="number">45</span> , baseR / <span class="number">2F</span>))</div><div class="line">    points.add(pointFactory(-<span class="number">45</span> - <span class="number">90</span> , baseR / <span class="number">5F</span>))</div><div class="line">    points.add(pointFactory(-<span class="number">30</span> - <span class="number">90</span> , baseR))</div><div class="line">    points.add(pointFactory(<span class="number">45</span> + <span class="number">90</span> , baseR / <span class="number">2F</span>))</div><div class="line">    points.add(pointFactory(<span class="number">45</span> , baseR / <span class="number">5F</span>))</div><div class="line">    points.add(pointFactory(<span class="number">60</span> , baseR))</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">//设置闪电的偏移量(模拟运动情况)</span></div><div class="line">    <span class="comment">//原本还想实现一个中心放大的透镜效果,但是效果很僵硬,只能移除了</span></div><div class="line">    <span class="keyword">for</span> (i in <span class="number">0</span>..points.size - <span class="number">1</span>)&#123;</div><div class="line">        points.set(i , Point(points[i].x + changeR , points[i].y))</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    path.moveTo(points[<span class="number">0</span>].x , points[<span class="number">0</span>].y)</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (index in <span class="number">1</span>..points.size - <span class="number">1</span>)&#123;</div><div class="line">        path.lineTo(points[index].x , points[index].y)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    canvas.drawPath(path , paint)</div><div class="line"></div><div class="line">    <span class="comment">//闪电绘制辅助坐标系</span></div><div class="line"><span class="comment">//        val paint2 = Paint()</span></div><div class="line"><span class="comment">//        paint2.strokeWidth = 5F</span></div><div class="line"><span class="comment">//        paint2.color = Color.YELLOW</span></div><div class="line"><span class="comment">//        canvas.drawLine(1000F , 0F ,-1000F , 0F , paint2)</span></div><div class="line"><span class="comment">//        canvas.drawLine( 0F ,-1000F , 0F , 1000F , paint2)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>闪电的实现还是很简单的,因为不涉及到图形的变化,只有一个简单的位移效果</p>
+<h2 id="霜-水-之哀伤篇"><a href="#霜-水-之哀伤篇" class="headerlink" title="霜(水)之哀伤篇"></a>霜(水)之哀伤篇</h2><h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><p>水滴的实现相对对于闪电来说麻烦一些,一是水滴本身不是很好绘制,又因为水滴在下落的过程中存在变化,最后选择通过贝塞尔曲线实现.二是水滴和背景之间的交互,在水滴未完全下落到背景中的时候,水滴背景的上部有个向下凹陷的过程,这个不是闪电背景的简单变化可能做到的.最后也是使用贝塞尔曲线绘制的一个圆弧的区域遮盖来实现.</p>
+<p>整理需要变化的元素是水滴及顶部的遮盖.都是使用贝塞尔曲线实现的.顶部的凹陷随着水滴的下落不断凹陷,直至水滴脱离顶部后再渐渐回落.主要是找到水滴完全脱离的时间当做顶部凹陷的关键点就好.水滴下落的过程中是需要变化,最开始可能稍微瘦长一些,然后相对变扁.</p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><ul>
+<li><p>水滴背景的实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//绘制水滴背景</span></div><div class="line">    <span class="function"><span class="keyword">private</span> fun  <span class="title">drawBaseButton</span><span class="params">(canvas: Canvas , index: Float)</span> </span>&#123;</div><div class="line">        <span class="comment">//计算水滴半进入区间(确定水滴背景上部变化范围)</span></div><div class="line">        val waterRand = (baseR * <span class="number">1.25</span> * coefficient) / ((baseR * <span class="number">1.25</span> * coefficient) + baseR)</div><div class="line"></div><div class="line">        <span class="comment">//设置画笔</span></div><div class="line">        val paint = Paint()</div><div class="line">        paint.color = Color.parseColor(<span class="string">"#45AAE1"</span>)</div><div class="line">        paint.style = Paint.Style.FILL</div><div class="line"></div><div class="line">        <span class="comment">//绘制水滴背景下半部分的(此部分不需要变换)</span></div><div class="line">        canvas.drawArc(RectF(-baseR, -baseR, baseR, baseR), <span class="number">180F</span> , <span class="number">180F</span>,<span class="keyword">true</span> , paint)</div><div class="line"></div><div class="line">        <span class="comment">//设置点list 顺序存储相关路径及关键点</span></div><div class="line">        val points : MutableList&lt;Point&gt; = ArrayList()</div><div class="line">        points.add(Point(-baseR , <span class="number">0F</span>))</div><div class="line">        points.add(Point(-baseR , baseR * C))</div><div class="line">        points.add(Point(-baseR * C , baseR ))</div><div class="line"></div><div class="line">        var baseButtonTop : Float</div><div class="line">        <span class="comment">//根据index判断上部的形态</span></div><div class="line">        <span class="keyword">if</span> (index &lt;= waterRand)&#123;</div><div class="line">            baseButtonTop = baseR - (baseR * coefficient * index) * <span class="number">2</span></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            baseButtonTop = baseR - (baseR * coefficient) * <span class="number">2</span> + (baseR * coefficient * index) * <span class="number">2</span></div><div class="line">            <span class="keyword">if</span> (baseButtonTop &gt; baseR)&#123;</div><div class="line">                baseButtonTop = baseR</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        points.add(Point(<span class="number">0F</span>, baseButtonTop))</div><div class="line"></div><div class="line">        points.add(Point(baseR * C , baseR))</div><div class="line">        points.add(Point(baseR , baseR * C ))</div><div class="line">        points.add(Point(baseR , <span class="number">0F</span>))</div><div class="line"></div><div class="line">        val path = Path()</div><div class="line">        <span class="comment">//画笔移动到指定位置(不移动的话通过贝塞尔绘制的图形会有误差)</span></div><div class="line">        path.moveTo(points[<span class="number">0</span>].x , points[<span class="number">0</span>].y)</div><div class="line">        <span class="comment">//设置贝塞尔曲线</span></div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">1</span>].x , points[<span class="number">1</span>].y ,</div><div class="line">                points[<span class="number">2</span>].x , points[<span class="number">2</span>].y ,</div><div class="line">                points[<span class="number">3</span>].x , points[<span class="number">3</span>].y)</div><div class="line"></div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">4</span>].x , points[<span class="number">4</span>].y ,</div><div class="line">                points[<span class="number">5</span>].x , points[<span class="number">5</span>].y ,</div><div class="line">                points[<span class="number">6</span>].x , points[<span class="number">6</span>].y)</div><div class="line">        <span class="comment">//绘制</span></div><div class="line">        canvas.drawPath(path, paint)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>水滴的实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> fun  <span class="title">drawDrops</span><span class="params">(canvas: Canvas , index: Float)</span> </span>&#123;</div><div class="line">        <span class="comment">//设置水滴半径</span></div><div class="line">        val baseR = baseR * coefficient</div><div class="line">        val index = <span class="number">1</span> - index</div><div class="line"></div><div class="line">        <span class="comment">//根据index将画布中心移动到对应位置</span></div><div class="line">        canvas.translate( <span class="number">0F</span> , (<span class="keyword">this</span>.baseR * <span class="number">1.125F</span> + baseR)* index - <span class="keyword">this</span>.baseR / <span class="number">8</span>)</div><div class="line"></div><div class="line">        <span class="comment">//设置画笔</span></div><div class="line">        val paint = Paint()</div><div class="line">        paint.style = Paint.Style.FILL</div><div class="line">        paint.color = viewBackgroundColor</div><div class="line">        <span class="comment">//存储关键点坐标</span></div><div class="line">        val points : MutableList&lt;Point&gt; = ArrayList()</div><div class="line">        points.add(Point(-baseR , <span class="number">0F</span>))</div><div class="line"></div><div class="line">        <span class="comment">//水滴顶部变换系数</span></div><div class="line">        val topCoefficient = <span class="number">1.5F</span></div><div class="line"></div><div class="line">        points.add(Point(-baseR , baseR * C))</div><div class="line">        points.add(Point(-baseR * C , baseR ))</div><div class="line">        points.add(Point(<span class="number">0F</span>, (<span class="number">1.5</span> * baseR + baseR * topCoefficient * index).toFloat()))</div><div class="line"></div><div class="line">        points.add(Point(baseR * C , baseR))</div><div class="line">        points.add(Point(baseR , baseR * C ))</div><div class="line">        points.add(Point(baseR , <span class="number">0F</span>))</div><div class="line">        <span class="comment">//水滴底部变换系数</span></div><div class="line">        <span class="comment">//这两个变换系数使得水滴在下落的过程中渐渐变扁</span></div><div class="line">        val bottomCoefficient = <span class="number">0.3F</span></div><div class="line">        val tempBaseR = (baseR - baseR * bottomCoefficient * index)</div><div class="line">        points.add(Point(baseR , -tempBaseR * C))</div><div class="line">        points.add(Point(baseR * C , -tempBaseR ))</div><div class="line">        points.add(Point(<span class="number">0F</span>, -tempBaseR))</div><div class="line"></div><div class="line">        points.add(Point(-baseR * C , -tempBaseR))</div><div class="line">        points.add(Point(-baseR , -tempBaseR * C ))</div><div class="line">        points.add(Point(-baseR , <span class="number">0F</span>))</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">        <span class="comment">//设置四个部分(90°一个部分)的贝塞尔曲线</span></div><div class="line">        <span class="comment">//关于贝塞尔曲线的事情...  感觉可以再做点记录</span></div><div class="line">        val path = Path()</div><div class="line">        path.moveTo(points[<span class="number">0</span>].x , points[<span class="number">0</span>].y)</div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">1</span>].x , points[<span class="number">1</span>].y ,</div><div class="line">                points[<span class="number">2</span>].x , points[<span class="number">2</span>].y ,</div><div class="line">                points[<span class="number">3</span>].x , points[<span class="number">3</span>].y)</div><div class="line"></div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">4</span>].x , points[<span class="number">4</span>].y ,</div><div class="line">                points[<span class="number">5</span>].x , points[<span class="number">5</span>].y ,</div><div class="line">                points[<span class="number">6</span>].x , points[<span class="number">6</span>].y)</div><div class="line"></div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">7</span>].x , points[<span class="number">7</span>].y ,</div><div class="line">                points[<span class="number">8</span>].x , points[<span class="number">8</span>].y ,</div><div class="line">                points[<span class="number">9</span>].x , points[<span class="number">9</span>].y)</div><div class="line"></div><div class="line">        path.cubicTo(</div><div class="line">                points[<span class="number">10</span>].x , points[<span class="number">10</span>].y ,</div><div class="line">                points[<span class="number">11</span>].x , points[<span class="number">11</span>].y ,</div><div class="line">                points[<span class="number">12</span>].x , points[<span class="number">12</span>].y)</div><div class="line"></div><div class="line">        <span class="comment">//绘制图形</span></div><div class="line">        canvas.drawPath(path, paint)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>偷懒的原因所以直接使用背景色做的一个简单的遮盖,没有使用遮罩(其实闪电的部分也是).</p>
+<p>相对来说水滴的实现最为满意,主要的预期效果都成功的实现出来了,整体看来效果还是可以的</p>
+<h2 id="火之高兴篇"><a href="#火之高兴篇" class="headerlink" title="火之高兴篇"></a>火之高兴篇</h2><h3 id="设计思路-1"><a href="#设计思路-1" class="headerlink" title="设计思路"></a>设计思路</h3><p>虽然整体看来,应该是一个难度中等的动画,但是在设计的过程中经历了空手用贝塞尔画火焰(最开始的想法本是火焰本身也是会动的),火焰扰动效果的实现(这个最为艰难,主要是不知道怎么控制火焰扰动的效果,其次是遮罩层的使用,具体的坑会另开文字来讲解),最后只能简单做了个底部向上的遮罩层来当做火焰的扰动情况</p>
+<p>所以其实就是绘制一个火焰的形状,然后再用个遮罩层来遮盖实现火焰的扰动</p>
+<h3 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h3><p>因为背景没有什么特效,就不贴背景的代码了</p>
+<ul>
+<li>整体火焰效果控制</li>
+</ul>
+<p>因为火焰需要展示绘制完成的火焰和遮罩层中相交的部分,要使用PorterDuffXfermode相关的方法,所以在绘制中将原图层和遮罩层分开设计</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> fun  <span class="title">drawFires</span><span class="params">(canvas: Canvas , index: Float)</span> </span>&#123;</div><div class="line">    <span class="comment">//设置火焰半径</span></div><div class="line"></div><div class="line">    <span class="comment">//设置原图层(火焰绘制)</span></div><div class="line">    val srcB = makeSrc(<span class="number">2</span> * baseR.toInt(), <span class="number">2</span> * baseR.toInt(), index)</div><div class="line">    <span class="comment">//设置遮罩层</span></div><div class="line">    val dstB = makeDst(<span class="number">2</span> * baseR.toInt(), <span class="number">2</span> * baseR.toInt(), index)</div><div class="line"></div><div class="line"></div><div class="line">    val paint = Paint()</div><div class="line">    canvas.saveLayer(-baseR, -baseR, baseR , baseR, <span class="keyword">null</span>, Canvas.ALL_SAVE_FLAG)</div><div class="line"></div><div class="line">    <span class="comment">//绘制遮罩层</span></div><div class="line">    canvas.drawBitmap(dstB,  -baseR/<span class="number">2</span>,  -baseR/<span class="number">2</span>, paint)</div><div class="line">    <span class="comment">//设置遮罩模式为SRC_IN显示原图层中原图层与遮罩层相交部分</span></div><div class="line">    paint.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)</div><div class="line">    canvas.drawBitmap(srcB, -baseR/<span class="number">2</span>, -baseR/<span class="number">2</span>, paint)</div><div class="line">    paint.xfermode = <span class="keyword">null</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>绘制原图层(火焰本身的绘制)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line"><span class="function">fun <span class="title">makeSrc</span><span class="params">(w: Int, h: Int , index :Float)</span>: Bitmap </span>&#123;</div><div class="line">       val bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)</div><div class="line">       val canvas = Canvas(bm)</div><div class="line"></div><div class="line">       canvas.translate(baseR / <span class="number">2F</span>, baseR / <span class="number">2F</span>)   <span class="comment">// 将坐标系移动到画布中央</span></div><div class="line"></div><div class="line">       val index = index * <span class="number">0.5F</span> + <span class="number">0.5F</span></div><div class="line">       val baseR = baseR * coefficient * index</div><div class="line"></div><div class="line">       <span class="comment">//设置画笔</span></div><div class="line">       val paint = Paint()</div><div class="line">       paint.style = Paint.Style.FILL</div><div class="line">       paint.color = viewBackgroundColor</div><div class="line">       paint.strokeWidth = <span class="number">10F</span></div><div class="line">       <span class="comment">//存储关键点坐标</span></div><div class="line">       val points : MutableList&lt;Point&gt; = ArrayList()</div><div class="line"></div><div class="line">       <span class="comment">//整体火焰是由六个贝塞尔曲线绘制成的</span></div><div class="line">       points.add(pointFactory( <span class="number">190F</span> , baseR))</div><div class="line">       points.add(pointFactory( <span class="number">280F</span> , baseR / <span class="number">3F</span> * <span class="number">4</span>))</div><div class="line">       points.add(pointFactory( <span class="number">320F</span> ,  baseR / <span class="number">6F</span>))</div><div class="line">       points.add(pointFactory( <span class="number">350F</span> , baseR))</div><div class="line"></div><div class="line">       points.add(pointFactory( <span class="number">10F</span> , baseR))</div><div class="line">       points.add(pointFactory( <span class="number">30F</span> , baseR / <span class="number">3F</span>* <span class="number">2</span>))</div><div class="line">       points.add(pointFactory( <span class="number">50F</span> , baseR / <span class="number">3F</span> ))</div><div class="line"></div><div class="line">       points.add(pointFactory( <span class="number">60F</span> , baseR / <span class="number">6F</span> * <span class="number">3</span>))</div><div class="line">       points.add(pointFactory( <span class="number">60F</span> , baseR / <span class="number">6F</span> * <span class="number">4</span>))</div><div class="line">       points.add(pointFactory( <span class="number">50F</span> , baseR / <span class="number">6F</span> * <span class="number">5</span>))</div><div class="line"></div><div class="line"></div><div class="line">       points.add(pointFactory( <span class="number">85F</span> , baseR / <span class="number">6F</span> * <span class="number">5</span>))</div><div class="line">       points.add(pointFactory( <span class="number">120F</span> , baseR / <span class="number">6F</span> * <span class="number">5</span>))</div><div class="line">       points.add(pointFactory( <span class="number">150F</span> , baseR ))</div><div class="line"></div><div class="line">       points.add(pointFactory( <span class="number">160F</span> , baseR / <span class="number">9F</span> * <span class="number">7</span>))</div><div class="line">       points.add(pointFactory( <span class="number">170F</span> , baseR / <span class="number">9F</span> * <span class="number">5</span>))</div><div class="line">       points.add(pointFactory( <span class="number">180F</span> , baseR / <span class="number">9F</span> * <span class="number">3</span>))</div><div class="line"></div><div class="line">       points.add(pointFactory( <span class="number">200F</span> , baseR / <span class="number">3F</span>))</div><div class="line">       points.add(pointFactory( <span class="number">195F</span> , baseR / <span class="number">3F</span> * <span class="number">2</span>))</div><div class="line">       points.add(pointFactory( <span class="number">190F</span> , baseR ))</div><div class="line"></div><div class="line"></div><div class="line">       val path = Path()</div><div class="line">       path.moveTo(points[<span class="number">0</span>].x , points[<span class="number">0</span>].y)</div><div class="line"></div><div class="line">       <span class="keyword">for</span> (index in <span class="number">0</span>..((points.size - <span class="number">1</span>) / <span class="number">3</span> - <span class="number">1</span>) )&#123;</div><div class="line">           path.cubicTo(</div><div class="line">                   points[<span class="number">3</span> * index + <span class="number">1</span>].x , points[<span class="number">3</span> * index + <span class="number">1</span>].y ,</div><div class="line">                   points[<span class="number">3</span> * index + <span class="number">2</span>].x , points[<span class="number">3</span> * index + <span class="number">2</span>].y ,</div><div class="line">                   points[<span class="number">3</span> * index + <span class="number">3</span>].x , points[<span class="number">3</span> * index + <span class="number">3</span>].y)</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       <span class="comment">//绘制图形</span></div><div class="line">       canvas.drawPath(path, paint)</div><div class="line"></div><div class="line">       <span class="keyword">return</span> bm</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>绘制遮罩层(火焰的扰动效果)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function">fun <span class="title">makeDst</span><span class="params">(w: Int, h: Int, index :Float)</span>: Bitmap </span>&#123;</div><div class="line">    val bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)</div><div class="line">    val canvas = Canvas(bm)</div><div class="line">    canvas.translate(baseR / <span class="number">2F</span>, <span class="number">0F</span>)</div><div class="line"></div><div class="line"></div><div class="line">    val paint = Paint()</div><div class="line">    paint.color = Color.YELLOW</div><div class="line"></div><div class="line">    val dstLength = baseR * coefficient * index * <span class="number">2</span></div><div class="line"></div><div class="line">    val rectf = RectF(-dstLength, -dstLength, dstLength, dstLength)</div><div class="line"></div><div class="line">    <span class="comment">//没找到合适的扰动效果,只能简单实现一个遮罩效果</span></div><div class="line">    canvas.drawArc(rectf , <span class="number">0F</span> , <span class="number">360F</span> , <span class="keyword">true</span>, paint)</div><div class="line"></div><div class="line">    <span class="keyword">return</span> bm</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>火焰来说,虽然需要的效果代码都实现了,但是缺少设计,整体的效果到时不尽如人意.针对效果来说还有很多的优化空间</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/view/" rel="tag"># view</a>
+          
+            <a href="/tags/自定义/" rel="tag"># 自定义</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/13/Android自定义View之鲨鱼和小鱼的等待动画/" rel="next" title="Android自定义View之鲨鱼和小鱼的等待动画">
+                <i class="fa fa-chevron-left"></i> Android自定义View之鲨鱼和小鱼的等待动画
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/26/贝塞尔曲线/" rel="prev" title="Android 自定义贝塞尔曲线工具">
+                Android 自定义贝塞尔曲线工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myicon.jpeg"
+               alt="clwater" />
+          <p class="site-author-name" itemprop="name">clwater</p>
+          <p class="site-description motion-element" itemprop="description">日常写bug 顺便留点痕迹</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/clwater" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gitbug.top" target="_blank" title="BookLibrary">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  BookLibrary
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/suoldevil19" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/gengzhibo/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="gengzhibo@gengzhibo.net" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/clwater_gzb" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#闪电篇"><span class="nav-number">1.</span> <span class="nav-text">闪电篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计过程"><span class="nav-number">1.1.</span> <span class="nav-text">设计过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#霜-水-之哀伤篇"><span class="nav-number">2.</span> <span class="nav-text">霜(水)之哀伤篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计思路"><span class="nav-number">2.1.</span> <span class="nav-text">设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现-1"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#火之高兴篇"><span class="nav-number">3.</span> <span class="nav-text">火之高兴篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计思路-1"><span class="nav-number">3.1.</span> <span class="nav-text">设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现-2"><span class="nav-number">3.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<!-- 不蒜子计数初始值纠正 -->
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var int = setInterval(fixCount, 100);
+        var busuanziSiteOffset = 11452;
+        var busuanziSitePople = 3037;
+        function fixCount() {
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                clearInterval(int);
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSitePople);
+            }
+        }
+    });
+</script>
+
+
+<br/>
+<br/>
+<br/>
+
+<div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">clwater</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+</div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<br/>
+
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total:&nbsp&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp&nbspviews.
+</span>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp</b>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total:&nbsp&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp&nbsppople.
+</span>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2018/01/16/view03/';
+
+      var disqus_title = "Android自定义View之元素按钮";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("XUzGKfuL0SWqGNbAtiml2AoK-gzGzoHsz", "QabKH7LligrztykhrA1kWPqj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

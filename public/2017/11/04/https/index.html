@@ -390,6 +390,16 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/04/https/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/11/04/https/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -763,7 +773,12 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -809,7 +824,7 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -818,7 +833,7 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -827,7 +842,7 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -936,7 +951,7 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
 
@@ -1082,30 +1097,39 @@ Https 超文本传输安全协议（英语：Hypertext Transfer Protocol Secure�
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2017/11/04/https/';
+
+      var disqus_title = "Https从了解到算了";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
-
-
-
-
-  
-
-
-
-
-
-  
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
-  
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
-      <!-- UY END -->
-  
+
+
+
+
 
 
 

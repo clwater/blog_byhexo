@@ -100,9 +100,9 @@ mTotalLength的再次测量
 对View进行第一次测量
 mTotalLength的再次测量
 二次测量部分View和对为测量的子View进行测量">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/34816550.jpg">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/88204275.jpg">
-<meta property="og:updated_time" content="2018-01-13T13:16:15.000Z">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/34816550.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/88204275.jpg">
+<meta property="og:updated_time" content="2018-11-19T13:31:10.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android View 相关源码分析之四 LinearLayout源码分析">
 <meta name="twitter:description" content="LinearLayout 源码分析measure过程主要过程
@@ -111,7 +111,7 @@ mTotalLength的再次测量
 对View进行第一次测量
 mTotalLength的再次测量
 二次测量部分View和对为测量的子View进行测量">
-<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/34816550.jpg">
+<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/34816550.jpg">
 
 
 
@@ -386,6 +386,16 @@ mTotalLength的再次测量
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/LinearLayout 源码分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/LinearLayout 源码分析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -436,11 +446,11 @@ mTotalLength的再次测量
 <p>而 mUseLargestChild = a.getBoolean(R.styleable.LinearLayout_measureWithLargestChild, false);</p>
 <p>就是说仅在LinearLayout的measureWithLargestChild属性设置为True时(默认为false)才可能出现某个child被二次测量</p>
 <p>实例如下</p>
-<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/34816550.jpg" alt="LinearLayout二次测量"></p>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/34816550.jpg" alt="LinearLayout二次测量"></p>
 <h4 id="二次测量部分View和对为测量的子View进行测量"><a href="#二次测量部分View和对为测量的子View进行测量" class="headerlink" title="二次测量部分View和对为测量的子View进行测量"></a>二次测量部分View和对为测量的子View进行测量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//加上padding的值</span></div><div class="line">mTotalLength += mPaddingTop + mPaddingBottom;</div><div class="line"><span class="keyword">int</span> heightSize = mTotalLength;</div><div class="line"><span class="comment">//minHeight和当前使用的高度比较取较大值</span></div><div class="line">heightSize = Math.max(heightSize, getSuggestedMinimumHeight());</div><div class="line"></div><div class="line"><span class="comment">//根据heightMeasureSpec协助计算heightSizeAndState的大小</span></div><div class="line"><span class="comment">//resolveSizeAndState方法之后会分析</span></div><div class="line"><span class="keyword">int</span> heightSizeAndState = resolveSizeAndState(heightSize, heightMeasureSpec, <span class="number">0</span>);</div><div class="line">heightSize = heightSizeAndState &amp; MEASURED_SIZE_MASK;</div><div class="line"></div><div class="line"><span class="comment">// Either expand children with weight to take up available space or</span></div><div class="line"><span class="comment">// shrink them if they extend beyond our current bounds. If we skipped</span></div><div class="line"><span class="comment">// measurement on any children, we need to measure them now.</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//delta为额外的空间 及LinearLayout中未被分配的空间(可以为负)</span></div><div class="line"><span class="keyword">int</span> delta = heightSize - mTotalLength;</div><div class="line"><span class="keyword">if</span> (skippedMeasure || delta != <span class="number">0</span> &amp;&amp; totalWeight &gt; <span class="number">0.0f</span>) &#123;</div><div class="line">    <span class="comment">//skippedMeasure为第一次测量下对跳过测量的子View设置的</span></div><div class="line">    <span class="comment">//weightSum为权重和 如果设置了总权重则使用我们所设置的  如果没有则使用子View的weight和</span></div><div class="line">    <span class="keyword">float</span> weightSum = mWeightSum &gt; <span class="number">0.0f</span> ? mWeightSum : totalWeight;</div><div class="line"></div><div class="line">    mTotalLength = <span class="number">0</span>;</div><div class="line">    <span class="comment">//测量什么的</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; ++i) &#123;</div><div class="line">        <span class="keyword">final</span> View child = getVirtualChildAt(i);</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (child.getVisibility() == View.GONE) &#123;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();</div><div class="line"></div><div class="line">        <span class="keyword">float</span> childExtra = lp.weight;</div><div class="line">        <span class="keyword">if</span> (childExtra &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="comment">// Child said it could absorb extra space -- give him his share</span></div><div class="line">            <span class="comment">//计算weight属性分配的大小</span></div><div class="line">            <span class="keyword">int</span> share = (<span class="keyword">int</span>) (childExtra * delta / weightSum);</div><div class="line">            <span class="comment">//权重和减去已经分配权重</span></div><div class="line">            weightSum -= childExtra;</div><div class="line">            <span class="comment">//剩余高度减去分配的高度</span></div><div class="line">            delta -= share;</div><div class="line"></div><div class="line">            <span class="keyword">final</span> <span class="keyword">int</span> childWidthMeasureSpec = getChildMeasureSpec(widthMeasureSpec,</div><div class="line">                    mPaddingLeft + mPaddingRight +</div><div class="line">                            lp.leftMargin + lp.rightMargin, lp.width);</div><div class="line"></div><div class="line">            <span class="comment">// <span class="doctag">TODO:</span> Use a field like lp.isMeasured to figure out if this</span></div><div class="line">            <span class="comment">// child has been previously measured</span></div><div class="line"></div><div class="line"></div><div class="line">            <span class="keyword">if</span> ((lp.height != <span class="number">0</span>) || (heightMode != MeasureSpec.EXACTLY)) &#123;</div><div class="line">                <span class="comment">//子视图已经被测量过</span></div><div class="line">                <span class="comment">//非EXACTLY view需要加上share</span></div><div class="line">                <span class="keyword">int</span> childHeight = child.getMeasuredHeight() + share;</div><div class="line">                <span class="keyword">if</span> (childHeight &lt; <span class="number">0</span>) &#123;</div><div class="line">                    childHeight = <span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//重新测量View</span></div><div class="line">                child.measure(childWidthMeasureSpec,</div><div class="line">                        MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">//如果当前是EXACTLY模式 说明没有被测量 需要进行测量</span></div><div class="line">                <span class="comment">//子视图首次被测量</span></div><div class="line">                <span class="comment">//EXACTLY模式下 将weight占比的高度分配给子View    </span></div><div class="line">                child.measure(childWidthMeasureSpec,</div><div class="line">                        MeasureSpec.makeMeasureSpec(share &gt; <span class="number">0</span> ? share : <span class="number">0</span>,</div><div class="line">                                MeasureSpec.EXACTLY));</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="comment">// Child may now not fit in vertical dimension.</span></div><div class="line">            childState = combineMeasuredStates(childState, child.getMeasuredState()</div><div class="line">                    &amp; (MEASURED_STATE_MASK&gt;&gt;MEASURED_HEIGHT_STATE_SHIFT));</div><div class="line">        &#125;</div><div class="line"></div><div class="line">       <span class="comment">//处理子视图宽度</span></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> margin =  lp.leftMargin + lp.rightMargin;</div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> measuredWidth = child.getMeasuredWidth() + margin;</div><div class="line">        maxWidth = Math.max(maxWidth, measuredWidth);</div><div class="line"></div><div class="line">        <span class="keyword">boolean</span> matchWidthLocally = widthMode != MeasureSpec.EXACTLY &amp;&amp;</div><div class="line">                lp.width == LayoutParams.MATCH_PARENT;</div><div class="line"></div><div class="line">        alternativeMaxWidth = Math.max(alternativeMaxWidth,</div><div class="line">                matchWidthLocally ? margin : measuredWidth);</div><div class="line"></div><div class="line">        allFillParent = allFillParent &amp;&amp; lp.width == LayoutParams.MATCH_PARENT;</div><div class="line"></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> totalLength = mTotalLength;</div><div class="line">        mTotalLength = Math.max(totalLength, totalLength + child.getMeasuredHeight() +</div><div class="line">                lp.topMargin + lp.bottomMargin + getNextLocationOffset(child));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Add in our padding</span></div><div class="line">    mTotalLength += mPaddingTop + mPaddingBottom;</div><div class="line">    <span class="comment">// <span class="doctag">TODO:</span> Should we recompute the heightSpec based on the new total length?</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    alternativeMaxWidth = Math.max(alternativeMaxWidth,</div><div class="line">                                   weightedMaxWidth);</div><div class="line"></div><div class="line"></div><div class="line">    <span class="comment">// We have no limit, so make all weighted views as tall as the largest child.</span></div><div class="line">    <span class="comment">// Children will have already been measured once.</span></div><div class="line">    <span class="keyword">if</span> (useLargestChild &amp;&amp; heightMode != MeasureSpec.EXACTLY) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">            <span class="keyword">final</span> View child = getVirtualChildAt(i);</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (child == <span class="keyword">null</span> || child.getVisibility() == View.GONE) &#123;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">final</span> LinearLayout.LayoutParams lp =</div><div class="line">                    (LinearLayout.LayoutParams) child.getLayoutParams();</div><div class="line"></div><div class="line">            <span class="keyword">float</span> childExtra = lp.weight;</div><div class="line">            <span class="keyword">if</span> (childExtra &gt; <span class="number">0</span>) &#123;</div><div class="line">               <span class="comment">//使用最大子视图高度测量</span></div><div class="line">                child.measure(</div><div class="line">                        MeasureSpec.makeMeasureSpec(child.getMeasuredWidth(),</div><div class="line">                                MeasureSpec.EXACTLY),</div><div class="line">                        MeasureSpec.makeMeasureSpec(largestChildHeight,</div><div class="line">                                MeasureSpec.EXACTLY));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (!allFillParent &amp;&amp; widthMode != MeasureSpec.EXACTLY) &#123;</div><div class="line">    maxWidth = alternativeMaxWidth;</div><div class="line">&#125;</div><div class="line"></div><div class="line">maxWidth += mPaddingLeft + mPaddingRight;</div><div class="line"></div><div class="line"><span class="comment">// Check against our minimum width</span></div><div class="line">maxWidth = Math.max(maxWidth, getSuggestedMinimumWidth());</div><div class="line"></div><div class="line">setMeasuredDimension(resolveSizeAndState(maxWidth, widthMeasureSpec, childState),</div><div class="line">        heightSizeAndState);</div><div class="line"></div><div class="line"><span class="keyword">if</span> (matchWidth) &#123;</div><div class="line">    forceUniformWidth(count, heightMeasureSpec);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>resolveSizeAndState方法 定义在View中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">   * Utility to reconcile a desired size and state, with constraints imposed</div><div class="line">   * by a MeasureSpec. Will take the desired size, unless a different size</div><div class="line">   * is imposed by the constraints. The returned value is a compound integer,</div><div class="line">   * with the resolved size in the &#123;<span class="doctag">@link</span> #MEASURED_SIZE_MASK&#125; bits and</div><div class="line">   * optionally the bit &#123;<span class="doctag">@link</span> #MEASURED_STATE_TOO_SMALL&#125; set if the</div><div class="line">   * resulting size is smaller than the size the view wants to be.</div><div class="line">   *</div><div class="line">   * <span class="doctag">@param</span> size How big the view wants to be.</div><div class="line">   * <span class="doctag">@param</span> measureSpec Constraints imposed by the parent.</div><div class="line">   * <span class="doctag">@param</span> childMeasuredState Size information bit mask for the view's</div><div class="line">   *                           children.</div><div class="line">   * <span class="doctag">@return</span> Size information bit mask as defined by</div><div class="line">   *         &#123;<span class="doctag">@link</span> #MEASURED_SIZE_MASK&#125; and</div><div class="line">   *         &#123;<span class="doctag">@link</span> #MEASURED_STATE_TOO_SMALL&#125;.</div><div class="line">   */</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">resolveSizeAndState</span><span class="params">(<span class="keyword">int</span> size, <span class="keyword">int</span> measureSpec, <span class="keyword">int</span> childMeasuredState)</span> </span>&#123;</div><div class="line">      <span class="keyword">final</span> <span class="keyword">int</span> specMode = MeasureSpec.getMode(measureSpec);</div><div class="line">      <span class="keyword">final</span> <span class="keyword">int</span> specSize = MeasureSpec.getSize(measureSpec);</div><div class="line">      <span class="keyword">final</span> <span class="keyword">int</span> result;</div><div class="line">      <span class="keyword">switch</span> (specMode) &#123;</div><div class="line">          <span class="keyword">case</span> MeasureSpec.AT_MOST:</div><div class="line">              <span class="keyword">if</span> (specSize &lt; size) &#123;</div><div class="line">                  result = specSize | MEASURED_STATE_TOO_SMALL;</div><div class="line">              &#125; <span class="keyword">else</span> &#123;</div><div class="line">                  result = size;</div><div class="line">              &#125;</div><div class="line">              <span class="keyword">break</span>;</div><div class="line">          <span class="keyword">case</span> MeasureSpec.EXACTLY:</div><div class="line">              result = specSize;</div><div class="line">              <span class="keyword">break</span>;</div><div class="line">          <span class="keyword">case</span> MeasureSpec.UNSPECIFIED:</div><div class="line">          <span class="keyword">default</span>:</div><div class="line">              result = size;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> result | (childMeasuredState &amp; MEASURED_STATE_MASK);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <h6 id="delta为负的相关解析"><a href="#delta为负的相关解析" class="headerlink" title="delta为负的相关解析"></a>delta为负的相关解析</h6><p>相关代码及效果如下</p>
-<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/88204275.jpg" alt="负delta.png"></p>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/88204275.jpg" alt="负delta.png"></p>
 <p>根据之前的measure流程分析一下</p>
 <ul>
 <li>相关变量初始化</li>
@@ -552,7 +562,12 @@ mTotalLength的再次测量
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -598,7 +613,7 @@ mTotalLength的再次测量
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -607,7 +622,7 @@ mTotalLength的再次测量
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -616,7 +631,7 @@ mTotalLength的再次测量
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -725,7 +740,7 @@ mTotalLength的再次测量
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
 
@@ -871,30 +886,39 @@ mTotalLength的再次测量
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2017/02/03/LinearLayout 源码分析/';
+
+      var disqus_title = "Android View 相关源码分析之四 LinearLayout源码分析";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
-
-
-
-
-  
-
-
-
-
-
-  
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
-  
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
-      <!-- UY END -->
-  
+
+
+
+
 
 
 

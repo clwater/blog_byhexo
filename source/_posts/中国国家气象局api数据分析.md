@@ -20,15 +20,15 @@ categories : "数据收集"
 ### 页面分析
 #### id查询
   我们先访问以下[http://m.weather.com.cn/mweather/101010100.shtml](http://m.weather.com.cn/mweather/101010100.shtml)页面  看看整个页面都请求了什么
-  ![页面请求信息](http://ooymoxvz4.bkt.clouddn.com/17-9-2/2275119.jpg)
+  ![页面请求信息](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/2275119.jpg)
 
   http://m.weather.com.cn/mweather/101010100.shtml 这个页面并没有返回对应的数据 也是 现在谁家的网页还能都是静态的
-  然后是这个位置的素质五连![数据五连](http://ooymoxvz4.bkt.clouddn.com/17-9-2/67360173.jpg)
+  然后是这个位置的素质五连![数据五连](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/67360173.jpg)
   后面是一个时间戳 模仿了对应的请求格式 但是每次访问的时候都被拒绝应该是页面js代码中有控制 看来直接通过城市id获取不行了
 
 #### 经纬度查询
   如果直接通过经纬度地址进行访问[http://m.weather.com.cn/d/town/index?lat=39.915055&lon=116.403982](http://m.weather.com.cn/d/town/index?lat=39.915055&lon=116.403982)通过分析可以在直接访问的地址中找到返回这个部分数据
-![请求详情](http://ooymoxvz4.bkt.clouddn.com/17-9-2/10458430.jpg)
+![请求详情](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/10458430.jpg)
 
 ## 数据分析
   ```
@@ -72,4 +72,4 @@ categories : "数据收集"
   而通过城市id的方法可以获得全球的天气信息
 
 ## 最后
-  页面还有很多数据可以发现 
+  页面还有很多数据可以发现

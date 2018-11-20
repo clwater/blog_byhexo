@@ -12,7 +12,7 @@ categories : "RpgMaker 教程"
 ## 第三回 让我们开始制作城堡
 在第二回中我们创建了一个新的项目 并制作了世界地图
 
-![第二回创建的世界地图](http://ooymoxvz4.bkt.clouddn.com/17-10-4/53054520.jpg)
+![第二回创建的世界地图](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/53054520.jpg)
 
 <!-- more -->
 
@@ -22,14 +22,14 @@ categories : "RpgMaker 教程"
 #### 创建一个新的地图
 在编辑器左下角的"世界地图"标签中右键 选择新建地图 来创建一个新的地图
 
-![冒险开始的城堡地图](http://ooymoxvz4.bkt.clouddn.com/17-10-4/41194854.jpg)
+![冒险开始的城堡地图](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/41194854.jpg)
 
 根据上面图片对新的地图属性进行设置,将地图名称更改为“冒险开始的城堡地图” ,地图大小设置为默认宽度17和高度13,它是一个只有一个屏幕的大小的地图,别忘了设置BGM.
 
 #### 绘制城堡地图
 我们要绘制一张地图,我们想象一下国王在城堡中生活的场景
 
-![城堡内国王生活的地方](http://ooymoxvz4.bkt.clouddn.com/17-10-4/29932479.jpg)
+![城堡内国王生活的地方](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/29932479.jpg)
 
 通过瓷砖 柱子 还有进行装饰,并将国王放在地图的中间,并在下部设置一个出人口.
 
@@ -45,22 +45,22 @@ categories : "RpgMaker 教程"
 
 在RPG Maker中,我们使用"事件"功能很方便,可以很方便的创建一个"事件",只需要在菜单中选择事件模式.
 
-![选择事件模式](http://ooymoxvz4.bkt.clouddn.com/17-10-4/20019323.jpg)
+![选择事件模式](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/20019323.jpg)
 
-![快速创建事件](http://ooymoxvz4.bkt.clouddn.com/17-10-4/69495280.jpg)
+![快速创建事件](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/69495280.jpg)
 
 <center>快速创建一个"事件"</center>
 
 将鼠标移动到城堡的出口位置,右键选择 快速创建事件->场所移动 的事件
 
-![场所移动事件的对话框](http://ooymoxvz4.bkt.clouddn.com/17-10-4/46059419.jpg)
+![场所移动事件的对话框](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/46059419.jpg)
 
 <center>场所移动事件的对话框</center>
 
 选择后会显示一个用于创建 场所移动 事件的对话框
 
 
-![目的地地图](http://ooymoxvz4.bkt.clouddn.com/17-10-4/97806613.jpg)
+![目的地地图](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/97806613.jpg)
 
 <center>目的地地图</center>
 
@@ -70,12 +70,12 @@ categories : "RpgMaker 教程"
 
 现在你可以从"城堡地图"移动到世界地图,但是还不能从"世界地图"移动到"开始城堡".通过同样的方式,我们创建一个"世界地图"到"城堡地图"的场景事件.
 
-![快速创建事件](http://ooymoxvz4.bkt.clouddn.com/17-10-4/35890321.jpg)
+![快速创建事件](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/35890321.jpg)
 <center>快速创建事件</center>
 
 将光标移动到指定位置 创建一个"场景移动"事件.
 
-![指定目的地及坐标](http://ooymoxvz4.bkt.clouddn.com/17-10-4/52224203.jpg)
+![指定目的地及坐标](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/52224203.jpg)
 <center>指定目的地及坐标</center>
 
 像之前一样 将目的地设置为城堡地图的入口位置,这样我们就能在"世界地图"和"城堡地图"之间移动了.

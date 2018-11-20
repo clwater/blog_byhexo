@@ -14,7 +14,7 @@ categories : "RpgMaker 教程"
 
 <!-- more -->
 
-![野生翻译的我](http://ooymoxvz4.bkt.clouddn.com/18-1-13/34278468.jpg)
+![野生翻译的我](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/34278468.jpg)
 
 这一回中我们将继续做游戏的开发工作
 
@@ -24,7 +24,7 @@ categories : "RpgMaker 教程"
 
 现在,我们要创建一个新项目,让我们启动程序,在菜单 文件-新建项目中
 
-![新建项目的画面](http://ooymoxvz4.bkt.clouddn.com/18-1-13/94169312.jpg)
+![新建项目的画面](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/94169312.jpg)
 
 文件名游戏名什么的 应该不需要解释了
 

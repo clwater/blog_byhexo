@@ -52,7 +52,7 @@ View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1
   ```
 View 绘制整体流程图如下
 
-![View绘制整体流程图](http://ooymoxvz4.bkt.clouddn.com/18-1-13/43941602.jpg)
+![View绘制整体流程图](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/43941602.jpg)
 
 ### measure源码分析
 
@@ -69,7 +69,7 @@ View 绘制整体流程图如下
 
 
 
-![View measure过程](http://ooymoxvz4.bkt.clouddn.com/18-1-13/11065619.jpg)
+![View measure过程](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/11065619.jpg)
 
 ```java
 /**
@@ -396,7 +396,7 @@ onLyayout方法
 
 View的draw流程图如下
 
-![Viewdraw](http://ooymoxvz4.bkt.clouddn.com/18-1-13/85888827.jpg)
+![Viewdraw](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/85888827.jpg)
 
 结论:
 * View需要在子类中实现onDraw的过程

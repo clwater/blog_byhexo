@@ -90,12 +90,12 @@
 <meta property="og:url" content="http://www.gengzhibo.com/2017/04/23/Hexo安装后的小问题/index.html">
 <meta property="og:site_name" content="Clwater Blog">
 <meta property="og:description" content="Hexo 是一个十分便捷的博客搭建工具 但是经常会遇见安装完成后再次打开终端操作的时候提示 command not found: hexo的情况 对应的github的issues中也没有详细的解决办法在这提供一种可行的解决思路 希望能帮助到大家">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/36864615.jpg">
-<meta property="og:updated_time" content="2018-01-13T13:01:05.000Z">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/36864615.jpg">
+<meta property="og:updated_time" content="2018-11-19T13:29:23.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo安装后hexo指令无法被找到的解决方法">
 <meta name="twitter:description" content="Hexo 是一个十分便捷的博客搭建工具 但是经常会遇见安装完成后再次打开终端操作的时候提示 command not found: hexo的情况 对应的github的issues中也没有详细的解决办法在这提供一种可行的解决思路 希望能帮助到大家">
-<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/36864615.jpg">
+<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/36864615.jpg">
 
 
 
@@ -370,6 +370,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/23/Hexo安装后的小问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/23/Hexo安装后的小问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -430,7 +440,7 @@
 <p>然后就可以重启终端了 再次输入hexo后会出现 command not found: hexo的提示  一般情况下都是首次安装hexo后可以正常使用 后来再次使用的时候发现无法使用</p>
 <h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>也不能说是正文 之前的都是为所依赖的环境做准备 顺便简单排除一下其它因素</p>
 <p><strong>查看node的版本情况</strong></p>
-<p><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/36864615.jpg" alt="查看node的版本情况"><br>(这个截图是我配置完成后的截图 初次使用的时候可能有部分出入)</p>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/36864615.jpg" alt="查看node的版本情况"><br>(这个截图是我配置完成后的截图 初次使用的时候可能有部分出入)</p>
 <p>在这里可以看到我的node版本是4.8.2</p>
 <p>再进行一下的操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//切换对应的版本</div><div class="line">nvm use 4.8.2</div><div class="line"></div><div class="line">//但是每次重启终端后改设置都会失效 所以要设置默认的版本</div><div class="line">nvm alias default 4.8.2</div></pre></td></tr></table></figure></p>
 <p>再次使用nvm ls命令来查看 当和前面的途中绿色箭头指向你所指定的版本好的时候就说明设置成功了</p>
@@ -531,7 +541,12 @@
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -577,7 +592,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -586,7 +601,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -595,7 +610,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -704,7 +719,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
 
@@ -850,30 +865,39 @@
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2017/04/23/Hexo安装后的小问题/';
+
+      var disqus_title = "Hexo安装后hexo指令无法被找到的解决方法";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
-
-
-
-
-  
-
-
-
-
-
-  
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
-  
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
-      <!-- UY END -->
-  
+
+
+
+
 
 
 

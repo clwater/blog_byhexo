@@ -15,17 +15,17 @@ categories : "Android自定义View"
 <!-- more -->
 
 ## 效果图
-![效果图](http://ooymoxvz4.bkt.clouddn.com/17-8-20/25082465.jpg)
+![效果图](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/25082465.jpg)
 
 ## 设计过程
 ### 外侧渐变圆环
-![外侧圆环效果](http://ooymoxvz4.bkt.clouddn.com/17-8-20/78850293.jpg)
+![外侧圆环效果](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/78850293.jpg)
 ### 外侧刻度盘及文字显示
-![外侧刻度盘及文字显示](http://ooymoxvz4.bkt.clouddn.com/17-8-20/30532330.jpg)
+![外侧刻度盘及文字显示](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/30532330.jpg)
 ### 指针显示
-![指针显示](http://ooymoxvz4.bkt.clouddn.com/17-8-20/72116334.jpg)
+![指针显示](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/72116334.jpg)
 ### 内部圆环及文字展示
-![内部圆环及文字展示](http://ooymoxvz4.bkt.clouddn.com/17-8-20/81417498.jpg)
+![内部圆环及文字展示](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/81417498.jpg)
 
 ## 代码实现
 ### 自定义组件显示优化

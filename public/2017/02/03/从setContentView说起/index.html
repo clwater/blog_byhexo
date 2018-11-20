@@ -90,14 +90,14 @@
 <meta property="og:url" content="http://www.gengzhibo.com/2017/02/03/从setContentView说起/index.html">
 <meta property="og:site_name" content="Clwater Blog">
 <meta property="og:description" content="从setContentView与LayoutInflater说起setContentView分析相关关系">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/61853049.jpg">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/39785701.jpg">
-<meta property="og:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/4341656.jpg">
-<meta property="og:updated_time" content="2018-01-13T13:20:02.000Z">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/61853049.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/39785701.jpg">
+<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/4341656.jpg">
+<meta property="og:updated_time" content="2018-11-19T13:25:33.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android View 相关源码分析之一 从setContentView与LayoutInflater说起">
 <meta name="twitter:description" content="从setContentView与LayoutInflater说起setContentView分析相关关系">
-<meta name="twitter:image" content="http://ooymoxvz4.bkt.clouddn.com/18-1-13/61853049.jpg">
+<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/61853049.jpg">
 
 
 
@@ -372,6 +372,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/从setContentView说起/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/从setContentView说起/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -405,11 +415,11 @@
       
 
       
-        <h2 id="从setContentView与LayoutInflater说起"><a href="#从setContentView与LayoutInflater说起" class="headerlink" title="从setContentView与LayoutInflater说起"></a>从setContentView与LayoutInflater说起</h2><h3 id="setContentView分析"><a href="#setContentView分析" class="headerlink" title="setContentView分析"></a>setContentView分析</h3><h4 id="相关关系"><a href="#相关关系" class="headerlink" title="相关关系"></a>相关关系</h4><p>  <img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/61853049.jpg" alt="相关关系图"><br>  <a id="more"></a></p>
+        <h2 id="从setContentView与LayoutInflater说起"><a href="#从setContentView与LayoutInflater说起" class="headerlink" title="从setContentView与LayoutInflater说起"></a>从setContentView与LayoutInflater说起</h2><h3 id="setContentView分析"><a href="#setContentView分析" class="headerlink" title="setContentView分析"></a>setContentView分析</h3><h4 id="相关关系"><a href="#相关关系" class="headerlink" title="相关关系"></a>相关关系</h4><p>  <img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/61853049.jpg" alt="相关关系图"><br>  <a id="more"></a></p>
 <p>  Activity中有Window成员 实例化为PhoneWindow PhoneWindow是抽象Window类的实现类</p>
 <p>  Window提供了绘制窗口的通用API PhoneWindow中包含了DecorView对象 是所有窗口(Activity界面)的根View</p>
 <p>  具体的构如下</p>
-<p>  <img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/39785701.jpg" alt="View层级分析"></p>
+<p>  <img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/39785701.jpg" alt="View层级分析"></p>
 <p>  具体的可以通过hierarchyviewer工具分析一下</p>
 <h4 id="PhoneWindow的setContentView分析"><a href="#PhoneWindow的setContentView分析" class="headerlink" title="PhoneWindow的setContentView分析"></a>PhoneWindow的setContentView分析</h4><blockquote>
 <p>Window类的setContentView方法 而Window的setContentView方法是抽象的  所以查看PhoneWindow的setContentView()</p>
@@ -466,7 +476,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">inflate</span><span class="params">(@LayoutRes <span class="keyword">int</span> resource, @Nullable ViewGroup root, <span class="keyword">boolean</span> attachToRoot)</span> </span>&#123;</div><div class="line">    <span class="keyword">final</span> Resources res = getContext().getResources();</div><div class="line">    <span class="keyword">if</span> (DEBUG) &#123;</div><div class="line">        Log.d(TAG, <span class="string">"INFLATING from resource: \""</span> + res.getResourceName(resource) + <span class="string">"\" ("</span></div><div class="line">                + Integer.toHexString(resource) + <span class="string">")"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> XmlResourceParser parser = res.getLayout(resource);</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="keyword">return</span> inflate(parser, root, attachToRoot);</div><div class="line">    &#125; <span class="keyword">finally</span> &#123;</div><div class="line">        parser.close();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>最后发现都需要调用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">inflate</span><span class="params">(XmlPullParser parser, @Nullable ViewGroup root, <span class="keyword">boolean</span> attachToRoot)</span> </span>&#123;</div><div class="line">        <span class="keyword">synchronized</span> (mConstructorArgs) &#123;</div><div class="line">            Trace.traceBegin(Trace.TRACE_TAG_VIEW, <span class="string">"inflate"</span>);</div><div class="line"></div><div class="line">            <span class="keyword">final</span> Context inflaterContext = mContext;</div><div class="line">            <span class="keyword">final</span> AttributeSet attrs = Xml.asAttributeSet(parser);</div><div class="line">            Context lastContext = (Context) mConstructorArgs[<span class="number">0</span>];</div><div class="line">            mConstructorArgs[<span class="number">0</span>] = inflaterContext;</div><div class="line">            <span class="comment">//定义返回值 初始化传入形参 root</span></div><div class="line">            View result = root;</div><div class="line"></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="comment">// 找到根节点</span></div><div class="line">                <span class="keyword">int</span> type;</div><div class="line">                <span class="keyword">while</span> ((type = parser.next()) != XmlPullParser.START_TAG &amp;&amp;</div><div class="line">                        type != XmlPullParser.END_DOCUMENT) &#123;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">//验证type是否为Start_Tag  保证xml文件正确</span></div><div class="line">                <span class="keyword">if</span> (type != XmlPullParser.START_TAG) &#123;</div><div class="line">                    <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(parser.getPositionDescription()</div><div class="line">                            + <span class="string">": No start tag found!"</span>);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="comment">//type为 root node</span></div><div class="line">                <span class="keyword">final</span> String name = parser.getName();</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (DEBUG) &#123;</div><div class="line">                    System.out.println(<span class="string">"**************************"</span>);</div><div class="line">                    System.out.println(<span class="string">"Creating root view: "</span></div><div class="line">                            + name);</div><div class="line">                    System.out.println(<span class="string">"**************************"</span>);</div><div class="line">                &#125;</div><div class="line"></div><div class="line">                <span class="keyword">if</span> (TAG_MERGE.equals(name)) &#123;</div><div class="line">                    <span class="comment">//处理 merge相关</span></div><div class="line">                    <span class="comment">//root需要非空 且attachToRoot为空</span></div><div class="line">                    <span class="keyword">if</span> (root == <span class="keyword">null</span> || !attachToRoot) &#123;</div><div class="line">                        <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(<span class="string">"&lt;merge /&gt; can be used only with a valid "</span></div><div class="line">                                + <span class="string">"ViewGroup root and attachToRoot=true"</span>);</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">//递归inflate 方法调用</span></div><div class="line">                    rInflate(parser, root, inflaterContext, attrs, <span class="keyword">false</span>);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    <span class="comment">//根据tag节点创建view对象</span></div><div class="line">                    <span class="keyword">final</span> View temp = createViewFromTag(root, name, inflaterContext, attrs);</div><div class="line"></div><div class="line">                    ViewGroup.LayoutParams params = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">                    <span class="keyword">if</span> (root != <span class="keyword">null</span>) &#123;</div><div class="line">                        <span class="keyword">if</span> (DEBUG) &#123;</div><div class="line">                            System.out.println(<span class="string">"Creating params from root: "</span> +</div><div class="line">                                    root);</div><div class="line">                        &#125;</div><div class="line">                        <span class="comment">//根据root生成LayoutParams</span></div><div class="line">                        params = root.generateLayoutParams(attrs);</div><div class="line">                        <span class="keyword">if</span> (!attachToRoot) &#123;</div><div class="line">                            <span class="comment">//如果attachToRoot为flase 则调用setLayoutParams</span></div><div class="line">                            temp.setLayoutParams(params);</div><div class="line">                        &#125;</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="keyword">if</span> (DEBUG) &#123;</div><div class="line">                        System.out.println(<span class="string">"-----&gt; start inflating children"</span>);</div><div class="line">                    &#125;</div><div class="line">                    <span class="comment">//递归inflate剩下的children</span></div><div class="line">                    rInflateChildren(parser, temp, attrs, <span class="keyword">true</span>);</div><div class="line"></div><div class="line">                    <span class="keyword">if</span> (DEBUG) &#123;</div><div class="line">                        System.out.println(<span class="string">"-----&gt; done inflating children"</span>);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="comment">// We are supposed to attach all the views we found (int temp)</span></div><div class="line">                    <span class="comment">// to root. Do that now.</span></div><div class="line">                    <span class="keyword">if</span> (root != <span class="keyword">null</span> &amp;&amp; attachToRoot) &#123;</div><div class="line">                        <span class="comment">//root非空且attachToRoot=true则将xml文件的root view加到形参提供的root里</span></div><div class="line">                        root.addView(temp, params);</div><div class="line">                    &#125;</div><div class="line"></div><div class="line">                    <span class="comment">// Decide whether to return the root that was passed in or the</span></div><div class="line">                    <span class="comment">// top view found in xml.</span></div><div class="line">                    <span class="keyword">if</span> (root == <span class="keyword">null</span> || !attachToRoot) &#123;</div><div class="line">                        <span class="comment">//返回xml里解析的root view</span></div><div class="line">                        result = temp;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line"></div><div class="line">            &#125; <span class="keyword">catch</span> (XmlPullParserException e) &#123;</div><div class="line">                InflateException ex = <span class="keyword">new</span> InflateException(e.getMessage());</div><div class="line">                ex.initCause(e);</div><div class="line">                <span class="keyword">throw</span> ex;</div><div class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">                InflateException ex = <span class="keyword">new</span> InflateException(</div><div class="line">                        parser.getPositionDescription()</div><div class="line">                                + <span class="string">": "</span> + e.getMessage());</div><div class="line">                ex.initCause(e);</div><div class="line">                <span class="keyword">throw</span> ex;</div><div class="line">            &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                <span class="comment">// Don't retain static reference on context.</span></div><div class="line">                mConstructorArgs[<span class="number">0</span>] = lastContext;</div><div class="line">                mConstructorArgs[<span class="number">1</span>] = <span class="keyword">null</span>;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            Trace.traceEnd(Trace.TRACE_TAG_VIEW);</div><div class="line">            <span class="comment">//返回参数root或xml文件里的root view</span></div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>相关inflate参数的结果<br><img src="http://ooymoxvz4.bkt.clouddn.com/18-1-13/4341656.jpg" alt="inflate参数.png"></p>
+<p>相关inflate参数的结果<br><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/4341656.jpg" alt="inflate参数.png"></p>
 </li>
 <li><p>相关方法解析<br>在Inflate中多次被调用的rInflate</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rInflate</span><span class="params">(XmlPullParser parser, View parent, Context context,</span></span></div><div class="line">        AttributeSet attrs, <span class="keyword">boolean</span> finishInflate) <span class="keyword">throws</span> XmlPullParserException, IOException &#123;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> <span class="keyword">int</span> depth = parser.getDepth();</div><div class="line">    <span class="keyword">int</span> type;</div><div class="line">    <span class="comment">//XmlPullParser解析器的标准解析模式</span></div><div class="line">    <span class="keyword">while</span> (((type = parser.next()) != XmlPullParser.END_TAG ||</div><div class="line">            parser.getDepth() &gt; depth) &amp;&amp; type != XmlPullParser.END_DOCUMENT) &#123;</div><div class="line">        <span class="comment">//找到start_tag节点</span></div><div class="line">        <span class="keyword">if</span> (type != XmlPullParser.START_TAG) &#123;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//获取Name标记</span></div><div class="line">        <span class="keyword">final</span> String name = parser.getName();</div><div class="line"></div><div class="line">        <span class="comment">//private static final String TAG_REQUEST_FOCUS = "requestFocus";</span></div><div class="line">        <span class="comment">//处理requestFocus</span></div><div class="line">        <span class="keyword">if</span> (TAG_REQUEST_FOCUS.equals(name)) &#123;</div><div class="line">            parseRequestFocus(parser, parent);</div><div class="line">        <span class="comment">// private static final String TAG_TAG = "tag";</span></div><div class="line">        <span class="comment">//处理tag</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TAG_TAG.equals(name)) &#123;</div><div class="line">            parseViewTag(parser, parent, attrs);</div><div class="line">        <span class="comment">//private static final String TAG_INCLUDE = "include";</span></div><div class="line">        <span class="comment">//处理include</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TAG_INCLUDE.equals(name)) &#123;</div><div class="line">            <span class="comment">//如果是根节点则抛出异常</span></div><div class="line">            <span class="keyword">if</span> (parser.getDepth() == <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(<span class="string">"&lt;include /&gt; cannot be the root element"</span>);</div><div class="line">            &#125;</div><div class="line">            parseInclude(parser, context, parent, attrs);</div><div class="line">        <span class="comment">//private static final String TAG_MERGE = "merge";</span></div><div class="line">        <span class="comment">//处理merge merge需要是xml中的根节点</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (TAG_MERGE.equals(name)) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> InflateException(<span class="string">"&lt;merge /&gt; must be the root element"</span>);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">final</span> View view = createViewFromTag(parent, name, context, attrs);</div><div class="line">            <span class="keyword">final</span> ViewGroup viewGroup = (ViewGroup) parent;</div><div class="line">            <span class="keyword">final</span> ViewGroup.LayoutParams params = viewGroup.generateLayoutParams(attrs);</div><div class="line">            rInflateChildren(parser, view, attrs, <span class="keyword">true</span>);</div><div class="line">            viewGroup.addView(view, params);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">     <span class="comment">//parent的所有子节点都处理完毕的时候回onFinishInflate方法</span></div><div class="line">    <span class="keyword">if</span> (finishInflate) &#123;</div><div class="line">        parent.onFinishInflate();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//可以添加自定义逻辑</span></div><div class="line"> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onFinishInflate</span><span class="params">()</span> </span>&#123;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
@@ -565,7 +575,12 @@
           
   <div class="comments" id="comments">
     
-      <div id="uyan_frame"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -611,7 +626,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -620,7 +635,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -629,7 +644,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -738,7 +753,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
 
@@ -884,30 +899,39 @@
 
   
 
+    <script type="text/javascript">
+      var disqus_shortname = 'clwaterblog';
+      var disqus_identifier = '2017/02/03/从setContentView说起/';
+
+      var disqus_title = "Android View 相关源码分析之一 从setContentView与LayoutInflater说起";
 
 
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
 
-	
+      run_disqus_script('count.js');
 
-
-
-
-
-  
-
-
-
-
-
-  
       
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
-  
-      <!-- UY BEGIN -->
-      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2140310"></script>
-      <!-- UY END -->
-  
+
+
+
+
 
 
 

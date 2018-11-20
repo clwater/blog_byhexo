@@ -11,10 +11,10 @@ categories: "Python"
 Speed Dial Plus和Earth View from Google Earth都是Chrome中的两个十分好用的新标签页插件
 
 Speed Dial Plus可以在你打开一个新的标签页的时候提供经常访问的页面的快捷方式 虽然还有很多扩展, 但是这个功能真心好用
-![Speed Dial Plus](http://ooymoxvz4.bkt.clouddn.com/17-5-18/39416953-file_1495036928867_860e.png)
+![Speed Dial Plus](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/39416953-file_1495036928867_860e.png)
 <!--more-->
 Earth View from Google Earth可以在你打开一个新的标签页的时候展示一副google earth拍摄的图片(虽然只有1500多个图片 但是每幅图都是十分别致的)
-![Earth View from Google Earth](http://ooymoxvz4.bkt.clouddn.com/17-5-18/62579920-file_1495037085098_d853.png)
+![Earth View from Google Earth](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/62579920-file_1495037085098_d853.png)
 
 
 ## 需求
@@ -29,7 +29,7 @@ Earth View from Google Earth可以在你打开一个新的标签页的时候展�
 本来是打算直接使用Chrome的开发者工具和charles直接分析网络请求，但是每次返回的图片地址都不一样只能进一步查看GoogelEarth的页面了
 如https://g.co/ev/2131 这样的短链，可以看到后面的2131这样的四位id 尝试了几次发现不是连续的。  本来打算写个脚本 验证下一定范围内哪些数字是有效的
 然后日常github 发现了[这个好东西](https://github.com/limhenry/earthview) 提供了一个一个[接口](https://raw.githubusercontent.com/limhenry/earthview/master/earthview.json)可以得到当前所有图片的信息
-![所有图片的信息](http://ooymoxvz4.bkt.clouddn.com/17-5-18/11845916-file_1495088848235_6c3c.png)
+![所有图片的信息](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/11845916-file_1495088848235_6c3c.png)
 
 可以通过这个json数据解析出所有的图片id  保存到本地作为服务器的数据源
 

@@ -168,7 +168,7 @@ categories: "android"
 
   ```
   相关inflate参数的结果
-  ![inflate参数.png](http://ooymoxvz4.bkt.clouddn.com/18-1-13/22700304.jpg)
+  ![inflate参数.png](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/22700304.jpg)
 
 4. 相关方法解析
   在Inflate中多次被调用的rInflate

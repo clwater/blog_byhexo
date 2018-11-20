@@ -38,28 +38,28 @@ pptp是一种点对点隧道协议 可以用来实现科学上网相对于ss来�
 搬瓦工有一键开启ss的功能 只是想简单的自己做个vpn没有额外其他的要求可以使用一下 十分的便捷 同样 我也会说一下手动配置的方法 也十分的便捷其实
 ### 利用ss的Shadowsocks Server一键开启vpn
 1. 进入控制台
-![进入控制台](http://ooymoxvz4.bkt.clouddn.com/18-1-13/51872827.jpg)
+![进入控制台](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/51872827.jpg)
 
 2. 对系统进行更新
-![对系统进行更新](http://ooymoxvz4.bkt.clouddn.com/18-1-13/4821245.jpg)
+![对系统进行更新](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/4821245.jpg)
 
 3. 一键生成ss服务
 
-  ![一键生成ss服务](http://ooymoxvz4.bkt.clouddn.com/18-1-13/47291324.jpg)
+  ![一键生成ss服务](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/47291324.jpg)
   选择一键生成的功能
 
-  ![成功生成](http://ooymoxvz4.bkt.clouddn.com/18-1-13/33245491.jpg)
+  ![成功生成](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/33245491.jpg)
   这个时候就说明生成成功了
 
-  ![查看信息](http://ooymoxvz4.bkt.clouddn.com/18-1-13/3453713.jpg)
+  ![查看信息](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/3453713.jpg)
   ss服务的相关配置信息
 
-  ![配置ss客户端](http://ooymoxvz4.bkt.clouddn.com/18-1-13/77964504.jpg)
+  ![配置ss客户端](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/77964504.jpg)
   下载ss客户端后创建新的连接 输入相关的信息
 
-  ![相关介绍](http://ooymoxvz4.bkt.clouddn.com/18-1-13/60933694.jpg)
+  ![相关介绍](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/60933694.jpg)
 
-  ![关闭ss](http://ooymoxvz4.bkt.clouddn.com/18-1-13/99019643.jpg)
+  ![关闭ss](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/99019643.jpg)
   不需要的时候可以点击这里关闭ss服务
 
 ### 手动配置ss服务开启vpn
@@ -117,7 +117,7 @@ pptp是一种点对点隧道协议 可以用来实现科学上网相对于ss来�
   ```
   # yum list installed ppp  //查看当前ppp版本
   ```
-  ![查看当前ppp版本](http://ooymoxvz4.bkt.clouddn.com/18-1-13/34188869.jpg)
+  ![查看当前ppp版本](https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/34188869.jpg)
 
   根据当期ppp版本选择对应的pptp版本 可以在[这里](http://poptop.sourceforge.net/yum/stable/packages/)找到对应的版本下载
 
