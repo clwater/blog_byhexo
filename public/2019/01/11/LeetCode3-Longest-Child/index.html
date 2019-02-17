@@ -1,0 +1,1187 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="算法,LeetCode," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)LeetCode:https://leetcode.com/problems/longest-substring-without-repeating-characters/
+LeetCodeCn:https://leetcode-cn.com/problems/l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)">
+<meta property="og:url" content="http://www.gengzhibo.com/2019/01/11/LeetCode3-Longest-Child/index.html">
+<meta property="og:site_name" content="Clwater Blog">
+<meta property="og:description" content="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)LeetCode:https://leetcode.com/problems/longest-substring-without-repeating-characters/
+LeetCodeCn:https://leetcode-cn.com/problems/l">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/2052140.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/97954118.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/15643611.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/24448000.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/45366813.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/56653284.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/55319490.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/83146993.jpg">
+<meta property="og:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/4364624.jpg">
+<meta property="og:updated_time" content="2019-01-10T18:27:34.887Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)">
+<meta name="twitter:description" content="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)LeetCode:https://leetcode.com/problems/longest-substring-without-repeating-characters/
+LeetCodeCn:https://leetcode-cn.com/problems/l">
+<meta name="twitter:image" content="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/2052140.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.gengzhibo.com/2019/01/11/LeetCode3-Longest-Child/"/>
+
+
+
+
+
+  <title> LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串) | Clwater Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d62d5f2846e8623f48fe847021d53b14";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Clwater Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">bug如风 常伴吾身</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Suche
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2019/01/11/LeetCode3-Longest-Child/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-11T01:04:15+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/11/LeetCode3-Longest-Child/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2019/01/11/LeetCode3-Longest-Child/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/01/11/LeetCode3-Longest-Child/" class="leancloud_visitors" data-flag-title="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="LeetCode3-Longest-Substring-Without-Repeating-Characters-无重复字符的最长子串"><a href="#LeetCode3-Longest-Substring-Without-Repeating-Characters-无重复字符的最长子串" class="headerlink" title="LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)"></a>LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)</h1><p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">LeetCode:https://leetcode.com/problems/longest-substring-without-repeating-characters/</a></p>
+<p><a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="external">LeetCodeCn:https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/</a></p>
+<h2 id="题目说明"><a href="#题目说明" class="headerlink" title="题目说明"></a>题目说明</h2><p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul>
+<li>示例 1:<ul>
+<li>输入: “abcabcbb”</li>
+<li>输出: 3</li>
+<li>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>示例 2:</p>
+<ul>
+<li>输入: “bbbbb”</li>
+<li>输出: 1</li>
+<li>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。</li>
+</ul>
+</li>
+<li><p>示例 3:</p>
+<ul>
+<li>输入: “pwwkew”</li>
+<li>输出: 3</li>
+<li>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br> 请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</li>
+</ul>
+</li>
+</ul>
+<h2 id="解题方法"><a href="#解题方法" class="headerlink" title="解题方法"></a>解题方法</h2><h3 id="日常暴力法"><a href="#日常暴力法" class="headerlink" title="日常暴力法"></a>日常暴力法</h3><p>  遍历每个元素作为一个字符串开始,查找当前字符串是否元素不重复,如果不重复则得到其长度,全部遍历得到其最长无重复自串长度.</p>
+<h3 id="滑动窗口-HaskMap辅助表"><a href="#滑动窗口-HaskMap辅助表" class="headerlink" title="滑动窗口(HaskMap辅助表)"></a>滑动窗口(HaskMap辅助表)</h3><blockquote>
+<p>HaskMap真是个好东西,最近再整理下HashMap相关的资料</p>
+</blockquote>
+<p>此方法只需要一次遍历即可,主要思路为在遍历过程中计算当前遍历位置到最后一个重复元素的下一位位置的长度(也可以说是将最后一次重复的元素的下一位作为一个子串的开始,当前遍历位置作为子串的结束,计算此子串的长度),将其与已存在的最长子串长度对比,得到当前最长未重复元素子串的长度.下面通过图示解析相关思路.</p>
+<h4 id="图解相关思路"><a href="#图解相关思路" class="headerlink" title="图解相关思路"></a>图解相关思路</h4><p>我们输入”pwwkew”作为参数,此时默认最长无重复子串长度(result)为0,HashMap辅助表check为空.</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/2052140.jpg" alt="输入条件"></p>
+<p>默认遍历位置i = 0, 默认最后一个重复元素的下一位位置index = 0;</p>
+<p>查找辅助表check中不存在i位置对应的元素p</p>
+<p>当前最长无重复元素子串长度result = i(0) - index(0) + 1 = 1</p>
+<p>更新check表,将(p,0)加入到check表中</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/97954118.jpg" alt="i=0"></p>
+<p>继续遍历此串,当i = 1时,check中依旧查找不到i位置对应的元素w</p>
+<p>result = i(1) - index(0) + 1 = 2</p>
+<p>更新check表,将(w,1)加入到check表中</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/15643611.jpg" alt="i=1"></p>
+<p>继续遍历当i = 2时,此时i对应的元素w在check表中可以被找到,说明此元素是一个重复元素,我们需要更新index的值,在这里我们比较当前index的值和check中出现的最后一次重复元素的下一位中的较大值(防止”abba”这样的在遍历最后一个a的时候取到首位a的位置).</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/24448000.jpg" alt="i=2(0)"></p>
+<p>此时index = max(index(0), check.get(key(“w”)) (1 + 1 = 2)) = 2</p>
+<p>计算当前的result = i(2) - index(2) + 1 = 1,小于之前的result(2),此时result依然为2.</p>
+<p>更新check表的内容,将key为w的value更改为2<br><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/45366813.jpg" alt="i=2(1)"></p>
+<p>继续遍历,当i = 3时,check表中找不到’k’</p>
+<p>result = i(3) - index(2) + 1 = 2</p>
+<p>更新check表,将(k,3)加入到check表中</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/56653284.jpg" alt="i=3"></p>
+<p>继续遍历,当i = 4时,check表中找不到’e’</p>
+<p>result = i(4) - index(2) + 1 = 3, 此时的result大于原有的result,则更新result的值为3</p>
+<p>更新check表,将(e,4)加入到check表中</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/55319490.jpg" alt="i=4"></p>
+<p>继续遍历当i = 5时,此时i对应的元素w在check表中可以被找到,</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/83146993.jpg" alt="i=5(0)"></p>
+<p>此时index = max(index(5), check.get(key(“w”)) (2 + 1 = 3)) = 5</p>
+<p>计算当前的result = i(5) - index(2) + 1 = 3,大于之前的result(2),此时result更新为3.</p>
+<p>更新check表的内容,将key为w的value更改为5</p>
+<p><img src="http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-11/4364624.jpg" alt="i=5(1)"></p>
+<p>至此,遍历结束,此时reslut的值就是s中最长为重复子串的长度.</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">    Map&lt;Character, Integer&gt; check = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, index = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</div><div class="line">        <span class="keyword">if</span> (check.containsKey(s.charAt(i)))&#123;</div><div class="line">            index = Math.max(index, check.get(s.charAt(i)) + <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        result = Math.max(result, i - index + <span class="number">1</span>);</div><div class="line">        check.put(s.charAt(i), i);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/clwater/Code/blob/master/src/LongestSubstringWithoutRepeatingCharacters.java" target="_blank" rel="external">相关代码</a>欢迎大家关注并提出改进的建议</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/09/LeetCode2-Add-two-numbers/" rel="next" title="LeetCode2: Add two numbers(两数相加)">
+                <i class="fa fa-chevron-left"></i> LeetCode2: Add two numbers(两数相加)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/11/Leetcode5-LongestPalindromicSubstring/" rel="prev" title="Leetcode5: Longest Palindromic Substring(最长回文子串)">
+                Leetcode5: Longest Palindromic Substring(最长回文子串) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/myicon.jpeg"
+               alt="clwater" />
+          <p class="site-author-name" itemprop="name">clwater</p>
+          <p class="site-description motion-element" itemprop="description">日常写bug 顺便留点痕迹</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">Kategorien</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/clwater" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://gitbug.top" target="_blank" title="BookLibrary">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                  BookLibrary
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/suoldevil19" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/gengzhibo/activities" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Zhihu
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="gengzhibo@gengzhibo.net" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/clwater_gzb" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode3-Longest-Substring-Without-Repeating-Characters-无重复字符的最长子串"><span class="nav-number">1.</span> <span class="nav-text">LeetCode3:Longest Substring Without Repeating Characters(无重复字符的最长子串)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目说明"><span class="nav-number">1.1.</span> <span class="nav-text">题目说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">1.2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解题方法"><span class="nav-number">1.3.</span> <span class="nav-text">解题方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日常暴力法"><span class="nav-number">1.3.1.</span> <span class="nav-text">日常暴力法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑动窗口-HaskMap辅助表"><span class="nav-number">1.3.2.</span> <span class="nav-text">滑动窗口(HaskMap辅助表)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图解相关思路"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">图解相关思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<!-- 不蒜子计数初始值纠正 -->
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var int = setInterval(fixCount, 100);
+        var busuanziSiteOffset = 11452;
+        var busuanziSitePople = 3037;
+        function fixCount() {
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                clearInterval(int);
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSitePople);
+            }
+        }
+    });
+</script>
+
+
+<br/>
+<br/>
+<br/>
+
+<div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">clwater</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+<br/>
+
+<span id="busuanzi_container_site_pv" style='display:none'>
+    Total:&nbsp&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp&nbspviews.
+</span>&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp</b>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    Total:&nbsp&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp&nbsppople.
+</span>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93779, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 93779, xid: "2019/01/11/LeetCode3-Longest-Child/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93779/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("XUzGKfuL0SWqGNbAtiml2AoK-gzGzoHsz", "QabKH7LligrztykhrA1kWPqj");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

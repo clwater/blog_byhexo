@@ -1,11 +1,11 @@
 ---
-title: 'LeetCode: Two sum(两数之和)'
+title: 'LeetCode 1: Two sum(两数之和)'
 date: 2019-01-08 22:52:01
 tags: ["算法" , "LeetCode"]
 categories : "LeetCode"
 ---
 
-# LeetCode: Two sum(两数之和)
+# LeetCode-1: Two sum(两数之和)
 
 > 日常新坑,沉迷学习,无法自拔
 
@@ -54,7 +54,7 @@ categories : "LeetCode"
 ![i=2](http://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/19-1-8/33350674.jpg)
 
 #### 代码实现
-```
+```java
 public int[] twoSum(int[] nums, int target) {
     HashMap<Integer, Integer> check = new HashMap<>();
     int[] position = new int[2];

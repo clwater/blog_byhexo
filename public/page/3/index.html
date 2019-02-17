@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -106,7 +106,7 @@
     motion: true,
     duoshuo: {
       userId: 'undefined',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -129,7 +129,7 @@
   <title> Clwater Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
 
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archiv
           </a>
         </li>
       
@@ -218,7 +218,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            分类
+            Kategorien
           </a>
         </li>
       
@@ -228,7 +228,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -238,7 +238,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于我
+            Über
           </a>
         </li>
       
@@ -251,7 +251,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            搜索
+            Suche
           </a>
         </li>
       
@@ -294,7 +294,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/LinearLayout 源码分析/">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/10/04/RpgMaker教程3/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="clwater">
@@ -319,8 +319,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/03/LinearLayout 源码分析/" itemprop="url">
-                  Android View 相关源码分析之四 LinearLayout源码分析
+                <a class="post-title-link" href="/2017/10/04/RpgMaker教程3/" itemprop="url">
+                  RpgMaker教程3
                 </a>
               
             
@@ -334,10 +334,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T17:55:53+08:00">
-                2017-02-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T17:05:26+08:00">
+                2017-10-04
               </time>
             
 
@@ -355,12 +355,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/RpgMaker-教程/" itemprop="url" rel="index">
+                    <span itemprop="name">RpgMaker 教程</span>
                   </a>
                 </span>
 
@@ -372,15 +372,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/03/LinearLayout 源码分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/LinearLayout 源码分析/" itemprop="commentCount"></span>
+                <a href="/2017/10/04/RpgMaker教程3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/04/RpgMaker教程3/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -388,13 +390,13 @@
 
           
           
-             <span id="/2017/02/03/LinearLayout 源码分析/" class="leancloud_visitors" data-flag-title="Android View 相关源码分析之四 LinearLayout源码分析">
+             <span id="/2017/10/04/RpgMaker教程3/" class="leancloud_visitors" data-flag-title="RpgMaker教程3">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">Visitors </span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -416,186 +418,15 @@
 
       
         
-          <h2 id="LinearLayout-源码分析"><a href="#LinearLayout-源码分析" class="headerlink" title="LinearLayout 源码分析"></a>LinearLayout 源码分析</h2><h3 id="measure过程"><a href="#measure过程" class="headerlink" title="measure过程"></a>measure过程</h3><h4 id="主要过程"><a href="#主要过程" class="headerlink" title="主要过程"></a>主要过程</h4><ul>
-<li>根据布局方向选择measure过程分支</li>
-<li>初始化相关变量</li>
-<li>对View进行第一次测量</li>
-<li>mTotalLength的再次测量</li>
-<li>二次测量部分View和对为测量的子View进行测量</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/02/03/LinearLayout 源码分析/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/View 绘制源码分析/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="clwater">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/myicon.jpeg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Clwater Blog">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/03/View 绘制源码分析/" itemprop="url">
-                  Android View 相关源码分析之三 View的绘制过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T17:48:05+08:00">
-                2017-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/03/View 绘制源码分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/View 绘制源码分析/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2017/02/03/View 绘制源码分析/" class="leancloud_visitors" data-flag-title="Android View 相关源码分析之三 View的绘制过程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Android-View"><a href="#Android-View" class="headerlink" title="Android View"></a>Android View</h1><blockquote>
-<p>Android View框架相关  View的测量 布局 绘制过程<br>LinearLayout RelativeLayout实现源码分析</p>
+          <blockquote>
+<p>开始填坑的我</p>
 </blockquote>
-<h2 id="View的测量-布局-绘制过程"><a href="#View的测量-布局-绘制过程" class="headerlink" title="View的测量 布局 绘制过程"></a>View的测量 布局 绘制过程</h2><h3 id="测量之前的事情"><a href="#测量之前的事情" class="headerlink" title="测量之前的事情"></a>测量之前的事情</h3><p>View的整个绘制流程是开始于ViewRootImpl类的performTraversals方法(1k行)  根据相关设置来觉得十分要重新执行相关功能<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">performTraversals</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="comment">// cache mView since it is used so much below...</span></div><div class="line">  <span class="keyword">final</span> View host = mView;</div><div class="line">  ...</div><div class="line">  <span class="keyword">int</span> childWidthMeasureSpec = getRootMeasureSpec(mWidth, lp.width);</div><div class="line">  <span class="keyword">int</span> childHeightMeasureSpec = getRootMeasureSpec(mHeight, lp.height);</div><div class="line">  ...</div><div class="line">  <span class="comment">//measure</span></div><div class="line">  mView.measure(childWidthMeasureSpec, childHeightMeasureSpec);</div><div class="line">  ...</div><div class="line">  <span class="comment">//layout</span></div><div class="line">  mView.layout(<span class="number">0</span>, <span class="number">0</span>, mView.getMeasuredWidth(), mView.getMeasuredHeight());</div><div class="line">  ...</div><div class="line">  <span class="comment">//draw</span></div><div class="line">  mView.draw(canvas);</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="RpgMaker入门教程3"><a href="#RpgMaker入门教程3" class="headerlink" title="RpgMaker入门教程3"></a>RpgMaker入门教程3</h1><h2 id="第三回-让我们开始制作城堡"><a href="#第三回-让我们开始制作城堡" class="headerlink" title="第三回 让我们开始制作城堡"></a>第三回 让我们开始制作城堡</h2><p>在第二回中我们创建了一个新的项目 并制作了世界地图</p>
+<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/53054520.jpg" alt="第二回创建的世界地图"></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/03/View 绘制源码分析/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2017/10/04/RpgMaker教程3/#more" rel="contents">
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -635,7 +466,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/LayoutInflater/">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/08/31/中国国家气象局api数据分析/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="clwater">
@@ -660,8 +491,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/03/LayoutInflater/" itemprop="url">
-                  Android View 相关源码分析之二 继LayoutInflater来说
+                <a class="post-title-link" href="/2017/08/31/中国国家气象局api数据分析/" itemprop="url">
+                  中国国家气象局api数据分析
                 </a>
               
             
@@ -675,10 +506,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T17:39:24+08:00">
-                2017-02-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-31T22:57:44+08:00">
+                2017-08-31
               </time>
             
 
@@ -696,12 +527,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/数据收集/" itemprop="url" rel="index">
+                    <span itemprop="name">数据收集</span>
                   </a>
                 </span>
 
@@ -713,15 +544,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/03/LayoutInflater/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/LayoutInflater/" itemprop="commentCount"></span>
+                <a href="/2017/08/31/中国国家气象局api数据分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/31/中国国家气象局api数据分析/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -729,13 +562,13 @@
 
           
           
-             <span id="/2017/02/03/LayoutInflater/" class="leancloud_visitors" data-flag-title="Android View 相关源码分析之二 继LayoutInflater来说">
+             <span id="/2017/08/31/中国国家气象局api数据分析/" class="leancloud_visitors" data-flag-title="中国国家气象局api数据分析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">Visitors </span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -757,17 +590,12 @@
 
       
         
-          <h3 id="LayoutInflater源码分析"><a href="#LayoutInflater源码分析" class="headerlink" title="LayoutInflater源码分析"></a>LayoutInflater源码分析</h3><ol>
-<li><p>与setContentView相关</p>
-<p>在PhoneWindow的generateLayout中调用了     </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">View in = mLayoutInflater.inflate(layoutResource, <span class="keyword">null</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>LayoutInflater中获取实例化方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</div><div class="line"> * Obtains the LayoutInflater from the given context.</div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LayoutInflater <span class="title">from</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">    LayoutInflater LayoutInflater =</div><div class="line">            (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);</div><div class="line">    <span class="keyword">if</span> (LayoutInflater == <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> AssertionError(<span class="string">"LayoutInflater not found."</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> LayoutInflater;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <h1 id="中国国家气象局api数据分析"><a href="#中国国家气象局api数据分析" class="headerlink" title="中国国家气象局api数据分析"></a>中国国家气象局api数据分析</h1><blockquote>
+<p>天气预报是程序中很常见的功能 然而现在免费好用的天气api却很难找 不妨仔细的看一下<a href="http://m.weather.com.cn/">国家气象局</a> 本分就此网站来获取天气<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/03/LayoutInflater/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2017/08/31/中国国家气象局api数据分析/#more" rel="contents">
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -807,7 +635,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/从setContentView说起/">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/08/10/android自定义View之仪表盘/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="clwater">
@@ -832,8 +660,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/02/03/从setContentView说起/" itemprop="url">
-                  Android View 相关源码分析之一 从setContentView与LayoutInflater说起
+                <a class="post-title-link" href="/2017/08/10/android自定义View之仪表盘/" itemprop="url">
+                  Android自定义View之仪表盘
                 </a>
               
             
@@ -847,10 +675,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T17:29:24+08:00">
-                2017-02-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-10T22:33:13+08:00">
+                2017-08-10
               </time>
             
 
@@ -868,12 +696,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/android/" itemprop="url" rel="index">
-                    <span itemprop="name">android</span>
+                  <a href="/categories/Android自定义View/" itemprop="url" rel="index">
+                    <span itemprop="name">Android自定义View</span>
                   </a>
                 </span>
 
@@ -885,15 +713,17 @@
 
           
             
+            <!--noindex-->
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/03/从setContentView说起/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/02/03/从setContentView说起/" itemprop="commentCount"></span>
+                <a href="/2017/08/10/android自定义View之仪表盘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/08/10/android自定义View之仪表盘/" itemprop="commentsCount"></span>
                 </a>
               </span>
+              <!--/noindex-->
             
           
 
@@ -901,13 +731,13 @@
 
           
           
-             <span id="/2017/02/03/从setContentView说起/" class="leancloud_visitors" data-flag-title="Android View 相关源码分析之一 从setContentView与LayoutInflater说起">
+             <span id="/2017/08/10/android自定义View之仪表盘/" class="leancloud_visitors" data-flag-title="Android自定义View之仪表盘">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
                
-                 <span class="post-meta-item-text">阅读次数 </span>
+                 <span class="post-meta-item-text">Visitors </span>
                
                  <span class="leancloud-visitors-count"></span>
              </span>
@@ -929,11 +759,1218 @@
 
       
         
-          <h2 id="从setContentView与LayoutInflater说起"><a href="#从setContentView与LayoutInflater说起" class="headerlink" title="从setContentView与LayoutInflater说起"></a>从setContentView与LayoutInflater说起</h2><h3 id="setContentView分析"><a href="#setContentView分析" class="headerlink" title="setContentView分析"></a>setContentView分析</h3><h4 id="相关关系"><a href="#相关关系" class="headerlink" title="相关关系"></a>相关关系</h4><p>  <img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/61853049.jpg" alt="相关关系图"><br>
+          <h1 id="Android自定义View之仪表盘"><a href="#Android自定义View之仪表盘" class="headerlink" title="Android自定义View之仪表盘"></a>Android自定义View之仪表盘</h1><blockquote>
+<p>又是新系列（坑） 感觉都很零碎，能积累一些是一些了</p>
+</blockquote>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>随着项目开发 越来越多的需求被摆在面前 其中不免涉及到定制的功能<br>其中仪表盘也是一个很常用的功能<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/03/从setContentView说起/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2017/08/10/android自定义View之仪表盘/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/" itemprop="url">
+                  如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-17T23:56:45+08:00">
+                2017-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/" class="leancloud_visitors" data-flag-title="如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景"><a href="#如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景" class="headerlink" title="如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景"></a>如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Speed Dial Plus和Earth View from Google Earth都是Chrome中的两个十分好用的新标签页插件</p>
+<p>Speed Dial Plus可以在你打开一个新的标签页的时候提供经常访问的页面的快捷方式 虽然还有很多扩展, 但是这个功能真心好用<br><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/39416953-file_1495036928867_860e.png" alt="Speed Dial Plus"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/17/如何在SpeedDialPlus中使用EarthViewfromGoogleEarth图片作为背景/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/04/25/RpgMaker教程2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/25/RpgMaker教程2/" itemprop="url">
+                  RpgMaker入门教程2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T14:24:28+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RpgMaker-教程/" itemprop="url" rel="index">
+                    <span itemprop="name">RpgMaker 教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/25/RpgMaker教程2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/25/RpgMaker教程2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/25/RpgMaker教程2/" class="leancloud_visitors" data-flag-title="RpgMaker入门教程2">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>上一回的翻译过后发现好多迷之翻译 这里开始决定不再完全依靠原文 部分文本有所删减并增加大量个人经验</p>
+</blockquote>
+<h1 id="第二回-游戏的蓝图"><a href="#第二回-游戏的蓝图" class="headerlink" title="第二回 游戏的蓝图"></a>第二回 游戏的蓝图</h1><p>这里第二回的初学者教程</p>
+<p>在第一回中我们设计了整体的流程图</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/25/RpgMaker教程2/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/04/24/RpgMaker入门教程1/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/24/RpgMaker入门教程1/" itemprop="url">
+                  RpgMaker入门教程1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-24T11:23:46+08:00">
+                2017-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/RpgMaker-教程/" itemprop="url" rel="index">
+                    <span itemprop="name">RpgMaker 教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/24/RpgMaker入门教程1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/24/RpgMaker入门教程1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/24/RpgMaker入门教程1/" class="leancloud_visitors" data-flag-title="RpgMaker入门教程1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>RPG Maker是一个十分优秀的rpg游戏制作引擎 恩 一个被定义为游戏的游戏引擎 可以用来十分便捷的制作rpg游戏 有兴趣的可以尝试一下 满足自己想做游戏的愿望</p>
+</blockquote>
+<p>本文主要根据<a href="http://tkool.jp/products/rpgvx/lecture">官方文档</a>相关进行翻译并添加了部分个人的理解和帮助 部分文意和理解可能所有差异 欢迎讨论 翻译的主体的的是RpgMaker的VX版本 我使用的是RpgMaker的Mv版本 部分ui界面可能有所不同 基本功能都是一样的 MV版本的<a href="http://tkool.jp/mv/guide/index.html">官方初级教程</a>可以参考这里 关于RogMaker的相关版本说明可以<a href="http://tkool.jp/sp/valueplus/index">参考这里</a> 至于学习的建议 版本来说MV的版本扩展性更强 也可以适用于更多的平台 但是本教程的内容对这两个版本都是通用的</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/24/RpgMaker入门教程1/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/04/23/Hexo安装后的小问题/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/23/Hexo安装后的小问题/" itemprop="url">
+                  Hexo安装后hexo指令无法被找到的解决方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-23T14:05:36+08:00">
+                2017-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/23/Hexo安装后的小问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/04/23/Hexo安装后的小问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/04/23/Hexo安装后的小问题/" class="leancloud_visitors" data-flag-title="Hexo安装后hexo指令无法被找到的解决方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p><a href="https://hexo.io/">Hexo</a> 是一个十分便捷的博客搭建工具 但是经常会遇见安装完成后再次打开终端操作的时候提示 command not found: hexo的情况 对应的github的issues中也没有详细的解决办法在这提供一种可行的解决思路 希望能帮助到大家<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/23/Hexo安装后的小问题/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/05/vpn/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/05/vpn/" itemprop="url">
+                  在搬瓦工中搭建个人vpn(ss和pptp)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T00:08:52+08:00">
+                2017-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/05/vpn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/05/vpn/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/05/vpn/" class="leancloud_visitors" data-flag-title="在搬瓦工中搭建个人vpn(ss和pptp)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>帮助为了方便访问一些不存在的网站的你们</p>
+</blockquote>
+<h2 id="搬瓦工"><a href="#搬瓦工" class="headerlink" title="搬瓦工"></a>搬瓦工</h2><p><a href="http://bandwagonhost.com/">官方网站</a> 虽然经常连接不上  反而这个<a href="http://bwh1.net">备用地址</a>倒是连接速度很快<br>一个支持<em>ailpay</em>的国外vps 价格十分的感人 现在应该是2.99美元一个月 同时五个机房可以随意更换 也就是说可以获得五个ip地址 某些情况下十分的有用</p>
+<p>同样价格感人的还有Host1plus 2美元每月 但是线路不是很稳定详细的可以查看<a href="https://www.host1plus.com/">官方网站</a></p>
+<p>这里只是简单的介绍了两个可以通过支付宝支付的国外vps 免去了还得申请visa卡的纠结 更多详细的内容可以查看<a href="https://zhuanlan.zhihu.com/p/21872685">十个便宜VPS(国内国外)主机分享-VPS服务器建站和搭建应用服务体验</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/05/vpn/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/HierarchyViewer/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/03/HierarchyViewer/" itemprop="url">
+                  Android Tools 之一 Hierarchy Viewer
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T18:02:56+08:00">
+                2017-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/HierarchyViewer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/03/HierarchyViewer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/03/HierarchyViewer/" class="leancloud_visitors" data-flag-title="Android Tools 之一 Hierarchy Viewer">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Android-Tools-之一-Hierarchy-Viewer"><a href="#Android-Tools-之一-Hierarchy-Viewer" class="headerlink" title="Android Tools 之一 Hierarchy Viewer"></a>Android Tools 之一 Hierarchy Viewer</h1><blockquote>
+<p>本系列旨在介绍一些被忽略的优质工具 毕竟 能被当做自带的工具总有些做的比较好的地方不是</p>
+</blockquote>
+<h2 id="Hierarchy-Viewer"><a href="#Hierarchy-Viewer" class="headerlink" title="Hierarchy Viewer"></a>Hierarchy Viewer</h2><p>Hierarchy Viewer是一个可以用来查看View的使用工具 android sdk中自带</p>
+<p><a href="https://developer.android.com/studio/profile/optimize-ui.html#lint">Optimizing Your UI -官方网站 需科学上网</a></p>
+<h3 id="启动Hierarchy-Viewer"><a href="#启动Hierarchy-Viewer" class="headerlink" title="启动Hierarchy Viewer"></a>启动Hierarchy Viewer</h3><p>hierarchyviewer工具在sdk/tools路径下<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/03/HierarchyViewer/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/02/03/RelativeLayout 源码分析/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="clwater">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/myicon.jpeg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Clwater Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Clwater Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/03/RelativeLayout 源码分析/" itemprop="url">
+                  Android View 相关源码分析之五 RelativeLayout 源码分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-03T17:59:16+08:00">
+                2017-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/03/RelativeLayout 源码分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/02/03/RelativeLayout 源码分析/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/03/RelativeLayout 源码分析/" class="leancloud_visitors" data-flag-title="Android View 相关源码分析之五 RelativeLayout 源码分析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="RelativeLayout-源码分析"><a href="#RelativeLayout-源码分析" class="headerlink" title="RelativeLayout  源码分析"></a>RelativeLayout  源码分析</h2><blockquote>
+<p>继承自ViewGroup 没有重载onDraw方法 内部子View又是相对 只要计算出View的坐标 layout过程同样简单</p>
+</blockquote>
+<h3 id="measure过程"><a href="#measure过程" class="headerlink" title="measure过程"></a>measure过程</h3><h4 id="主要过程"><a href="#主要过程" class="headerlink" title="主要过程"></a>主要过程</h4><ol>
+<li>将内部View根据纵向关系和横向关系排序</li>
+<li>初始化相关变量</li>
+<li>遍历水平关系的View</li>
+<li>遍历竖直关系的View</li>
+<li>baseline计算</li>
+<li><p>宽度和高度修正</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/02/03/RelativeLayout 源码分析/#more" rel="contents">
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -968,7 +2005,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1011,8 +2048,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">24</span>
-                <span class="site-state-item-name">日志</span>
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1020,8 +2057,8 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">分类</span>
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -1029,8 +2066,8 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">29</span>
-                <span class="site-state-item-name">标签</span>
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -1151,7 +2188,7 @@
 <div class="copyright" >
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1159,10 +2196,10 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
@@ -1264,28 +2301,30 @@
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'clwaterblog';
-      var disqus_identifier = 'page/3/index.html';
-
-      var disqus_title = "";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
+	
 
-      
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
 
-    </script>
-  
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93779, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93779/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
 
 
 
