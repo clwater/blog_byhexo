@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[Leetcode70-ClimbingStairs(爬楼梯)]]></title>
+      <url>%2F2019%2F02%2F20%2FLeetCode70-ClimbingStairs%2F</url>
+      <content type="text"><![CDATA[Leetcode70-ClimbingStairs(爬楼梯)LeetCode:https://leetcode-cn.com/climbing-stairs/ LeetCodeCn:https://leetcode-cn.com/climbing-stairs/ 题目描述假设你正在爬楼梯。需要 n 阶你才能到达楼顶。每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？注意：给定 n 是一个正整数。 示例 示例 1： 输入： 2 输出： 2 解释： 有两种方法可以爬到楼顶。 1 阶 + 1 阶 2 阶 示例 2： 输入： 3 输出： 3 解释： 有三种方法可以爬到楼顶。 1 阶 + 1 阶 + 1 阶 1 阶 + 2 阶 2 阶 + 1 阶 解题思路-迭代法一道很经典的题,这个题可以转化为求斐波那契数列数列第n项的问题.可以才用递归的方法,不过在递归的过程中有大量的重复计算导致其性能一般(可以通过设置计算缓存来避免). 初次之外,还可以用迭代的方法来降低消耗的资源. 原理很简单,应为斐波那契数列从第三项起,其值为前两项的和,我们可以通过不断的计算前两项和,并更新前两项的数据来获得最新项的值 图解相关思路下面我们给出斐波那契数列数列的前十项,并令a为第一项(0),b为第二项(1) 当我们求第三项的时候,我们先创建一个临时变量用于储存a,将a指向b,将b指向下一位(应计算的位置),并将原来的b值和变化前的a值(temp).简单来说就是将a和b都向后移动了一位 计算第四项及以后各项均类似,通过更改自身的值,并不断的去计算新的内容 代码实现123456789101112public int climbStairs(int n) &#123; if (n == 0) &#123; return 0; &#125; int a = 0, b = 1; for (int i = 0; i &lt; n; i++) &#123; int temp = a; a = b; b += temp; &#125; return b;&#125; 相关代码欢迎大家关注并提出改进的建议]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[LeetCode58-LengthOfLastWord(最后一个单词的长度)]]></title>
+      <url>%2F2019%2F02%2F19%2FLeetCode58-LengthOfLastWord%2F</url>
+      <content type="text"><![CDATA[LeetCode58-LengthOfLastWord(最后一个单词的长度)LeetCode:https://leetcode-cn.com/length-of-last-word/ LeetCodeCn:https://leetcode-cn.com/length-of-last-word/ 题目描述给定一个仅包含大小写字母和空格 ‘ ‘ 的字符串，返回其最后一个单词的长度。如果不存在最后一个单词，请返回 0 。 说明：一个单词是指由字母组成，但不包含任何空格的字符串。 示例 输入: “Hello World” 输出: 5 思路很简单的一道题,主要是测试用例中’ ‘引起的各种问题,我们可以通过trim去除首位的’ ‘,然后再通过split截断’ ‘,返回最后一个字符串的长度即可. 代码实现12345678public int lengthOfLastWord(String s) &#123; s = s.trim(); String[] strs = s.split(" "); if (strs.length == 0)&#123; return 0; &#125; return strs[strs.length - 1].length();&#125; 相关代码欢迎大家关注并提出改进的建议]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[LeetCode53-MaximumSubarray(最大子序和)]]></title>
+      <url>%2F2019%2F02%2F18%2FLeetCode53-MaximumSubarray%2F</url>
+      <content type="text"><![CDATA[LeetCode53-MaximumSubarray(最大子序和)LeetCode:https://leetcode-cn.com/problems/maximum-subarray/ LeetCodeCn:https://leetcode-cn.com/problems/maximum-subarray/ 题目描述给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。 示例: 输入: [-2,1,-3,4,-1,2,1,-5,4], 输出: 6 解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。 解题思路-分治此条件下,我们可以发现连续子数组的序列和最大的时候其首位不能为负数,原因很简单,如果首位为负数,当拿掉首位时,其剩余的数组和必然会增大.同理可扩展,如果某几项的和为负数时,则这几个数也不能作为和最大的子数组的开始 当了解了以上的内容时,我们可以采用分治的方法来解决此问题.我们已一个非负数为开始,直到和为负数为结束,再此过程中比较其和的最大值并记录,重复以上过程直到遍历到数组结束. 图解相关思路下面已[-2,1,-3,4,-1,2,1,-5,4]为例,我们需要通过i遍历一次nums的内容,额外使用sum用来记录当前子数组的和(默认为0),result为遍历过程中遇到的最大和(默认为nums[0]) 当i=0时,sum不大于0,我们要已此位(i=0)为子数组的开始,同时例行检查result和sum的关系 当i=1时,此时sum=-2,要小于0,此时和为-2的子数组[-2]不能为最大子数组的开始,将sum更新为num=1,result更新为1 当i=2时,此时sum=1,要大于0,sum要+=num为-2 当i=3是,此时sum为-2,我们需要将此为作为新的子序列的开始,相关变化如下图 当i=4,5,6,7,8时,sum均大于0,检测result和sum值即可 代码实现1234567891011121314151617public int maxSubArray(int[] nums) &#123; int result = nums[0]; int sum = 0; for (int i = 0 ; i &lt; nums.length ; i++)&#123; if (sum &gt; 0)&#123; sum += nums[i]; &#125;else &#123; sum = nums[i]; &#125; if (sum &gt; result)&#123; result = sum; &#125; &#125; return result;&#125; 相关代码欢迎大家关注并提出改进的建议]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[LeetCode27-RemoveElement(移除元素)]]></title>
       <url>%2F2019%2F02%2F17%2FLeetCode27-RemoveElement%2F</url>
       <content type="text"><![CDATA[LeetCode27-RemoveElement(移除元素)LeetCode:https://leetcode-cn.com/problems/remove-element/ LeetCodeCn:https://leetcode-cn.com/problems/remove-element/ 题目描述给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。 示例 示例 1: 给定 nums = [3,2,2,3], val = 3, 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。 你不需要考虑数组中超出新长度后面的元素。 示例 2: 给定 nums = [0,1,2,2,3,0,4,2], val = 2, 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。 注意这五个元素可为任意顺序。 你不需要考虑数组中超出新长度后面的元素。 解题方法-双指针应为可以更改其中数据的顺序并且需要原地修改内容,类似’删除排序数组中的重复项’中双指针的方法,不过这里我们的两个指针分别从数组头(l)和数组尾(r)向中心移动校验,当l遇到需要移除的元素时,之间将其内容更换为r所指向的内容,并将r向中心移动,当l指向的内容非需要移除的内容时,将l向中心移动,知道l在r的右侧 图解相关思路下面我们以[0,1,2,2,3,0,4,2],删除2内容为例.l为左侧指针,默认为数组首位,r为右侧指针默认为数组末位.两个指针都向中心移动 当l指向的元素(0,1)不为需要移除的元素(2)时,仅移动l指针 当l指向2时,移动r所指向的元素(2)到l的位置,并仅移动r指针(l指针不移动,下次验证l的时候会对移动来的数据进行校验) 当我们再次校验l的内容时,将r指向的4移动到原来l指向的内容2中,并仅移动r指针 我们再次校验l的内容,发现不需要更改,仅移动l指针即可 类似的,更改下一次l内容为r的内容 知道l指针的位置不在r的左侧,此时r的位置就是此数组的有效位置 代码实现12345678910111213public int removeElement(int[] nums, int val) &#123; int l = 0; int r = nums.length; while (l &lt; r)&#123; if (nums[l] == val)&#123; nums[l] = nums[r - 1]; r--; &#125;else &#123; l++; &#125; &#125; return r;&#125; 相关代码欢迎大家关注并提出改进的建议]]></content>
