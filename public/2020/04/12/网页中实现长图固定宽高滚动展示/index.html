@@ -95,48 +95,26 @@
 
 
 
-  <meta name="description" content="RpgMaker教程5Step11 让我们创造一个英雄角色在RpgMaker的数据库中默认初始化设置了一些数据,例如角色,怪物等数据. 打开游戏中的数据库">
+  <meta name="description" content="网页中实现长图固定宽高滚动展示 最近的事情比较多, 不能体系的整理相关资料, 所以开始多做一些小功能和解决小问题.    问题的来源是做网站的时候需要实现一个比较长的图片, 固定宽度, 默认显示图片顶部的内容, 图片有最大的高度, 当超过最大的高度的时候可以滚动展示. 避免整个页面因为图片拉伸的过长. 功能比较简陋也比较简单, 不过我在实现的时候耽误了不短的时间. 记录一下,简单的问题有时候思路容">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RpgMaker教程5">
-<meta property="og:url" content="http://www.gengzhibo.com/2017/10/06/RpgMaker教程5/index.html">
+<meta property="og:title" content="网页中实现长图固定宽高滚动展示">
+<meta property="og:url" content="http://www.gengzhibo.com/2020/04/12/网页中实现长图固定宽高滚动展示/index.html">
 <meta property="og:site_name" content="Clwater Blog">
-<meta property="og:description" content="RpgMaker教程5Step11 让我们创造一个英雄角色在RpgMaker的数据库中默认初始化设置了一些数据,例如角色,怪物等数据. 打开游戏中的数据库">
+<meta property="og:description" content="网页中实现长图固定宽高滚动展示 最近的事情比较多, 不能体系的整理相关资料, 所以开始多做一些小功能和解决小问题.    问题的来源是做网站的时候需要实现一个比较长的图片, 固定宽度, 默认显示图片顶部的内容, 图片有最大的高度, 当超过最大的高度的时候可以滚动展示. 避免整个页面因为图片拉伸的过长. 功能比较简陋也比较简单, 不过我在实现的时候耽误了不短的时间. 记录一下,简单的问题有时候思路容">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/22028.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/42542596.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/894305.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/16724796.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/71726307.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/55925694.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/53965285.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/15362978.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/93210400.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/81607793.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/99759838.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/14243586.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/83684284.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/42873202.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/3792988.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/90806645.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/96995937.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/28111494.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/93585120.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/27242709.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/87720825.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/77422347.jpg">
-<meta property="og:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/50304687.jpg">
-<meta property="og:updated_time" content="2020-03-13T09:33:05.454Z">
+<meta property="og:image" content="https://update-image.oss-cn-shanghai.aliyuncs.com/pic/20200412054145.gif">
+<meta property="og:updated_time" content="2020-04-11T21:46:07.973Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RpgMaker教程5">
-<meta name="twitter:description" content="RpgMaker教程5Step11 让我们创造一个英雄角色在RpgMaker的数据库中默认初始化设置了一些数据,例如角色,怪物等数据. 打开游戏中的数据库">
-<meta name="twitter:image" content="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/22028.jpg">
+<meta name="twitter:title" content="网页中实现长图固定宽高滚动展示">
+<meta name="twitter:description" content="网页中实现长图固定宽高滚动展示 最近的事情比较多, 不能体系的整理相关资料, 所以开始多做一些小功能和解决小问题.    问题的来源是做网站的时候需要实现一个比较长的图片, 固定宽度, 默认显示图片顶部的内容, 图片有最大的高度, 当超过最大的高度的时候可以滚动展示. 避免整个页面因为图片拉伸的过长. 功能比较简陋也比较简单, 不过我在实现的时候耽误了不短的时间. 记录一下,简单的问题有时候思路容">
+<meta name="twitter:image" content="https://update-image.oss-cn-shanghai.aliyuncs.com/pic/20200412054145.gif">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.gengzhibo.com/2017/10/06/RpgMaker教程5/">
+  <link rel="canonical" href="http://www.gengzhibo.com/2020/04/12/网页中实现长图固定宽高滚动展示/">
 
 
 
@@ -146,7 +124,7 @@
   };
 </script>
 
-  <title>RpgMaker教程5 | Clwater Blog</title>
+  <title>网页中实现长图固定宽高滚动展示 | Clwater Blog</title>
   
 
 
@@ -409,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2017/10/06/RpgMaker教程5/">
+    <link itemprop="mainEntityOfPage" href="http://www.gengzhibo.com/2020/04/12/网页中实现长图固定宽高滚动展示/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="clwater">
@@ -426,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RpgMaker教程5
+          <h1 class="post-title" itemprop="name headline">网页中实现长图固定宽高滚动展示
 
               
             
@@ -452,47 +430,17 @@
                 
               
 
-              <time title="Created: 2017-10-06 21:14:13" itemprop="dateCreated datePublished" datetime="2017-10-06T21:14:13+08:00">2017-10-06</time>
+              <time title="Created: 2020-04-12 05:33:55 / Modified: 05:46:07" itemprop="dateCreated datePublished" datetime="2020-04-12T05:33:55+08:00">2020-04-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-03-13 17:33:05" itemprop="dateModified" datetime="2020-03-13T17:33:05+08:00">2020-03-13</time>
               
             
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RpgMaker-教程/" itemprop="url" rel="index"><span itemprop="name">RpgMaker 教程</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -501,7 +449,7 @@
 
           
           
-            <span id="/2017/10/06/RpgMaker教程5/" class="leancloud_visitors" data-flag-title="RpgMaker教程5">
+            <span id="/2020/04/12/网页中实现长图固定宽高滚动展示/" class="leancloud_visitors" data-flag-title="网页中实现长图固定宽高滚动展示">
               <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -532,89 +480,14 @@
       
 
       
-        <h1 id="RpgMaker教程5"><a href="#RpgMaker教程5" class="headerlink" title="RpgMaker教程5"></a>RpgMaker教程5</h1><h2 id="Step11-让我们创造一个英雄角色"><a href="#Step11-让我们创造一个英雄角色" class="headerlink" title="Step11 让我们创造一个英雄角色"></a>Step11 让我们创造一个英雄角色</h2><p>在RpgMaker的数据库中默认初始化设置了一些数据,例如角色,怪物等数据.</p>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/22028.jpg" alt="打开游戏的数据库"><br>打开游戏中的数据库<br><a id="more"></a></p>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/42542596.jpg" alt="数据库页面"></p>
-<center>数据库页面,根据版本或者设置不同,可能部分数据不同</center>
-
-<h3 id="创建应该一个新的角色"><a href="#创建应该一个新的角色" class="headerlink" title="创建应该一个新的角色"></a>创建应该一个新的角色</h3><p>我们可以在”数据库”中的”角色”标签中对角色进行编辑.</p>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/894305.jpg" alt="变更角色最大数量"></p>
-<p>我们在左下方的部分可以设置最大角色数量.当前是1,如果想要设置更多的角色,要先修改最大角色数量.如果我们创建一个新的角色,就先将最大角色设置为2.</p>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/16724796.jpg" alt="设置最大角色数量为2"></p>
-<center>设置最大角色数量为2</center>
-
-<p>设置最大角色数量为2,新的角色还没有设置内容,所以只显示了”0002”</p>
-<h3 id="设置角色名称"><a href="#设置角色名称" class="headerlink" title="设置角色名称"></a>设置角色名称</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/71726307.jpg" alt="设置角色名称"></p>
-<center>设置角色名称</center>
-
-<p>我们设置角色的名称为”王富贵”,我们还可以设置角色的昵称和简称的内容.</p>
-<h3 id="设置角色形象"><a href="#设置角色形象" class="headerlink" title="设置角色形象"></a>设置角色形象</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/55925694.jpg" alt="设置角色图像"></p>
-<center>设置角色图像</center>
-
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/53965285.jpg" alt="设置角色脸图"></p>
-<center>设置角色脸图</center>
-
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/15362978.jpg" alt="设置角色行走图"></p>
-<center>设置角色行走图</center>
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/93210400.jpg" alt="设置角色战斗图"></p>
-<center>设置角色战斗图</center>
-
-<p>通过双击”角色”标签”图像”位置的三个不同图像部分来设置不同需求时的图像.</p>
-<h3 id="设置角色职业"><a href="#设置角色职业" class="headerlink" title="设置角色职业"></a>设置角色职业</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/81607793.jpg" alt="设置角色职业"></p>
-<p>通过下拉菜单来选择默认提供的几个职业.</p>
-<h3 id="设置职业信息"><a href="#设置职业信息" class="headerlink" title="设置职业信息"></a>设置职业信息</h3><blockquote>
-<p>不同版本的面板有做不同 已mv版本为主.</p>
+        <h1 id="网页中实现长图固定宽高滚动展示"><a href="#网页中实现长图固定宽高滚动展示" class="headerlink" title="网页中实现长图固定宽高滚动展示"></a>网页中实现长图固定宽高滚动展示</h1><blockquote>
+<p>最近的事情比较多, 不能体系的整理相关资料, 所以开始多做一些小功能和解决小问题.  </p>
 </blockquote>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/99759838.jpg" alt="数据库职业标签"></p>
-<center>数据库职业标签</center>
-
-<h4 id="设置经验值曲线"><a href="#设置经验值曲线" class="headerlink" title="设置经验值曲线"></a>设置经验值曲线</h4><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/14243586.jpg" alt="经验值曲线"></p>
-<center>经验值曲线</center>
-
-<p>我们可以根据需求和职业特色来针对不同的职业设置不同的经验曲线</p>
-<h4 id="设置能力曲线"><a href="#设置能力曲线" class="headerlink" title="设置能力曲线"></a>设置能力曲线</h4><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/83684284.jpg" alt="能力曲线"></p>
-<center>能力缺陷</center>
-
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/42873202.jpg" alt="能力值设置"></p>
-<center>能力值设置</center>
-
-<p>同样可以通过各种参数设置具有职业特色职业能力曲线.</p>
-<h4 id="设置职业技能"><a href="#设置职业技能" class="headerlink" title="设置职业技能"></a>设置职业技能</h4><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/3792988.jpg" alt="设置职业技能"></p>
-<center>设置职业技能</center>
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/90806645.jpg" alt="数据库技能标签"></p>
-<center>数据库技能标签</center>
-
-<p>关于角色的技能可以通过技能标签页面来进行修改.</p>
-<h3 id="设置角色初始装备"><a href="#设置角色初始装备" class="headerlink" title="设置角色初始装备"></a>设置角色初始装备</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/96995937.jpg" alt="角色初始装备"></p>
-<center>角色初始装备</center>
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/28111494.jpg" alt="武器标签页"></p>
-<center>武器标签页</center>
-
-<p>可以切换到武器标签页对武器进行编辑,针对不同的角色可以针对的设置不同的初始武器.</p>
-<h3 id="设置角色特性"><a href="#设置角色特性" class="headerlink" title="设置角色特性"></a>设置角色特性</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/93585120.jpg" alt="角色特性面板"></p>
-<center>角色特性面板</center>
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/27242709.jpg" alt="设置角色特性"></p>
-<center>设置角色特性</center>
-
-<h3 id="设置初始角色队伍"><a href="#设置初始角色队伍" class="headerlink" title="设置初始角色队伍"></a>设置初始角色队伍</h3><p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/87720825.jpg" alt="系统页面"></p>
-<center>系统页面</center>
-
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/77422347.jpg" alt="初始队伍编辑"></p>
-<center>初始队伍编辑</center>
-
-<p>选择”系统”标签页,可以看到初始队伍的面板,右键已经添加的角色,可以对初始队伍的角色进行编辑和删除.</p>
-<p>设置成功并保存后,让我们进入游戏打开菜单,测试一下我们的初始队伍是否和期望的一样.</p>
-<p><img src="https://qiniu-ali-oss.oss-cn-hangzhou.aliyuncs.com/qiniuold/50304687.jpg" alt="游戏中的菜单页面"></p>
-<center>游戏中的菜单页面</center>
-
-<p>可以看到,我们针对初始队伍的设置是成功的.</p>
+<p>问题的来源是做网站的时候需要实现一个比较长的图片, 固定宽度, 默认显示图片顶部的内容, 图片有最大的高度, 当超过最大的高度的时候可以滚动展示. 避免整个页面因为图片拉伸的过长.</p>
+<p>功能比较简陋也比较简单, 不过我在实现的时候耽误了不短的时间. 记录一下,简单的问题有时候思路容易陷入胡同中导致迟迟不能解决. 这里记录下, 希望可能帮到有需要的人</p>
+<p>下面直接看下效果图</p>
+<p><img src="https://update-image.oss-cn-shanghai.aliyuncs.com/pic/20200412054145.gif" alt="git"></p>
+<p>demo 比较简陋, 效果也很简单<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 1000px; height: 400px; overflow-y: auto;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://image"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">style</span>=<span class="string">"width: 100%; overflow-y: auto;"</span>    </span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -699,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/04/RpgMaker教程4/" rel="next" title="RpgMaker教程4">
-                <i class="fa fa-chevron-left"></i> RpgMaker教程4
+              <a href="/2020/03/19/公告/" rel="next" title="公告">
+                <i class="fa fa-chevron-left"></i> 公告
               </a>
             
           </div>
@@ -708,10 +581,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/04/https/" rel="prev" title="Https从了解到算了">
-                Https从了解到算了 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -993,7 +862,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RpgMaker教程5"><span class="nav-number">1.</span> <span class="nav-text">RpgMaker教程5</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step11-让我们创造一个英雄角色"><span class="nav-number">1.1.</span> <span class="nav-text">Step11 让我们创造一个英雄角色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建应该一个新的角色"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建应该一个新的角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置角色名称"><span class="nav-number">1.1.2.</span> <span class="nav-text">设置角色名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置角色形象"><span class="nav-number">1.1.3.</span> <span class="nav-text">设置角色形象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置角色职业"><span class="nav-number">1.1.4.</span> <span class="nav-text">设置角色职业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置职业信息"><span class="nav-number">1.1.5.</span> <span class="nav-text">设置职业信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置经验值曲线"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">设置经验值曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置能力曲线"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">设置能力曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置职业技能"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">设置职业技能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置角色初始装备"><span class="nav-number">1.1.6.</span> <span class="nav-text">设置角色初始装备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置角色特性"><span class="nav-number">1.1.7.</span> <span class="nav-text">设置角色特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置初始角色队伍"><span class="nav-number">1.1.8.</span> <span class="nav-text">设置初始角色队伍</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网页中实现长图固定宽高滚动展示"><span class="nav-number">1.</span> <span class="nav-text">网页中实现长图固定宽高滚动展示</span></a></li></ol></div>
             
 
           </div>
@@ -1176,7 +1045,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2017/10/06/RpgMaker教程5/'
+    refer: '2020/04/12/网页中实现长图固定宽高滚动展示/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

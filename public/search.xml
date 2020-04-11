@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[网页中实现长图固定宽高滚动展示]]></title>
+      <url>%2F2020%2F04%2F12%2F%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%AE%9E%E7%8E%B0%E9%95%BF%E5%9B%BE%E5%9B%BA%E5%AE%9A%E5%AE%BD%E9%AB%98%E6%BB%9A%E5%8A%A8%E5%B1%95%E7%A4%BA%2F</url>
+      <content type="text"><![CDATA[网页中实现长图固定宽高滚动展示 最近的事情比较多, 不能体系的整理相关资料, 所以开始多做一些小功能和解决小问题. 问题的来源是做网站的时候需要实现一个比较长的图片, 固定宽度, 默认显示图片顶部的内容, 图片有最大的高度, 当超过最大的高度的时候可以滚动展示. 避免整个页面因为图片拉伸的过长. 功能比较简陋也比较简单, 不过我在实现的时候耽误了不短的时间. 记录一下,简单的问题有时候思路容易陷入胡同中导致迟迟不能解决. 这里记录下, 希望可能帮到有需要的人 下面直接看下效果图 demo 比较简陋, 效果也很简单12345&lt;div style="width: 1000px; height: 400px; overflow-y: auto;"&gt; &lt;img src="http://image" style="width: 100%; overflow-y: auto;" /&gt;&lt;/div&gt;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[公告]]></title>
       <url>%2F2020%2F03%2F19%2F%E5%85%AC%E5%91%8A%2F</url>
       <content type="text"><![CDATA[#公告 为啥换回来了, 主要是之前用的halo的服务器… 那天测其它东西的时候忘记了服务器还有halo的docker, 服务器已经删除了, 数据也找不回来了…… 后期有时间再继续优化]]></content>
