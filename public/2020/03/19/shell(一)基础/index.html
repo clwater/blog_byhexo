@@ -495,7 +495,7 @@
   <a id="more"></a>
 <h2 id="shell和bash的区别"><a href="#shell和bash的区别" class="headerlink" title="shell和bash的区别"></a>shell和bash的区别</h2><p>这两个是包含的关系,bash是shell的一种,其中linux默认的shell就是bash.</p>
 <p>bash可以说是shell的脚本解释器</p>
-<h2 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/usr/bin/env bash</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">像前面所说的,bash是shell的脚本解释器. </span></span><br><span class="line"><span class="meta">#</span><span class="bash">这种写法可以最大程度的避免夸平台下脚本无法运行的问题</span></span><br><span class="line"><span class="meta">#</span><span class="bash">后面相关文件均使用此默认配置</span></span><br><span class="line"></span><br><span class="line">echo "Hello World"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span>是shell中的输出方法</span></span><br></pre></td></tr></table></figure>
+<h2 id="第一个shell脚本"><a href="#第一个shell脚本" class="headerlink" title="第一个shell脚本"></a>第一个shell脚本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/usr/bin/env bash</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>像前面所说的,bash是shell的脚本解释器. </span><br><span class="line"><span class="meta">#</span>这种写法可以最大程度的避免夸平台下脚本无法运行的问题</span><br><span class="line"><span class="meta">#</span>后面相关文件均使用此默认配置</span><br><span class="line"></span><br><span class="line">echo "Hello World"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> echo是shell中的输出方法</span><br></pre></td></tr></table></figure>
 <p>至此 一个最简单的shell脚本就完成了,我么可以在终端中运行查看效果</p>
 <p><img src="https://user-gold-cdn.xitu.io/2019/8/13/16c8b797f393d980?w=726&amp;h=115&amp;f=png&amp;s=88801" alt="1"><br>(在初次运行中可能出现permission denied的情况, 对应的增加权限即可)</p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name='clwater'</span><br><span class="line"></span><br><span class="line">echo $name</span><br><span class="line">echo "$name"</span><br><span class="line">echo "$&#123;name&#125;!"</span><br><span class="line"></span><br><span class="line">echo '$name'</span><br></pre></td></tr></table></figure>
@@ -512,7 +512,7 @@
 <p><img src="https://user-gold-cdn.xitu.io/2019/8/13/16c8b797f4b05a84?w=118&amp;h=65&amp;f=png&amp;s=14640" alt="3"></p>
 <p>我们可以通过<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functionName() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这样的形式来定义一个函数(如何穿参参考后面函数部分),调用的时候也是否的简洁,直接调用相关的函数名即可,除此之外可以通过以下方法获取此函数的返回值</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">(functionName)</span></span><br><span class="line">`functionName`</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>(functionName)</span><br><span class="line">`functionName`</span><br></pre></td></tr></table></figure>
 <p>故此我们可以把返回值存起来以便后面的使用</p>
 <p>shell的函数只能返回一个string类型的字符串,shell中没有我们平常使用的return关键字,使用的是echo输出的内容作为其函数的返回值,具体相关的在后面的函数中详细的介绍</p>
 <h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><p>在shell中,我们常常需要知道上一次的命令执行是否成功来决定下一步怎样执行</p>
@@ -707,7 +707,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
