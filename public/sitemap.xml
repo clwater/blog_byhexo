@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.gengzhibo.com/2021/06/03/%E6%AF%8F%E5%91%A8%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89View-1-%E5%8A%A8%E6%80%81ProgressView/</loc>
+    <loc>http://www.gengzhibo.com/2021/06/10/Android%E6%9D%82%E9%A3%9F%E5%BA%97-%E4%B8%80%E6%AC%A1%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2021-06-04T16:28:41.164Z</lastmod>
+    <lastmod>2021-06-11T15:54:46.411Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.gengzhibo.com/2020/10/13/RobinAlgo/</loc>
     
-    <lastmod>2020-10-12T20:09:39.442Z</lastmod>
+    <lastmod>2021-06-11T15:45:45.454Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gengzhibo.com/2021/06/03/%E6%AF%8F%E5%91%A8%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89View-1-%E5%8A%A8%E6%80%81ProgressView/</loc>
+    
+    <lastmod>2021-06-04T16:37:47.815Z</lastmod>
     
   </url>
   
@@ -149,13 +156,6 @@
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2017/08/10/android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E4%BB%AA%E8%A1%A8%E7%9B%98/</loc>
-    
-    <lastmod>2020-03-13T09:33:05.454Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.gengzhibo.com/2017/10/06/RpgMaker%E6%95%99%E7%A8%8B5/</loc>
     
     <lastmod>2020-03-13T09:33:05.454Z</lastmod>
@@ -170,14 +170,21 @@
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2020/03/13/RpgMaker%E6%95%99%E7%A8%8B2/</loc>
+    <loc>http://www.gengzhibo.com/2017/08/10/android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E4%BB%AA%E8%A1%A8%E7%9B%98/</loc>
+    
+    <lastmod>2020-03-13T09:33:05.454Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.gengzhibo.com/2017/04/24/RpgMaker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/</loc>
     
     <lastmod>2020-03-13T09:33:05.453Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2017/04/24/RpgMaker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/</loc>
+    <loc>http://www.gengzhibo.com/2020/03/13/RpgMaker%E6%95%99%E7%A8%8B2/</loc>
     
     <lastmod>2020-03-13T09:33:05.453Z</lastmod>
     
@@ -198,14 +205,14 @@
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2017/02/03/RelativeLayout%20%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <loc>http://www.gengzhibo.com/2017/02/03/LinearLayout%20%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
     
     <lastmod>2020-03-13T09:33:05.452Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2017/02/03/LinearLayout%20%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
+    <loc>http://www.gengzhibo.com/2017/02/03/RelativeLayout%20%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</loc>
     
     <lastmod>2020-03-13T09:33:05.452Z</lastmod>
     
@@ -296,14 +303,14 @@
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2018/01/13/Android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E9%B2%A8%E9%B1%BC%E5%92%8C%E5%B0%8F%E9%B1%BC%E7%9A%84%E7%AD%89%E5%BE%85%E5%8A%A8%E7%94%BB/</loc>
+    <loc>http://www.gengzhibo.com/2018/05/05/Android%E8%87%AA%E5%AE%9A%E4%B9%89view%E4%B9%8Bemoji%E9%94%AE%E7%9B%98/</loc>
     
     <lastmod>2020-03-13T09:33:05.448Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.gengzhibo.com/2018/05/05/Android%E8%87%AA%E5%AE%9A%E4%B9%89view%E4%B9%8Bemoji%E9%94%AE%E7%9B%98/</loc>
+    <loc>http://www.gengzhibo.com/2018/01/13/Android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E9%B2%A8%E9%B1%BC%E5%92%8C%E5%B0%8F%E9%B1%BC%E7%9A%84%E7%AD%89%E5%BE%85%E5%8A%A8%E7%94%BB/</loc>
     
     <lastmod>2020-03-13T09:33:05.448Z</lastmod>
     
