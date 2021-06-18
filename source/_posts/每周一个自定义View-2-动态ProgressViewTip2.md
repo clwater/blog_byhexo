@@ -25,4 +25,80 @@ tags:
 ![动画效果](https://update-image.oss-cn-shanghai.aliyuncs.com/image/20210617221840.gif)
 
 
-### 
+## 代码实现
+代码相对来说还是比较简单的, 就不分模块展示了
+```java
+@Override
+    protected void onDraw(Canvas canvas) {
+        //绘制区域下移, 避免顶部动画时内容缺失
+        canvas.translate(0, tipHeight / 3);
+        //更新绘制坐标位置
+        int tipPosition = (int) ((width - tipWidth) / 100f * progress);
+
+        //避免差值器过度至异常位置
+        if (tipPosition < tipWidth / 6) {
+            tipPosition = tipWidth / 6;
+        } else if (tipPosition > width - tipWidth / 6f * 7) {
+            tipPosition = (int) (width - tipWidth / 6f * 7);
+        }
+
+        //背景绘制Paint
+        Paint paint = new Paint();
+        paint.setColor(backgroundColor);
+
+        //移动到中心的位置
+        canvas.translate(tipPosition, 0);
+
+        //更新需要变化的角度
+        int degrees = (int) (changeProgress / 100f * maxDegrees);
+
+        //旋转整体
+        canvas.rotate(degrees, tipWidth >> 1,
+                tipHeight + triangleWith);
+        canvas.save();
+
+        //绘制圆角矩形区域
+        canvas.drawRoundRect(0,
+                0,
+                tipWidth,
+                tipHeight,
+                30, 30, paint);
+        canvas.translate(tipWidth >> 1, tipHeight);
+
+        //绘制底部三角区域
+        Path path = new Path();
+        path.moveTo(-triangleWith >> 1, 0);
+        path.lineTo(triangleWith >> 1, 0);
+        path.lineTo(0, triangleWith);
+        path.close();
+        canvas.drawPath(path, paint);
+
+        canvas.restore();
+        canvas.save();
+
+        //文件绘制Paint
+        Paint textPaint = new Paint();
+        textPaint.setColor(textColor);
+        textPaint.setTextSize(tipHeight >> 1);
+        textPaint.setStyle(Paint.Style.FILL);
+
+        //使得在文字x轴居中
+        textPaint.setTextAlign(Paint.Align.CENTER);
+
+        //使得在文字y轴居中
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float top = fontMetrics.top;
+        float bottom = fontMetrics.bottom;
+        int baseLineY = (int) ((tipHeight >> 1) - top / 2 - bottom / 2);
+
+        //避免差值器引起的取值异常
+        if (progress < 0) {
+            progress = 0;
+        } else if (progress > 100) {
+            progress = 100;
+        }
+        //更新需要展示的文字信息
+        String text = "" + progress + "%";
+        canvas.drawText(text, tipWidth >> 1, baseLineY, textPaint);
+    }
+```
