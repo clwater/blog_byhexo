@@ -11,6 +11,8 @@ tags:
 照理先看下效果, 这里可以看到, 随着进度的变化越快, tip偏移的角度也越大, 给人一种加速度高的感觉
 ![动画效果](https://update-image.oss-cn-shanghai.aliyuncs.com/image/20210617215220.gif)
 
+<!-- more -->
+
 
 ## 设计过程
 ### 静态分解
