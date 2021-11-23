@@ -104,3 +104,6 @@ tags:
         canvas.drawText(text, tipWidth >> 1, baseLineY, textPaint);
     }
 ```
+## 最后
+相关代码可以访问[我的GitHub](https://github.com/clwater/AndroidAnimator/tree/main/AnimationProgress2)来获取,欢迎大家start或者提供建议.
+
